@@ -127,6 +127,24 @@ try:
 except Exception:
     pass
 
+# 防禦性確保 archspec 不會因遺漏 json 檔案而導致 Texture2D / astc 解碼失敗
+try:
+    import archspec.cpu
+    _orig_host = archspec.cpu.host
+    def _safe_host():
+        try:
+            return _orig_host()
+        except Exception:
+            class _DummyFamily:
+                name = "x86_64"
+            class _DummyHost:
+                family = _DummyFamily()
+                features = ["sse2", "sse4_1", "avx2"]
+            return _DummyHost()
+    archspec.cpu.host = _safe_host
+except Exception:
+    pass
+
 CDN_BASE = "https://asset-tw.legeclo.johren.games/pcr"
 RESOURCE_DIR = os.path.join(BASE_DIR, 'resources')
 CACHE_DIR = os.path.join(BASE_DIR, 'cache')
@@ -812,6 +830,10 @@ class LegecloHandler(SimpleHTTPRequestHandler):
         # 靜態資源串流 (/cache, /assets)
         if path.startswith('/cache/'):
             fpath = os.path.join(CACHE_DIR, path[7:].replace('/', os.sep))
+            if not os.path.exists(fpath) and '_half.png' in fpath:
+                cand = fpath.replace('_half.png', '.png')
+                if os.path.exists(cand):
+                    fpath = cand
             if os.path.exists(fpath) and os.path.isfile(fpath):
                 self.serve_file(fpath)
                 return

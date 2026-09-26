@@ -1007,7 +1007,7 @@ class LegecloPlayer {
 
     // Immediate preview: show fallback image first so screen is never blank while Spine loads
     if (this.staticStandingFallback) {
-      const fallbackUrl = standing.fallback_img || `/cache/avatars/${standing.character_id || this.currentChapterData.char_id}_half.png`;
+      const fallbackUrl = standing.fallback_img || `/cache/avatars/${standing.character_id || this.currentChapterData.char_id}.png`;
       this.staticStandingFallback.src = fallbackUrl;
       this.staticStandingFallback.classList.remove('hidden');
     }
@@ -1121,7 +1121,7 @@ class LegecloPlayer {
             error: (player, msg) => {
               console.error(`[Spine] Standing load error:`, msg);
               if (this.staticStandingFallback) {
-                const fallbackUrl = standing.fallback_img || `/cache/avatars/${standing.character_id || this.currentChapterData.char_id}_half.png`;
+                const fallbackUrl = standing.fallback_img || `/cache/avatars/${standing.character_id || this.currentChapterData.char_id}.png`;
                 this.staticStandingFallback.src = fallbackUrl;
                 this.staticStandingFallback.classList.remove('hidden');
               }
@@ -1132,7 +1132,7 @@ class LegecloPlayer {
     } catch (e) {
       console.error('[Spine] Exception creating SpinePlayer:', e);
       if (this.staticStandingFallback) {
-        const fallbackUrl = standing.fallback_img || `/cache/avatars/${standing.character_id || this.currentChapterData.char_id}_half.png`;
+        const fallbackUrl = standing.fallback_img || `/cache/avatars/${standing.character_id || this.currentChapterData.char_id}.png`;
         this.staticStandingFallback.src = fallbackUrl;
         this.staticStandingFallback.classList.remove('hidden');
       }
