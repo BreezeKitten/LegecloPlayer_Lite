@@ -2430,8 +2430,25 @@ var spine;
 		}
 		AtlasAttachmentLoader.prototype.newRegionAttachment = function (skin, name, path) {
 			var region = this.atlas.findRegion(path);
-			if (region == null)
-				throw new Error("Region not found in atlas: " + path + " (region attachment: " + name + ")");
+			if (region == null) {
+				console.warn("Region not found in atlas: " + path + " (region attachment: " + name + "), creating safe fallback region");
+				var baseRegion = (this.atlas.regions && this.atlas.regions.length > 0) ? this.atlas.regions[0] : null;
+				if (baseRegion) {
+					region = new spine.TextureAtlasRegion();
+					region.page = baseRegion.page;
+					region.texture = baseRegion.texture;
+					region.name = path;
+					region.x = 0; region.y = 0;
+					region.width = 0; region.height = 0;
+					region.originalWidth = 1; region.originalHeight = 1;
+					region.offsetX = 0; region.offsetY = 0;
+					region.u = 0; region.v = 0; region.u2 = 0; region.v2 = 0;
+					region.renderObject = region;
+					region.degrees = 0;
+				} else {
+					throw new Error("Region not found in atlas: " + path + " (region attachment: " + name + ")");
+				}
+			}
 			region.renderObject = region;
 			var attachment = new spine.RegionAttachment(name);
 			attachment.setRegion(region);
@@ -2439,8 +2456,25 @@ var spine;
 		};
 		AtlasAttachmentLoader.prototype.newMeshAttachment = function (skin, name, path) {
 			var region = this.atlas.findRegion(path);
-			if (region == null)
-				throw new Error("Region not found in atlas: " + path + " (mesh attachment: " + name + ")");
+			if (region == null) {
+				console.warn("Region not found in atlas: " + path + " (mesh attachment: " + name + "), creating safe fallback region");
+				var baseRegion = (this.atlas.regions && this.atlas.regions.length > 0) ? this.atlas.regions[0] : null;
+				if (baseRegion) {
+					region = new spine.TextureAtlasRegion();
+					region.page = baseRegion.page;
+					region.texture = baseRegion.texture;
+					region.name = path;
+					region.x = 0; region.y = 0;
+					region.width = 0; region.height = 0;
+					region.originalWidth = 1; region.originalHeight = 1;
+					region.offsetX = 0; region.offsetY = 0;
+					region.u = 0; region.v = 0; region.u2 = 0; region.v2 = 0;
+					region.renderObject = region;
+					region.degrees = 0;
+				} else {
+					throw new Error("Region not found in atlas: " + path + " (mesh attachment: " + name + ")");
+				}
+			}
 			region.renderObject = region;
 			var attachment = new spine.MeshAttachment(name);
 			attachment.region = region;
@@ -6723,6 +6757,37 @@ var spine;
 				if (this.regions[i].name == name) {
 					return this.regions[i];
 				}
+			}
+			// 1. 去除路徑前綴 (例如 "standing/head" -> "head")
+			var simpleName = name.replace(/^.*[\\\/]/, '');
+			if (simpleName !== name) {
+				for (var i = 0; i < this.regions.length; i++) {
+					if (this.regions[i].name == simpleName) return this.regions[i];
+				}
+			}
+			// 2. 去除副檔名 (例如 "head.png" -> "head")
+			var noExt = simpleName.replace(/\.[^.]+$/, '');
+			if (noExt !== simpleName) {
+				for (var i = 0; i < this.regions.length; i++) {
+					if (this.regions[i].name == noExt) return this.regions[i];
+				}
+			}
+			// 3. 嘗試去除常見的 "AT_" 前綴或補上 "AT_"
+			if (simpleName.indexOf('AT_') === 0) {
+				var noAT = simpleName.substring(3);
+				for (var i = 0; i < this.regions.length; i++) {
+					if (this.regions[i].name == noAT) return this.regions[i];
+				}
+			} else {
+				var withAT = 'AT_' + simpleName;
+				for (var i = 0; i < this.regions.length; i++) {
+					if (this.regions[i].name == withAT) return this.regions[i];
+				}
+			}
+			// 4. 不分大小寫比對
+			var lower = name.toLowerCase();
+			for (var i = 0; i < this.regions.length; i++) {
+				if (this.regions[i].name.toLowerCase() == lower) return this.regions[i];
 			}
 			return null;
 		};

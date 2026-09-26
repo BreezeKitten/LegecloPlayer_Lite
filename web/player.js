@@ -1120,6 +1120,7 @@ class LegecloPlayer {
             },
             error: (player, msg) => {
               console.error(`[Spine] Standing load error:`, msg);
+              if (this.spineContainer) this.spineContainer.innerHTML = '';
               if (this.staticStandingFallback) {
                 const fallbackUrl = standing.fallback_img || `/cache/avatars/${standing.character_id || this.currentChapterData.char_id}.png`;
                 this.staticStandingFallback.src = fallbackUrl;
@@ -1131,6 +1132,7 @@ class LegecloPlayer {
       }
     } catch (e) {
       console.error('[Spine] Exception creating SpinePlayer:', e);
+      if (this.spineContainer) this.spineContainer.innerHTML = '';
       if (this.staticStandingFallback) {
         const fallbackUrl = standing.fallback_img || `/cache/avatars/${standing.character_id || this.currentChapterData.char_id}.png`;
         this.staticStandingFallback.src = fallbackUrl;
