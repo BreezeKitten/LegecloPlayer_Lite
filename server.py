@@ -145,7 +145,31 @@ try:
 except Exception:
     pass
 
-CDN_BASE = "https://asset-tw.legeclo.johren.games/pcr"
+def load_config():
+    cfg = {
+        "cdn_base": "https://asset-tw.legeclo.johren.games/pcr",
+        "port": 8888,
+        "auto_open_browser": True
+    }
+    cfg_file = os.path.join(BASE_DIR, 'config.json')
+    example_file = os.path.join(BASE_DIR, 'config.example.json')
+    target_file = cfg_file if os.path.isfile(cfg_file) else (example_file if os.path.isfile(example_file) else None)
+    if target_file:
+        try:
+            with open(target_file, 'r', encoding='utf-8') as f:
+                cfg.update(json.load(f))
+        except Exception as e:
+            print(f"[!] 讀取配置檔 {target_file} 失敗: {e}")
+    env_cdn = os.environ.get("LEGECLO_CDN_BASE")
+    if env_cdn:
+        cfg["cdn_base"] = env_cdn
+    return cfg
+
+CONFIG = load_config()
+CDN_BASE = CONFIG.get("cdn_base", "https://asset-tw.legeclo.johren.games/pcr").rstrip('/')
+PORT = int(CONFIG.get("port", 8888))
+AUTO_OPEN = bool(CONFIG.get("auto_open_browser", True))
+
 RESOURCE_DIR = os.path.join(BASE_DIR, 'resources')
 CACHE_DIR = os.path.join(BASE_DIR, 'cache')
 WEB_DIR = os.path.join(BASE_DIR, 'web')
@@ -460,7 +484,10 @@ def ensure_bgm(bgm_name):
     cand_asset = os.path.join(ASSETS_DIR, f"{bgm_name}.wav")
     if os.path.exists(cand_asset):
         return f"/assets/{bgm_name}.wav"
-    return '/assets/bgm_scene_0005.wav'
+    cand_default = os.path.join(ASSETS_DIR, 'bgm_scene_0005.wav')
+    if os.path.exists(cand_default):
+        return '/assets/bgm_scene_0005.wav'
+    return None
 
 def ensure_background(bg_name, cid, ep_str):
     """取得場景背景圖片 (自 CDN 回補或保底預設)"""
@@ -830,10 +857,13 @@ class LegecloHandler(SimpleHTTPRequestHandler):
         # 靜態資源串流 (/cache, /assets)
         if path.startswith('/cache/'):
             fpath = os.path.join(CACHE_DIR, path[7:].replace('/', os.sep))
-            if not os.path.exists(fpath) and '_half.png' in fpath:
-                cand = fpath.replace('_half.png', '.png')
-                if os.path.exists(cand):
-                    fpath = cand
+            if not os.path.exists(fpath):
+                if '_half.png' in fpath:
+                    cand = fpath.replace('_half.png', '.png')
+                    if os.path.exists(cand):
+                        fpath = cand
+                elif path.startswith('/cache/avatars/'):
+                    fpath = os.path.join(ASSETS_DIR, 'default_avatar.png')
             if os.path.exists(fpath) and os.path.isfile(fpath):
                 self.serve_file(fpath)
                 return
@@ -954,5 +984,5 @@ def run_server(port=8888, open_browser=True):
         print("\n伺服器已停止。")
 
 if __name__ == '__main__':
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else 8888
-    run_server(port)
+    port = int(sys.argv[1]) if len(sys.argv) > 1 else PORT
+    run_server(port, open_browser=AUTO_OPEN)

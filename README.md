@@ -1,77 +1,113 @@
-# 《れじぇくろ！》輕量互動劇情播放器 (Lite 雲端隨選版)
+# 《れじぇくろ！》輕量互動劇情引擎 (LegecloPlayer Lite)
 
-專為**極速分享、低硬碟佔用與跨裝置播放**設計的便攜式本機播放器。
-初始體積僅約 280 MB，免安裝任何 Python 或額外環境，解壓即開即玩。
-
----
-
-### ✨ 核心特色
-
-1. **雲端即時串流回補 (On-Demand Streaming)**：
-   - 點擊任意角色章節時，伺服器於背景自動自官方 CDN 即時下載該段演出素材（動畫、CG 插圖、語音與劇本腳本，每話約 10~15 MB）。
-   - 內建 SSL 容錯通道與多線程處理，在任何電腦環境皆能順暢下載。
-2. **越玩越完整的離線快取**：
-   - 播放過的章節素材將永久保存於本地 `resources/` 與 `cache/` 中，下次播放 **0 秒瞬間載入**，斷網時亦可流暢欣賞。
-3. **內建「一鍵全量回補」工具**：
-   - 附帶 `一鍵全量回補.bat`，可自由選擇分級下載：
-     - `[1] 極速回補`：全角色立繪骨骼 + 劇本腳本（約 120MB，1~2 分鐘完成，全角色立繪與對話離線可用）
-     - `[2] 標準回補`：立繪 + 劇本 + 全角色語音音訊（約 3.5GB，離線享有全語音配音）
-     - `[3] 完整回補`：上述內容 + 全角色劇情插圖 CG（約 4.0GB）
-     - `[4] 全量回補`：包含所有高畫質動畫影片（約 9~11GB，打造完全離線旗艦版）
-4. **全角色大頭貼圖鑑**：
-   - 預載全 421 位角色 256x256 高畫質大頭貼與繁體中文官方譯名，選角目錄瞬間加載零延遲。
-5. **極致視聽優化**：
-   - 採用 64KB 緩衝分塊音訊串流，BGM 與語音播放絲滑無卡頓。
-   - 支援 Live2D Spine 3.8 原生動態立繪、動作表情即時切換。
-   - 支援 16:9 / 滿版全螢幕、手機直橫向自動適配與 PWA 離線應用。
+> [!IMPORTANT]
+> ### ⚖️ 免責聲明與法律條款 (Disclaimer & Legal Notice)
+> 
+> 1. **僅供技術研究與教育學習 (Academic & Research Purpose Only)**：
+>    本專案為開源非商業專案，旨在研究 WebGL 互動式視覺渲染、Spine 2D 骨骼動畫即時重構、音訊串流分塊解碼及數位檔案封存技術。請勿將本專案用於任何形式之商業營利、付費傳播或侵害原著作權人之行為。
+> 2. **智慧財產權與著作權歸屬 (Copyright Notice)**：
+>    本專案所解析、呈現或關聯之遊戲人物、美術插圖、CG 靜態圖、Spine 骨骼模型、音樂音效、語音台詞與劇本文本，其所有智慧財產權、商標權與著作權均完整歸屬於原遊戲開發商與發行商（**Techcross / Johren / DMM GAMES**）所有。本開源代碼庫**不包含且不託管**任何受版權保護的原廠二進位遊戲素材。
+> 3. **非官方與無任何關聯 (No Affiliation & Unofficial)**：
+>    本專案為社群技術愛好者之獨立開源專案，與 Techcross、Johren、DMM GAMES 或其關聯企業無任何隸屬、授權、背書或合作關係。使用者因使用本專案而產生之任何爭議或法律責任，均由使用者自行承擔。
+> 4. **外部端點與自訂內容責任 (Third-Party CDN & User Responsibilities)**：
+>    本引擎支援動態自訂外部資源端點（如自建 Cloudflare R2、私人鏡像伺服器或本地快取路徑）。本專案不提供任何受保護資源之公開下載服務，使用者應自行確保其存取端點與資產之合法授權。
+> 5. **權益維護與下架聯繫 (Takedown & Safe Harbor Notice)**：
+>    若版權持有人或相關機構認為本代碼庫存在任何疑慮或不妥之處，敬請隨時透過 Issue 或電子郵件聯繫，開發者將在第一時間全力配合說明、修改或移除相關內容。
 
 ---
 
-### 🚀 快速啟動
+## ✨ 專案特色
 
-#### 方式一：點選即玩（輕量隨選串流）
-1. 雙擊執行資料夾內的 **`啟動播放器.bat`**。
-2. 命令提示字元啟動後，瀏覽器將自動開啟：
-   `http://localhost:8888/`
-3. 點選任一角色即可開始觀賞劇情與動態演出！
-
-#### 方式二：一鍵全量下載（自由選擇離線層級）
-1. 雙擊執行資料夾內的 **`一鍵全量回補.bat`**。
-2. 依提示輸入代號 `1` ~ `4`，系統將啟動 8 線程平行下載，支援斷點續傳與隨時暫停。
+1. **模組化按需串流 (On-Demand Caching)**：
+   - 支援依章節演出動態讀取語音、背景與動畫差分，無需一次性佔用大量本機儲存空間。
+2. **Spine 2D 骨骼渲染優化**：
+   - 內建容錯紋理尋址與安全備援機制，大幅提升網頁端 Spine 動態立繪加載穩定性。
+3. **端點配置完全解耦**：
+   - 支援透過 `config.json` 或環境變數自由指定資源鏡像站（支援官方端點、私人 NAS 或 Cloudflare R2 物件儲存）。
+4. **PWA 與跨裝置相容**：
+   - 支援 16:9 / 滿版全螢幕、手機直橫向自動適配與離線應用安裝。
 
 ---
 
-### 📁 目錄結構
+## 🚀 快速開始
+
+### 方式一：下載開箱即用完整包（推薦一般使用者）
+若您不具備 Python 開發環境，請直接前往 **[Releases 頁面](../../releases)** 下載最新發布的綠色壓縮包 `LegecloPlayer_Lite.zip`：
+1. 解壓縮至任意目錄（無須安裝）。
+2. 雙擊執行 **`啟動播放器.bat`**。
+3. 瀏覽器將自動開啟 `http://localhost:8888/` 即可開始體驗。
+
+---
+
+### 方式二：從原始碼運行（開發者 / 多平台）
+本專案核心為純 Python + 標準 Web 技術構建，可跨 Windows / macOS / Linux 運行：
+
+1. **複製專案庫**：
+   ```bash
+   git clone https://github.com/BreezeKitten/LegecloPlayer_Lite.git
+   cd LegecloPlayer_Lite
+   ```
+
+2. **安裝 Python 相依庫**：
+   ```bash
+   pip install UnityPy imageio-ffmpeg pillow
+   ```
+   *(可選)* 音訊解碼若需處理 CRI HCA/ACB 封裝，請確保系統已安裝 `vgmstream` 並加入 PATH。
+
+3. **初始化設定檔**：
+   複製設定檔範本為 `config.json`：
+   ```bash
+   cp config.example.json config.json
+   ```
+   可依需求自訂連接埠或自建 CDN 端點：
+   ```json
+   {
+     "cdn_base": "https://your-mirror-bucket.com/pcr",
+     "port": 8888,
+     "auto_open_browser": true
+   }
+   ```
+
+4. **啟動伺服器**：
+   ```bash
+   python server.py
+   ```
+   打開瀏覽器瀏覽 `http://localhost:8888/`。
+
+---
+
+## ⚙️ 進階配置 (config.json)
+
+| 欄位名稱 | 型別 | 預設值 | 說明 |
+| :--- | :--- | :--- | :--- |
+| `cdn_base` | string | `https://asset-tw.legeclo.johren.games/pcr` | 資源鏡像伺服器基礎 URL（支援 Cloudflare R2 / 自建 CDN） |
+| `port` | number | `8888` | 本機 Web 服務監聽埠號（若衝突會自動順延） |
+| `auto_open_browser` | boolean | `true` | 啟動完成後是否自動呼叫預設瀏覽器開啟頁面 |
+
+> **環境變數支援**：亦可透過設定環境變數 `LEGECLO_CDN_BASE` 覆蓋設定檔中的端點網址。
+
+---
+
+## 📁 檔案結構說明
 
 ```text
 LegecloPlayer_Lite/
-├── 啟動播放器.bat          # 雙擊一鍵啟動伺服器並自動開啟瀏覽器
-├── 啟動播放器.exe          # 獨立免安裝本機串流伺服器
-├── 一鍵全量回補.bat        # 雙擊開啟資源回補選單
-├── 一鍵全量回補.exe        # 8 線程平行全量回補工具
-├── server.py              # 核心伺服器原始碼 (ThreadedHTTPServer + CDN Fetcher)
-├── cdn_manifest.json      # 全章節資源 CDN 清單索引 (3,289 動畫 / 1,643 插圖 / 語音 / 劇本)
-├── char_catalog.json      # 421 位角色目錄與話數資料
-├── char_model_map.json    # Live2D Spine 動態立繪模型映射
-├── char_names.json        # 角色繁體中文名稱快取
-├── tools/                 # 內建 FFmpeg 60fps 轉碼引擎
-├── vgmstream/             # 內建 CRI HCA/AAC 語音解碼器
-├── web/                   # 播放器前端介面 (HTML5 / CSS3 / ES6 / Spine Runtime)
-├── vcruntime140.dll 等    # 內建微軟 C++ 執行庫 (免除缺 DLL 困擾)
-└── cache/avatars/         # 421 位角色高解析度大頭貼
+├── config.example.json    # 外部配置範本 (CDN 端點 / 埠號設定)
+├── server.py              # 核心輕量 HTTP 串流伺服器與解碼調度器
+├── 一鍵全量回補.py        # 多線程批次資源回補與離線同步工具
+├── cdn_manifest.json      # 演出素材映射清單
+├── char_catalog.json      # 角色話數索引目錄
+├── char_model_map.json    # Spine 骨骼模型對應表
+├── char_names.json        # 角色名稱中繼資料
+├── web/                   # HTML5/ES6 播放器前端介面與 Spine Runtime
+├── assets/                # 播放器預設介面圖示 (預設頭像與背景圖)
+└── cache/                 # 本地動態運行快取 (依需求即時生成)
 ```
 
 ---
 
-### ❓ 常見問題與疑難排解 (FAQ)
+## 📄 開源授權 (License)
 
-#### Q: 啟動時出現 `failed to load dynlib/dll` 提示怎麼辦？
-**A:** 這是少數純淨 Windows 系統（如全新重灌、很少玩 PC 遊戲的電腦）缺少微軟官方 C++ 執行階段程式庫，或防毒軟體鎖定暫存目錄所致：
-1. **一鍵安裝微軟官方 VC++ 執行庫（最推薦）**：
-   - 下載並安裝微軟官方 [Visual C++ 2015-2022 Redistributable (x64)](https://aka.ms/vs/17/release/vc_redist.x64.exe)（微軟官方下載，安裝僅需 10 秒，安裝後**免重啟電腦**即可直接雙擊啟動）。
-2. **已內建本機 DLL 隨身包**：
-   - 播放器目錄已直接附帶 `vcruntime140.dll`、`msvcp140.dll` 等通用相依函式庫，多數電腦解壓後皆能直接讀取。
-3. **改用本機 Python 啟動**：
-   - 若電腦本身有安裝 Python，執行 `啟動播放器.bat` 會在獨立執行檔受阻時自動切換至本機 Python 執行，確保 100% 順利啟動。
-4. **防毒軟體排除**：
-   - 若受 Windows Defender 或第三方防毒誤判攔截，請將播放器資料夾加入信任或排除名單。
+- 本專案自身的腳本與介面代碼採用 **MIT License** 授權。
+- 第三方開放原始碼庫（UnityPy、Spine Runtimes、vgmstream 等）版權各歸其原作者所有。
+- 專案相關之遊戲商業內容與原廠多媒體素材不在本開源授權範圍內。

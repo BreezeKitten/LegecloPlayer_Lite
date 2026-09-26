@@ -1,4 +1,6 @@
+# ==========================================
 # Python bytecode & cache
+# ==========================================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -6,24 +8,47 @@ __pycache__/
 build/
 dist/
 
-# 執行時期快取 (使用者播放時即時產生的動畫與語音切片)
-cache/*
-!cache/avatars/
-cache/avatars/*
-!cache/avatars/*.png
-!cache/standing/
+# ==========================================
+# 本地設定檔 (敏感端點與自訂埠號隔離)
+# ==========================================
+config.json
+
+# ==========================================
+# 執行檔與專利二進位庫 (透過 Releases 發布，不進入代碼庫)
+# ==========================================
+*.exe
+*.dll
+tools/ffmpeg.exe
+vgmstream/vgmstream-cli.exe
+vgmstream/*.dll
+
+# ==========================================
+# 遊戲素材快取與版權物隔離 (合規保護)
+# ==========================================
+cache/avatars/*.png
 cache/standing/*
 !cache/standing/.gitkeep
-!cache/bgm/
 cache/bgm/*
 !cache/bgm/.gitkeep
+cache/*_*
 
 # 執行時期自 CDN 下載的原始遊戲素材
 resources/adv/
 resources/characters/
 resources/sound/
 
-# 系統與編輯器暫存
+# 測試音訊與原廠多媒體素材
+assets/*.wav
+assets/st*.png
+assets/tsukuyomi_*.png
+assets/arena.png
+
+# ==========================================
+# 打包壓縮檔與系統暫存
+# ==========================================
+*.zip
+*.7z
+*.rar
 *.log
 *.tmp
 *.bak

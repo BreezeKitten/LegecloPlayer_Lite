@@ -24,7 +24,24 @@ if getattr(sys, 'frozen', False):
 else:
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-CDN_BASE = "https://asset-tw.legeclo.johren.games/pcr"
+def load_config():
+    cfg = {"cdn_base": "https://asset-tw.legeclo.johren.games/pcr"}
+    cfg_file = os.path.join(BASE_DIR, 'config.json')
+    example_file = os.path.join(BASE_DIR, 'config.example.json')
+    target_file = cfg_file if os.path.isfile(cfg_file) else (example_file if os.path.isfile(example_file) else None)
+    if target_file:
+        try:
+            with open(target_file, 'r', encoding='utf-8') as f:
+                cfg.update(json.load(f))
+        except Exception:
+            pass
+    env_cdn = os.environ.get("LEGECLO_CDN_BASE")
+    if env_cdn:
+        cfg["cdn_base"] = env_cdn
+    return cfg
+
+CONFIG = load_config()
+CDN_BASE = CONFIG.get("cdn_base", "https://asset-tw.legeclo.johren.games/pcr").rstrip('/')
 RESOURCE_DIR = os.path.join(BASE_DIR, 'resources')
 
 try:
