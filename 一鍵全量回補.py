@@ -14,6 +14,7 @@ import gzip
 import time
 import ssl
 import urllib.request
+import urllib.parse
 import urllib.error
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -56,7 +57,7 @@ SSL_CTX.verify_mode = ssl.CERT_NONE
 def fetch_file(rel_path, local_path, retries=3):
     if os.path.exists(local_path) and os.path.getsize(local_path) > 0:
         return True, "skipped"
-    url = f"{CDN_BASE}/{rel_path.replace(os.sep, '/')}"
+    url = f"{CDN_BASE}/{urllib.parse.quote(rel_path.replace(os.sep, '/'))}"
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
     for attempt in range(retries):
         try:
@@ -182,6 +183,7 @@ def main():
     success = 0
     failed = 0
 
+    errors = []
     with ThreadPoolExecutor(max_workers=8) as executor:
         future_map = {executor.submit(fetch_file, rel, loc): rel for rel, loc in unique_tasks}
         for future in as_completed(future_map):
@@ -193,8 +195,10 @@ def main():
                     success += 1
                 else:
                     failed += 1
-            except Exception:
+                    errors.append((rel, status))
+            except Exception as e:
                 failed += 1
+                errors.append((rel, str(e)))
 
             if completed % 10 == 0 or completed == total:
                 pct = (completed / total) * 100
@@ -205,6 +209,15 @@ def main():
     print()
     print("=" * 65)
     print(f"🎉 資源回補作業完成！共處理 {completed} 個檔案，總耗時: {time.time()-start_time:.1f} 秒")
+    if errors:
+        log_path = os.path.join(BASE_DIR, 'download_errors.log')
+        try:
+            with open(log_path, 'w', encoding='utf-8') as f:
+                for rel, status in errors:
+                    f.write(f"{rel}\t{status}\n")
+            print(f"[!] 注意：有 {len(errors)} 個檔案下載失敗，詳細錯誤清單已儲存至：{log_path}")
+        except Exception:
+            pass
     print("=" * 65)
     input("\n按 Enter 鍵結束...")
 

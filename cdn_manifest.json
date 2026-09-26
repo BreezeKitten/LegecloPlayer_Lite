@@ -2584,7 +2584,7 @@
         "hs_claudette_legend_st_0201.jpg",
         "hs_claudette_legend_st_0202.jpg"
       ],
-      "voice": "cs_claudette_02.acb.bytes",
+      "voice": "cs_claudette_legend_02.acb.bytes",
       "scenario": "cs_claudette_02.evsc.bytes"
     },
     "3": {
@@ -2598,7 +2598,7 @@
         "hs_claudette_legend_st_0301.jpg",
         "hs_claudette_legend_st_0302.jpg"
       ],
-      "voice": "cs_claudette_03.acb.bytes",
+      "voice": "cs_claudette_legend_03.acb.bytes",
       "scenario": "cs_claudette_03.evsc.bytes"
     }
   },
@@ -5668,7 +5668,7 @@
         "hs_khatia_legend_st_0201.jpg",
         "hs_khatia_legend_st_0202.jpg"
       ],
-      "voice": "cs_khatia_02.acb.bytes",
+      "voice": "cs_khatia_legend_02.acb.bytes",
       "scenario": "cs_khatia_02.evsc.bytes"
     },
     "3": {
@@ -5682,7 +5682,7 @@
         "hs_khatia_legend_st_0301.jpg",
         "hs_khatia_legend_st_0302.jpg"
       ],
-      "voice": "cs_khatia_03.acb.bytes",
+      "voice": "cs_khatia_legend_03.acb.bytes",
       "scenario": "cs_khatia_03.evsc.bytes"
     }
   },

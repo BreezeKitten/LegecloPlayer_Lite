@@ -2026,5 +2026,9 @@
   "claudette_legend": {
     "folder": "902100300",
     "prefix": "st_claudette"
+  },
+  "ring_engage": {
+    "folder": "905900300",
+    "prefix": "st_ ring_engage"
   }
 }

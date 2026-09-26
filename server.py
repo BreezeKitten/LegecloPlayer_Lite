@@ -240,7 +240,7 @@ def fetch_cdn_file(rel_path, local_path, optional=False, retries=3):
     """自 CDN 抓取檔案，自動處理 Gzip 解壓並存入指定路徑 (完全略過 SSL 驗證)"""
     if os.path.exists(local_path) and os.path.getsize(local_path) > 0:
         return True
-    url = f"{CDN_BASE}/{rel_path.replace(os.sep, '/')}"
+    url = f"{CDN_BASE}/{urllib.parse.quote(rel_path.replace(os.sep, '/'))}"
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
     for attempt in range(retries):
         try:
