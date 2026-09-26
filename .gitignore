@@ -1,0 +1,33 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.spec
+build/
+dist/
+
+# 執行時期快取 (使用者播放時即時產生的動畫與語音切片)
+cache/*
+!cache/avatars/
+cache/avatars/*
+!cache/avatars/*.png
+!cache/standing/
+cache/standing/*
+!cache/standing/.gitkeep
+!cache/bgm/
+cache/bgm/*
+!cache/bgm/.gitkeep
+
+# 執行時期自 CDN 下載的原始遊戲素材
+resources/adv/
+resources/characters/
+resources/sound/
+
+# 系統與編輯器暫存
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

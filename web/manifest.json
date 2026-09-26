@@ -1,0 +1,25 @@
+{
+  "name": "Legeclo Player - 命運之子立繪劇情播放器",
+  "short_name": "Legeclo",
+  "description": "雷傑克娜 命運之子 全角色高品質立繪與章節劇情播放器",
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#0a0c12",
+  "theme_color": "#ff5e98",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

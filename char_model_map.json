@@ -1,0 +1,2030 @@
+{
+  "shujinkou": {
+    "folder": "000100101",
+    "prefix": "st_shujinkou"
+  },
+  "shujinkou_nibu": {
+    "folder": "000101101",
+    "prefix": "st_shujinkou_nibu"
+  },
+  "jeanne_mizugi": {
+    "folder": "000200101",
+    "prefix": "st_jeanne_mizugi"
+  },
+  "jeanne": {
+    "folder": "000200102",
+    "prefix": "st_jeanne"
+  },
+  "jeanne_shogatsu": {
+    "folder": "000202103",
+    "prefix": "st_jeanne_shogatsu"
+  },
+  "jeanne_anniversary": {
+    "folder": "000203101",
+    "prefix": "st_jeanne_anniversary"
+  },
+  "jeanne_2nd": {
+    "folder": "000204101",
+    "prefix": "st_jeanne_2nd"
+  },
+  "jeanne_wedding": {
+    "folder": "000205105",
+    "prefix": "st_jeanne_wedding"
+  },
+  "jeanne_gakuen": {
+    "folder": "000206105",
+    "prefix": "st_jeanne_gakuen"
+  },
+  "arthur": {
+    "folder": "000300101",
+    "prefix": "st_arthur"
+  },
+  "arthur_christmas": {
+    "folder": "000301104",
+    "prefix": "st_arthur_christmas"
+  },
+  "arthur_valentine": {
+    "folder": "000302107",
+    "prefix": "st_arthur_valentine"
+  },
+  "arthur_angel": {
+    "folder": "000303106",
+    "prefix": "st_arthur_angel"
+  },
+  "arthur_wedding": {
+    "folder": "000304103",
+    "prefix": "st_arthur_wedding"
+  },
+  "siegfried": {
+    "folder": "000400101",
+    "prefix": "st_siegfried"
+  },
+  "siegfried_anniversary": {
+    "folder": "000401101",
+    "prefix": "st_siegfried_anniversary"
+  },
+  "siegfried_wedding": {
+    "folder": "000402105",
+    "prefix": "st_siegfried_wedding"
+  },
+  "siegfried_2nd": {
+    "folder": "000406103",
+    "prefix": "st_siegfried_2nd"
+  },
+  "siegfried_mizugi": {
+    "folder": "000407106",
+    "prefix": "st_siegfried_mizugi"
+  },
+  "siegfried_shogatsu": {
+    "folder": "000408101",
+    "prefix": "st_siegfried_shogatsu"
+  },
+  "cu_chulainn": {
+    "folder": "000500102",
+    "prefix": "st_cu_chulainn"
+  },
+  "cu_chulainn_halloween": {
+    "folder": "000500105",
+    "prefix": "st_cu_chulainn_halloween"
+  },
+  "cu_chulainn_mizugi": {
+    "folder": "000502104",
+    "prefix": "st_cu_chulainn_mizugi"
+  },
+  "nero": {
+    "folder": "000600103",
+    "prefix": "st_nero"
+  },
+  "nero_wedding": {
+    "folder": "000601107",
+    "prefix": "st_nero_wedding"
+  },
+  "nero_mizugi": {
+    "folder": "000602108",
+    "prefix": "st_nero_mizugi"
+  },
+  "nero_dress": {
+    "folder": "000603101",
+    "prefix": "st_nero_dress"
+  },
+  "clreopatra": {
+    "folder": "000700103",
+    "prefix": "st_clreopatra"
+  },
+  "cleopatra_half": {
+    "folder": "000701103",
+    "prefix": "st_cleopatra_half"
+  },
+  "cleopatra_link": {
+    "folder": "000702105",
+    "prefix": "st_cleopatra_link"
+  },
+  "yamatotakeru": {
+    "folder": "000800104",
+    "prefix": "st_yamatotakeru"
+  },
+  "yamatotakeru_shogatsu": {
+    "folder": "000801106",
+    "prefix": "st_yamatotakeru_shogatsu"
+  },
+  "yamatotakeru_half": {
+    "folder": "000802103",
+    "prefix": "yamatotakeru_half"
+  },
+  "yamatotakeru_future": {
+    "folder": "000803101",
+    "prefix": "st_yamatotakeru_future"
+  },
+  "yamatotakeru_gakuen": {
+    "folder": "000804101",
+    "prefix": "st_yamatotakeru_gakuen"
+  },
+  "yamatotakeru_racequeen": {
+    "folder": "000805108",
+    "prefix": "st_yamatotakeru_racequeen"
+  },
+  "yamatotakeru_mizugi": {
+    "folder": "000806104",
+    "prefix": "st_yamatotakeru_mizugi"
+  },
+  "marie_antoinette": {
+    "folder": "000900104",
+    "prefix": "st_marie_antoinette"
+  },
+  "marie_antoinette_yukata": {
+    "folder": "000901101",
+    "prefix": "st_marie_antoinette_yukata"
+  },
+  "marie_antoinette_clreopatra": {
+    "folder": "000902108",
+    "prefix": "st_marie_antoinette_clreopatra"
+  },
+  "solomon": {
+    "folder": "001000105",
+    "prefix": "st_solomon"
+  },
+  "solomon_halloween": {
+    "folder": "001001105",
+    "prefix": "st_solomon_halloween"
+  },
+  "solomon_link": {
+    "folder": "001002107",
+    "prefix": "st_solomon_link"
+  },
+  "solomon_wedding": {
+    "folder": "001003103",
+    "prefix": "st_solomon_wedding"
+  },
+  "solomon_bunny": {
+    "folder": "001004101",
+    "prefix": "st_solomon_bunny"
+  },
+  "napoleon": {
+    "folder": "001100106",
+    "prefix": "st_napoleon"
+  },
+  "napoleon_valentine": {
+    "folder": "001101104",
+    "prefix": "st_napoleon_valentine"
+  },
+  "ryofu_yukata": {
+    "folder": "001200102",
+    "prefix": "st_ryofu_yukata"
+  },
+  "ryofu": {
+    "folder": "001200107",
+    "prefix": "st_ryofu"
+  },
+  "ryofu_halloween": {
+    "folder": "001202106",
+    "prefix": "st_ryofu_halloween"
+  },
+  "ryofu_2nd": {
+    "folder": "001203103",
+    "prefix": "st_ryofu_2nd"
+  },
+  "ryofu_wedding": {
+    "folder": "001204106",
+    "prefix": "st_ryofu_wedding"
+  },
+  "okita_souji": {
+    "folder": "001300101",
+    "prefix": "st_okita_souji"
+  },
+  "okita_souji_shogatsu": {
+    "folder": "001301103",
+    "prefix": "st_okita_souji_shogatsu"
+  },
+  "okita_souji_wedding": {
+    "folder": "001302101",
+    "prefix": "st_okita_souji_wedding"
+  },
+  "okita_souji_mizugi": {
+    "folder": "001303108",
+    "prefix": "st_okita_souji_mizugi"
+  },
+  "timur": {
+    "folder": "001400101",
+    "prefix": "st_timur"
+  },
+  "benkei": {
+    "folder": "001500102",
+    "prefix": "st_benkei"
+  },
+  "benkei_taisouhuku": {
+    "folder": "001501107",
+    "prefix": "st_benkei_taisouhuku"
+  },
+  "benkei_2nd": {
+    "folder": "001502103",
+    "prefix": "st_benkei_2nd"
+  },
+  "benkei_bunny": {
+    "folder": "001503101",
+    "prefix": "st_benkei_bunny"
+  },
+  "elizabeth_bathory": {
+    "folder": "001600102",
+    "prefix": "st_elizabeth_bathory"
+  },
+  "elizabeth_bathory_valentine": {
+    "folder": "001601107",
+    "prefix": "st_elizabeth_bathory_valentine"
+  },
+  "elizabeth_bathory_christmas": {
+    "folder": "001602108",
+    "prefix": "st_elizabeth_bathory_christmas"
+  },
+  "elizabeth_bathory_gakuen": {
+    "folder": "001603105",
+    "prefix": "st_elizabeth_bathory_gakuen"
+  },
+  "mordred": {
+    "folder": "001700102",
+    "prefix": "st_mordred"
+  },
+  "gawain": {
+    "folder": "001701101",
+    "prefix": "st_gawain"
+  },
+  "lancelot": {
+    "folder": "001800103",
+    "prefix": "st_lancelot"
+  },
+  "asklepios": {
+    "folder": "001900104",
+    "prefix": "st_asklepios"
+  },
+  "asklepios_shogatsu": {
+    "folder": "001901103",
+    "prefix": "st_asklepios_shogatsu"
+  },
+  "richard_i": {
+    "folder": "002000104",
+    "prefix": "st_richard_i"
+  },
+  "richard_i_onehalf": {
+    "folder": "002001101",
+    "prefix": "st_richard_i_onehalf"
+  },
+  "richard_i_mizugi": {
+    "folder": "002002108",
+    "prefix": "st_richard_i_mizugi"
+  },
+  "sugawara_no_michizane": {
+    "folder": "002100105",
+    "prefix": "st_sugawara_no_michizane"
+  },
+  "sugawara_no_michizane_mizugi": {
+    "folder": "002101107",
+    "prefix": "st_sugawara_no_michizane_mizugi"
+  },
+  "tutankhamun": {
+    "folder": "002200105",
+    "prefix": "st_tutankhamun"
+  },
+  "tutankhamun_half": {
+    "folder": "002201104",
+    "prefix": "st_tutankhamun_half"
+  },
+  "tutankhamun_link": {
+    "folder": "002202103",
+    "prefix": "tutankhamun_link"
+  },
+  "tristan": {
+    "folder": "002300106",
+    "prefix": "st_tristan"
+  },
+  "tristan_valentine": {
+    "folder": "002301107",
+    "prefix": "st_tristan_valentine"
+  },
+  "tristan_racequeen": {
+    "folder": "002302103",
+    "prefix": "st_tristan_racequeen"
+  },
+  "tristan_2nd": {
+    "folder": "002303106",
+    "prefix": "st_tristan_2nd"
+  },
+  "leonardo_da_vinci": {
+    "folder": "002400107",
+    "prefix": "st_leonardo_da_vinci"
+  },
+  "leonardo_da_vinci_halloween": {
+    "folder": "002401104",
+    "prefix": "st_leonardo_da_vinci_halloween"
+  },
+  "leonardo_da_vinci_hinamatsuri": {
+    "folder": "002402106",
+    "prefix": "st_leonardo_da_vinci_hinamatsuri"
+  },
+  "leonardo_da_vinci_cinderella": {
+    "folder": "002403101",
+    "prefix": "st_leonardo_da_vinci_cinderella"
+  },
+  "fuuma_kotarou": {
+    "folder": "002500108",
+    "prefix": "st_fuuma_kotarou"
+  },
+  "syujinkou": {
+    "folder": "002700102",
+    "prefix": "st_syujinkou"
+  },
+  "toudou_takatora": {
+    "folder": "002600102",
+    "prefix": "st_toudou_takatora"
+  },
+  "galahad": {
+    "folder": "002700103",
+    "prefix": "st_galahad"
+  },
+  "galahad_cheshire_cat": {
+    "folder": "002701107",
+    "prefix": "st_galahad_cheshire_cat"
+  },
+  "galahad_2nd": {
+    "folder": "002702102",
+    "prefix": "st_galahad_2nd"
+  },
+  "robert_e_lee": {
+    "folder": "002800101",
+    "prefix": "st_robert_e_lee"
+  },
+  "kannei": {
+    "folder": "002900103",
+    "prefix": "st_kannei"
+  },
+  "kannei_wedding": {
+    "folder": "002901105",
+    "prefix": "st_kannei_wedding"
+  },
+  "anastasia": {
+    "folder": "003000104",
+    "prefix": "st_anastasia"
+  },
+  "anastasia_christmas": {
+    "folder": "003001101",
+    "prefix": "st_anastasia_christmas"
+  },
+  "anastasia_gakuen": {
+    "folder": "003002101",
+    "prefix": "st_anastasia_gakuen"
+  },
+  "anastasia_human": {
+    "folder": "003003104",
+    "prefix": "st_anastasia_human"
+  },
+  "anastasia_human_christmas": {
+    "folder": "003004101",
+    "prefix": "st_anastasia_human_christmas"
+  },
+  "anastasia_human_gakuen": {
+    "folder": "003005101",
+    "prefix": "st_anastasia_human_gakuen"
+  },
+  "anastasia_sister": {
+    "folder": "003006103",
+    "prefix": "st_anastasia_sister"
+  },
+  "anastasia_sister_human": {
+    "folder": "003007103",
+    "prefix": "st_anastasia_sister_human"
+  },
+  "anastasia_valentine": {
+    "folder": "003008107",
+    "prefix": "st_anastasia_valentine"
+  },
+  "anastasia_human_valentine": {
+    "folder": "003009107",
+    "prefix": "st_anastasia_human_valentine"
+  },
+  "gilles_de_rais": {
+    "folder": "003100105",
+    "prefix": "st_gilles_de_rais"
+  },
+  "gilles_de_rais_christmas": {
+    "folder": "003101107",
+    "prefix": "st_gilles_de_rais_christmas"
+  },
+  "gilles_de_rais_makaku": {
+    "folder": "003102105",
+    "prefix": "st_gilles_de_rais_makaku"
+  },
+  "gilles_de_rais_future": {
+    "folder": "003103105",
+    "prefix": "st_gilles_de_rais_future"
+  },
+  "gilles_de_rais_wedding": {
+    "folder": "003104108",
+    "prefix": "st_gilles_de_rais_wedding"
+  },
+  "gilles_de_rais_dress": {
+    "folder": "003105104",
+    "prefix": "st_gilles_de_rais_dress"
+  },
+  "platon": {
+    "folder": "003200105",
+    "prefix": "st_platon"
+  },
+  "niijima_yae": {
+    "folder": "003300106",
+    "prefix": "st_niijima_yae"
+  },
+  "francis_drake": {
+    "folder": "003400107",
+    "prefix": "st_francis_drake"
+  },
+  "charlotte_corday": {
+    "folder": "003500108",
+    "prefix": "st_charlotte_corday"
+  },
+  "charlotte_corday_christmas": {
+    "folder": "003501103",
+    "prefix": "st_charlotte_corday_christmas"
+  },
+  "rasputin": {
+    "folder": "003600108",
+    "prefix": "st_rasputin"
+  },
+  "rasputin_sister": {
+    "folder": "003601101",
+    "prefix": "st_rasputin_sister"
+  },
+  "susanoo": {
+    "folder": "003700201",
+    "prefix": "st_susanoo"
+  },
+  "susanoo_2nd": {
+    "folder": "003701101",
+    "prefix": "st_susanoo_2nd"
+  },
+  "apollon": {
+    "folder": "003800201",
+    "prefix": "st_apollon"
+  },
+  "apollon_christmas": {
+    "folder": "003801203",
+    "prefix": "st_apollon_christmas"
+  },
+  "apollon_2nd": {
+    "folder": "003802101",
+    "prefix": "st_apollon_2nd"
+  },
+  "apollon_halloween": {
+    "folder": "003803108",
+    "prefix": "st_apollon_halloween"
+  },
+  "apollon_pajama": {
+    "folder": "003804105",
+    "prefix": "st_apollon_pajama"
+  },
+  "shiva": {
+    "folder": "003900202",
+    "prefix": "st_shiva"
+  },
+  "odin": {
+    "folder": "004000203",
+    "prefix": "st_odin"
+  },
+  "odin_valentine": {
+    "folder": "004001205",
+    "prefix": "st_odin_valentine"
+  },
+  "anubis": {
+    "folder": "004100204",
+    "prefix": "st_anubis"
+  },
+  "anubis_half": {
+    "folder": "004101205",
+    "prefix": "st_anubis_half"
+  },
+  "joka": {
+    "folder": "004200205",
+    "prefix": "st_joka"
+  },
+  "joka_yukata": {
+    "folder": "004200208",
+    "prefix": "st_joka_yukata"
+  },
+  "joka_halloween": {
+    "folder": "004202206",
+    "prefix": "st_joka_halloween"
+  },
+  "joka_wedding": {
+    "folder": "004203107",
+    "prefix": "st_joka_wedding"
+  },
+  "artemis": {
+    "folder": "004300206",
+    "prefix": "st_artemis"
+  },
+  "artemis_half": {
+    "folder": "004301204",
+    "prefix": "st_artemis_half"
+  },
+  "artemis_2nd": {
+    "folder": "004302106",
+    "prefix": "st_artemis_2nd"
+  },
+  "artemis_halloween": {
+    "folder": "004303101",
+    "prefix": "st_artemis_halloween"
+  },
+  "artemis_bunny": {
+    "folder": "004304203",
+    "prefix": "st_artemis_bunny"
+  },
+  "amaterasu": {
+    "folder": "004400207",
+    "prefix": "st_amaterasu"
+  },
+  "amaterasu_shogatsu": {
+    "folder": "004401203",
+    "prefix": "st_amaterasu_shogatsu"
+  },
+  "amaterasu_link": {
+    "folder": "004402104",
+    "prefix": "st_amaterasu_link"
+  },
+  "thor": {
+    "folder": "004500201",
+    "prefix": "st_thor"
+  },
+  "thor_halloween": {
+    "folder": "004501203",
+    "prefix": "st_thor_halloween"
+  },
+  "thor_mizugi": {
+    "folder": "004502203",
+    "prefix": "st_thor_mizugi"
+  },
+  "thor_racequeen": {
+    "folder": "004503206",
+    "prefix": "st_thor_racequeen"
+  },
+  "loki": {
+    "folder": "004600202",
+    "prefix": "st_loki"
+  },
+  "gembu": {
+    "folder": "004700202",
+    "prefix": "st_gembu"
+  },
+  "idaten": {
+    "folder": "004800203",
+    "prefix": "st_idaten"
+  },
+  "michael_mizugi": {
+    "folder": "004900202",
+    "prefix": "st_michael_mizugi"
+  },
+  "michael": {
+    "folder": "004900204",
+    "prefix": "st_michael"
+  },
+  "michael_shogatsu": {
+    "folder": "004902202",
+    "prefix": "st_michael_shogatsu"
+  },
+  "michael_anniversary": {
+    "folder": "004903201",
+    "prefix": "st_michael_anniversary"
+  },
+  "michael_2nd": {
+    "folder": "004904104",
+    "prefix": "st_michael_2nd"
+  },
+  "michael_maid": {
+    "folder": "004905105",
+    "prefix": "st_michael_maid"
+  },
+  "michael_gakuen": {
+    "folder": "004906106",
+    "prefix": "st_michael_gakuen"
+  },
+  "poseidon": {
+    "folder": "005000205",
+    "prefix": "st_poseidon"
+  },
+  "poseidon_2nd": {
+    "folder": "005001104",
+    "prefix": "st_poseidon_2nd"
+  },
+  "nyarlathotep": {
+    "folder": "005100205",
+    "prefix": "st_nyarlathotep"
+  },
+  "nyarlathotep_christmas": {
+    "folder": "005101203",
+    "prefix": "st_nyarlathotep_christmas"
+  },
+  "nyarlathotep_gakuen": {
+    "folder": "005102201",
+    "prefix": "nyarlathotep_gakuen"
+  },
+  "nyarlathotep_dress": {
+    "folder": "005103202",
+    "prefix": "st_nyarlathotep_dress"
+  },
+  "uriel": {
+    "folder": "005200206",
+    "prefix": "st_uriel"
+  },
+  "uriel_christmas": {
+    "folder": "005201201",
+    "prefix": "st_uriel_christmas"
+  },
+  "uriel_gakuen": {
+    "folder": "005202201",
+    "prefix": "st_uriel_gakuen"
+  },
+  "uriel_pajama": {
+    "folder": "005203204",
+    "prefix": "st_uriel_pajama"
+  },
+  "kyuuten_gennyo": {
+    "folder": "005300207",
+    "prefix": "st_kyuuten_gennyo"
+  },
+  "byakko": {
+    "folder": "005400208",
+    "prefix": "st_byakko"
+  },
+  "salamander": {
+    "folder": "005500201",
+    "prefix": "st_salamander"
+  },
+  "ganesha": {
+    "folder": "005600202",
+    "prefix": "st_ganesha"
+  },
+  "cait_sith": {
+    "folder": "005700203",
+    "prefix": "st_cait_sith"
+  },
+  "mermaid": {
+    "folder": "005800203",
+    "prefix": "st_mermaid"
+  },
+  "nymue": {
+    "folder": "005900204",
+    "prefix": "st_nymue"
+  },
+  "nymue_valentine": {
+    "folder": "005901207",
+    "prefix": "st_nymue_valentine"
+  },
+  "koropokkuru": {
+    "folder": "006000204",
+    "prefix": "st_koropokkuru"
+  },
+  "kikimora": {
+    "folder": "006100205",
+    "prefix": "st_kikimora"
+  },
+  "cupido": {
+    "folder": "006200206",
+    "prefix": "st_cupido"
+  },
+  "cupido_wolf": {
+    "folder": "006201204",
+    "prefix": "st_cupido_wolf"
+  },
+  "quetzalcoatl": {
+    "folder": "006300207",
+    "prefix": "st_quetzalcoatl"
+  },
+  "rusalka": {
+    "folder": "006400208",
+    "prefix": "st_rusalka"
+  },
+  "rusalka_christmas": {
+    "folder": "006401203",
+    "prefix": "st_rusalka_christmas"
+  },
+  "rusalka_minette": {
+    "folder": "006402204",
+    "prefix": "st_rusalka_minette"
+  },
+  "rusalka_wedding": {
+    "folder": "006403204",
+    "prefix": "st_rusalka_wedding"
+  },
+  "nightingale": {
+    "folder": "006500104",
+    "prefix": "st_nightingale"
+  },
+  "nightingale_christmas": {
+    "folder": "006501103",
+    "prefix": "st_nightingale_christmas"
+  },
+  "nightingale_link": {
+    "folder": "006502102",
+    "prefix": "st_nightingale_link"
+  },
+  "nightingale_gakuen": {
+    "folder": "006503105",
+    "prefix": "st_nightingale_gakuen"
+  },
+  "nightingale_pajama": {
+    "folder": "006504101",
+    "prefix": "st_nightingale_pajama"
+  },
+  "sariel": {
+    "folder": "006600204",
+    "prefix": "st_sariel"
+  },
+  "sariel_half": {
+    "folder": "006601201",
+    "prefix": "st_sariel_half"
+  },
+  "sariel_mizugi": {
+    "folder": "006602203",
+    "prefix": "st_sariel_mizugi"
+  },
+  "valkyrie": {
+    "folder": "006700203",
+    "prefix": "st_valkyrie"
+  },
+  "valkyrie_wedding": {
+    "folder": "006701205",
+    "prefix": "st_valkyrie_wedding"
+  },
+  "beethoven": {
+    "folder": "006800105",
+    "prefix": "st_beethoven"
+  },
+  "beethoven_little": {
+    "folder": "006801107",
+    "prefix": "st_beethoven_little"
+  },
+  "beethoven_gakuen": {
+    "folder": "006802108",
+    "prefix": "st_beethoven_gakuen"
+  },
+  "tsukuyomi": {
+    "folder": "006900202",
+    "prefix": "st_tsukuyomi"
+  },
+  "tsukuyomi_shogatsu": {
+    "folder": "006901203",
+    "prefix": "st_tsukuyomi_shogatsu"
+  },
+  "tsukuyomi_link": {
+    "folder": "006902108",
+    "prefix": "st_tsukuyomi_link"
+  },
+  "tsukuyomi_wedding": {
+    "folder": "006903102",
+    "prefix": "st_tsukuyomi_wedding"
+  },
+  "tsukuyomi_mizugi": {
+    "folder": "006904105",
+    "prefix": "st_tsukuyomi_mizugi"
+  },
+  "seiryu": {
+    "folder": "007000205",
+    "prefix": "st_seiryu"
+  },
+  "nise_dimitri": {
+    "folder": "007100107",
+    "prefix": "st_nise_dimitri"
+  },
+  "enma": {
+    "folder": "007200208",
+    "prefix": "st_enma"
+  },
+  "enma_onehalf": {
+    "folder": "007201101",
+    "prefix": "st_enma_onehalf"
+  },
+  "konohanasakuyahime": {
+    "folder": "007300204",
+    "prefix": "st_konohanasakuyahime"
+  },
+  "konohanasakuyahime_onehalf": {
+    "folder": "007301208",
+    "prefix": "st_konohanasakuyahime_onehalf"
+  },
+  "richelieu_all": {
+    "folder": "007400105",
+    "prefix": "st_richelieu_all"
+  },
+  "isis": {
+    "folder": "007500205",
+    "prefix": "st_isis"
+  },
+  "medjed": {
+    "folder": "007600204",
+    "prefix": "st_medjed"
+  },
+  "medjed_halloween": {
+    "folder": "007600205",
+    "prefix": "st_medjed_halloween"
+  },
+  "medjed_halloween_sugao": {
+    "folder": "007602205",
+    "prefix": "st_medjed_halloween_sugao"
+  },
+  "mansamusa": {
+    "folder": "900500100",
+    "prefix": "st_mansamusa"
+  },
+  "mansa_musa_halloween": {
+    "folder": "007701108",
+    "prefix": "st_mansa_musa_halloween"
+  },
+  "mansa_musa_shogatsu": {
+    "folder": "007702107",
+    "prefix": "st_mansa_musa_shogatsu"
+  },
+  "kannon_bosatsu": {
+    "folder": "007800207",
+    "prefix": "st_kannon_bosatsu"
+  },
+  "carbuncle": {
+    "folder": "007900207",
+    "prefix": "st_carbuncle"
+  },
+  "suzaku": {
+    "folder": "008300206",
+    "prefix": "st_suzaku"
+  },
+  "niraikanai": {
+    "folder": "008400201",
+    "prefix": "st_niraikanai"
+  },
+  "katsushika_hokusai": {
+    "folder": "008500106",
+    "prefix": "st_katsushika_hokusai"
+  },
+  "katsushika_hokusai_mizugi": {
+    "folder": "008501107",
+    "prefix": "st_katsushika_hokusai_mizugi"
+  },
+  "katsushika_hokusai_onsen": {
+    "folder": "008502106",
+    "prefix": "st_katsushika_hokusai_onsen"
+  },
+  "nike": {
+    "folder": "008600207",
+    "prefix": "st_nike"
+  },
+  "nike_piacarrot3": {
+    "folder": "008601205",
+    "prefix": "st_nike_piacarrot3"
+  },
+  "kokopelli": {
+    "folder": "008700206",
+    "prefix": "st_kokopelli"
+  },
+  "tetsuwan_goetzens": {
+    "folder": "008800103",
+    "prefix": "st_tetsuwan_goetzens"
+  },
+  "leonidas": {
+    "folder": "008900100",
+    "prefix": "st_leonidas"
+  },
+  "donquixote": {
+    "folder": "009000103",
+    "prefix": "st_donquixote"
+  },
+  "sanada_yukimura": {
+    "folder": "009100102",
+    "prefix": "st_sanada_yukimura"
+  },
+  "sanada_yukimura_gakuen": {
+    "folder": "009101106",
+    "prefix": "st_sanada_yukimura_gakuen"
+  },
+  "raphael": {
+    "folder": "009200201",
+    "prefix": "st_raphael"
+  },
+  "raphael_yukata": {
+    "folder": "009201201",
+    "prefix": "st_raphael_yukata"
+  },
+  "caesar": {
+    "folder": "009300101",
+    "prefix": "st_caesar"
+  },
+  "caesar_gakuen": {
+    "folder": "009301108",
+    "prefix": "st_caesar_gakuen"
+  },
+  "caesar_wedding": {
+    "folder": "009302104",
+    "prefix": "st_caesar_wedding"
+  },
+  "caesar_rabbit": {
+    "folder": "009303106",
+    "prefix": "st_caesar_rabbit"
+  },
+  "gabriel": {
+    "folder": "009400207",
+    "prefix": "st_gabriel"
+  },
+  "gabriel_christmas": {
+    "folder": "009401201",
+    "prefix": "st_gabriel_christmas"
+  },
+  "gabriel_halloween": {
+    "folder": "009402208",
+    "prefix": "st_gabriel_halloween"
+  },
+  "gabriel_wedding": {
+    "folder": "009403107",
+    "prefix": "st_gabriel_wedding"
+  },
+  "gabriel_mizugi": {
+    "folder": "009404101",
+    "prefix": "st_gabriel_mizugi"
+  },
+  "gabriel_gakuen": {
+    "folder": "009405204",
+    "prefix": "st_gabriel_gakuen"
+  },
+  "sol_halloween": {
+    "folder": "009600205",
+    "prefix": "st_sol_halloween"
+  },
+  "sol": {
+    "folder": "009600206",
+    "prefix": "st_sol"
+  },
+  "sol_kamihimeishou": {
+    "folder": "009602206",
+    "prefix": "st_sol_kamihimeishou"
+  },
+  "sol_2nd": {
+    "folder": "009603106",
+    "prefix": "st_sol_2nd"
+  },
+  "sol_shogatsu": {
+    "folder": "009604102",
+    "prefix": "st_sol_shogatsu"
+  },
+  "choukaku": {
+    "folder": "009700104",
+    "prefix": "st_choukaku"
+  },
+  "brunhild": {
+    "folder": "009800202",
+    "prefix": "st_brunhild"
+  },
+  "brunhild_wedding": {
+    "folder": "009801205",
+    "prefix": "st_brunhild_wedding"
+  },
+  "brunhild_china": {
+    "folder": "009802206",
+    "prefix": "st_brunhild_china"
+  },
+  "brunhild_christmas": {
+    "folder": "009803204",
+    "prefix": "st_brunhild_christmas"
+  },
+  "brunhild_shogatsu": {
+    "folder": "009804201",
+    "prefix": "st_brunhild_shogatsu"
+  },
+  "spartacus": {
+    "folder": "009900101",
+    "prefix": "st_spartacus"
+  },
+  "spartacus_yukata": {
+    "folder": "009901106",
+    "prefix": "st_spartacus_yukata"
+  },
+  "amorounagu": {
+    "folder": "010000202",
+    "prefix": "st_amorounagu"
+  },
+  "amorounagu_hinamatsuri": {
+    "folder": "010001206",
+    "prefix": "st_amorounagu_hinamatsuri"
+  },
+  "mastersoldier": {
+    "folder": "513500401",
+    "prefix": "st_mastersoldier"
+  },
+  "mastersoldier_shogatsu": {
+    "folder": "010101105",
+    "prefix": "st_mastersoldier_shogatsu"
+  },
+  "masterlancer": {
+    "folder": "513600402",
+    "prefix": "st_masterlancer"
+  },
+  "masterrider": {
+    "folder": "513700403",
+    "prefix": "st_masterrider"
+  },
+  "masterrider_alice": {
+    "folder": "010301108",
+    "prefix": "st_masterrider_alice"
+  },
+  "mastershooter": {
+    "folder": "513800406",
+    "prefix": "st_mastershooter"
+  },
+  "masteraerial": {
+    "folder": "513900407",
+    "prefix": "st_masteraerial"
+  },
+  "masteraerial_shogatsu": {
+    "folder": "010501104",
+    "prefix": "st_masteraerial_shogatsu"
+  },
+  "masteraerial_piacarrot3": {
+    "folder": "010502108",
+    "prefix": "st_masteraerial_piacarrot3"
+  },
+  "masterassassin": {
+    "folder": "514000408",
+    "prefix": "st_masterassassin"
+  },
+  "mastersaint": {
+    "folder": "514100404",
+    "prefix": "st_mastersaint"
+  },
+  "mastersaint_shogatsu": {
+    "folder": "010701106",
+    "prefix": "st_mastersaint_shogatsu"
+  },
+  "mastersaint_christmas": {
+    "folder": "010702103",
+    "prefix": "st_mastersaint_christmas"
+  },
+  "mastersaint_dress": {
+    "folder": "010703107",
+    "prefix": "st_mastersaint_dress"
+  },
+  "mastersorcerer": {
+    "folder": "514200405",
+    "prefix": "st_mastersorcerer"
+  },
+  "ishikawagoemon": {
+    "folder": "010900108",
+    "prefix": "st_ishikawagoemon"
+  },
+  "saji": {
+    "folder": "011000105",
+    "prefix": "st_saji"
+  },
+  "saji_onehalf": {
+    "folder": "011001108",
+    "prefix": "st_saji_onehalf"
+  },
+  "saji_valentine": {
+    "folder": "011002105",
+    "prefix": "st_saji_valentine"
+  },
+  "hattorihanzou": {
+    "folder": "011100108",
+    "prefix": "st_hattorihanzou"
+  },
+  "hattorihanzou_mizugi": {
+    "folder": "011101103",
+    "prefix": "st_hattorihanzou_mizugi"
+  },
+  "hattorihanzou_onsen": {
+    "folder": "011102101",
+    "prefix": "st_hattorihanzou_onsen"
+  },
+  "bacchus": {
+    "folder": "011200208",
+    "prefix": "st_bacchus"
+  },
+  "bacchus_hinamatsuri": {
+    "folder": "011201206",
+    "prefix": "st_bacchus_hinamatsuri"
+  },
+  "hammurabi": {
+    "folder": "011300105",
+    "prefix": "st_hammurabi"
+  },
+  "izanami": {
+    "folder": "011400204",
+    "prefix": "st_izanami"
+  },
+  "williamtell": {
+    "folder": "011500106",
+    "prefix": "st_williamtell"
+  },
+  "williamtell_link": {
+    "folder": "011501108",
+    "prefix": "st_williamtell_link"
+  },
+  "hades": {
+    "folder": "011600208",
+    "prefix": "st_hades"
+  },
+  "hades_gakuen": {
+    "folder": "011601208",
+    "prefix": "st_hades_gakuen"
+  },
+  "hades_taisouhuku_anihalf": {
+    "folder": "011602204",
+    "prefix": "st_hades_taisouhuku_anihalf"
+  },
+  "hades_2nd": {
+    "folder": "011603108",
+    "prefix": "st_hades_2nd"
+  },
+  "hades_clreopatra": {
+    "folder": "011604103",
+    "prefix": "st_hades_clreopatra"
+  },
+  "hades_mizugi": {
+    "folder": "011605104",
+    "prefix": "st_hades_mizugi"
+  },
+  "pandora": {
+    "folder": "011800205",
+    "prefix": "st_pandora"
+  },
+  "pandora_onehalf": {
+    "folder": "011801201",
+    "prefix": "st_pandora_onehalf"
+  },
+  "pandora_maid": {
+    "folder": "011802207",
+    "prefix": "st_pandora_maid"
+  },
+  "pandora_valentine": {
+    "folder": "011803208",
+    "prefix": "st_pandora_valentine"
+  },
+  "alexander": {
+    "folder": "011900103",
+    "prefix": "st_alexander"
+  },
+  "alexander_little": {
+    "folder": "011901101",
+    "prefix": "st_alexander_little"
+  },
+  "nemesis": {
+    "folder": "012000201",
+    "prefix": "st_nemesis"
+  },
+  "nemesis_onehalf": {
+    "folder": "012001208",
+    "prefix": "st_nemesis_onehalf"
+  },
+  "hijikatatoshizou": {
+    "folder": "012100108",
+    "prefix": "st_hijikatatoshizou"
+  },
+  "hijikatatoshizo_china": {
+    "folder": "012101106",
+    "prefix": "st_hijikatatoshizo_china"
+  },
+  "hijikatatoshizo_little": {
+    "folder": "012102101",
+    "prefix": "st_hijikatatoshizo_little"
+  },
+  "orion": {
+    "folder": "012200206",
+    "prefix": "st_orion"
+  },
+  "taikobo": {
+    "folder": "012300107",
+    "prefix": "st_taikobo"
+  },
+  "taikobo_cheerleader": {
+    "folder": "012301104",
+    "prefix": "st_taikobo_cheerleader"
+  },
+  "parvathi": {
+    "folder": "012400203",
+    "prefix": "st_parvathi"
+  },
+  "andromeda": {
+    "folder": "012600106",
+    "prefix": "st_andromeda"
+  },
+  "andromeda_onehalf": {
+    "folder": "012601104",
+    "prefix": "st_andromeda_onehalf"
+  },
+  "andromeda_maid": {
+    "folder": "012602107",
+    "prefix": "st_andromeda_maid"
+  },
+  "andromeda_shogatsu": {
+    "folder": "012603105",
+    "prefix": "st_andromeda_shogatsu"
+  },
+  "andromeda_christmas": {
+    "folder": "012604103",
+    "prefix": "st_andromeda_christmas"
+  },
+  "marduk": {
+    "folder": "012700205",
+    "prefix": "st_marduk"
+  },
+  "inuyamatamaki": {
+    "folder": "012800104",
+    "prefix": "st_inuyamatamaki"
+  },
+  "shirayukimishiro": {
+    "folder": "012900204",
+    "prefix": "st_shirayukimishiro"
+  },
+  "ammon": {
+    "folder": "509200499",
+    "prefix": "st_ammon"
+  },
+  "ammon_valentine": {
+    "folder": "013002104",
+    "prefix": "st_ammon_valentine"
+  },
+  "scathach": {
+    "folder": "013100102",
+    "prefix": "st_scathach"
+  },
+  "scathach_devil": {
+    "folder": "013101108",
+    "prefix": "st_scathach_devil"
+  },
+  "morrigan": {
+    "folder": "013200202",
+    "prefix": "st_morrigan"
+  },
+  "morrigan_angel": {
+    "folder": "013201206",
+    "prefix": "st_morrigan_angel"
+  },
+  "himiko": {
+    "folder": "013300104",
+    "prefix": "st_himiko"
+  },
+  "snegurochka": {
+    "folder": "512200499",
+    "prefix": "st_snegurochka"
+  },
+  "snegurochka_chelsea": {
+    "folder": "013401104",
+    "prefix": "st_snegurochka_chelsea"
+  },
+  "snegurochka_wedding": {
+    "folder": "013402101",
+    "prefix": "st_snegurochka_wedding"
+  },
+  "snegurochka_gakuen": {
+    "folder": "013403103",
+    "prefix": "st_snegurochka_gakuen"
+  },
+  "furfur": {
+    "folder": "512300499",
+    "prefix": "st_furfur"
+  },
+  "furfur_mizugi": {
+    "folder": "013501101",
+    "prefix": "st_furfur_mizugi"
+  },
+  "juno": {
+    "folder": "013601101",
+    "prefix": "st_juno"
+  },
+  "juno_angel": {
+    "folder": "013601104",
+    "prefix": "st_juno_angel"
+  },
+  "juno_gakuen": {
+    "folder": "013602108",
+    "prefix": "st_juno_gakuen"
+  },
+  "juno_dress": {
+    "folder": "013603106",
+    "prefix": "st_juno_dress"
+  },
+  "sildra": {
+    "folder": "013700105",
+    "prefix": "st_sildra"
+  },
+  "sildra_devil": {
+    "folder": "013701101",
+    "prefix": "st_sildra_devil"
+  },
+  "sildra_gakuen": {
+    "folder": "013702104",
+    "prefix": "st_sildra_gakuen"
+  },
+  "sildra_2nd": {
+    "folder": "013703106",
+    "prefix": "st_sildra_2nd"
+  },
+  "yato": {
+    "folder": "013800108",
+    "prefix": "st_yato"
+  },
+  "yato_onsen": {
+    "folder": "013801102",
+    "prefix": "st_yato_onsen"
+  },
+  "yato_2nd": {
+    "folder": "013802102",
+    "prefix": "st_yato_2nd"
+  },
+  "origin": {
+    "folder": "904500300",
+    "prefix": "st_origin"
+  },
+  "origin_devil": {
+    "folder": "013901108",
+    "prefix": "st_origin_devil"
+  },
+  "zenith": {
+    "folder": "904600300",
+    "prefix": "st_zenith"
+  },
+  "nadir": {
+    "folder": "904700300",
+    "prefix": "st_nadir"
+  },
+  "nadir_valentine": {
+    "folder": "014102104",
+    "prefix": "st_nadir_valentine"
+  },
+  "nadir_racequeen": {
+    "folder": "014103107",
+    "prefix": "st_nadir_racequeen"
+  },
+  "nadir_teacher": {
+    "folder": "014104105",
+    "prefix": "st_nadir_teacher"
+  },
+  "asakuraotome": {
+    "folder": "014200205",
+    "prefix": "st_asakuraotome"
+  },
+  "asakurayume": {
+    "folder": "014300105",
+    "prefix": "st_asakurayume"
+  },
+  "hohenheim_origin": {
+    "folder": "014400105",
+    "prefix": "st_hohenheim_origin"
+  },
+  "hohenheim_racequeen": {
+    "folder": "014401104",
+    "prefix": "st_hohenheim_racequeen"
+  },
+  "hohenheim_little": {
+    "folder": "014402107",
+    "prefix": "st_hohenheim_little"
+  },
+  "hohenheim_old": {
+    "folder": "014403105",
+    "prefix": "st_hohenheim_old"
+  },
+  "dantalion": {
+    "folder": "510100499",
+    "prefix": "st_dantalion"
+  },
+  "astaroth": {
+    "folder": "510200499",
+    "prefix": "st_astaroth"
+  },
+  "astaroth_halloween": {
+    "folder": "014601105",
+    "prefix": "st_astaroth_halloween"
+  },
+  "baphomet": {
+    "folder": "515300499",
+    "prefix": "st_baphomet"
+  },
+  "baphomet_valentine": {
+    "folder": "014701204",
+    "prefix": "st_baphomet_valentine"
+  },
+  "claudette": {
+    "folder": "902100300",
+    "prefix": "st_claudette"
+  },
+  "claudette_china": {
+    "folder": "014801103",
+    "prefix": "st_claudette_china"
+  },
+  "claudette_mizugi": {
+    "folder": "014802102",
+    "prefix": "st_claudette_mizugi"
+  },
+  "claudette_akazukin": {
+    "folder": "014803105",
+    "prefix": "st_claudette_akazukin"
+  },
+  "claudette_valentine": {
+    "folder": "014804108",
+    "prefix": "st_claudette_valentine"
+  },
+  "khatia": {
+    "folder": "902000300",
+    "prefix": "st_khatia"
+  },
+  "khatia_valentine": {
+    "folder": "014902107",
+    "prefix": "st_khatia_valentine"
+  },
+  "khatia_christmas": {
+    "folder": "014903103",
+    "prefix": "st_khatia_christmas"
+  },
+  "khatia_legend_mizugi": {
+    "folder": "014904101",
+    "prefix": "st_khatia_legend_mizugi"
+  },
+  "khatia_gakuen": {
+    "folder": "014905101",
+    "prefix": "st_khatia_gakuen"
+  },
+  "sol_kamihime": {
+    "folder": "015000106",
+    "prefix": "st_sol_kamihime"
+  },
+  "amaterasu_shikigami": {
+    "folder": "015100104",
+    "prefix": "st_amaterasu_shikigami"
+  },
+  "hermy": {
+    "folder": "015200201",
+    "prefix": "st_hermy"
+  },
+  "hermy_angel": {
+    "folder": "015201204",
+    "prefix": "st_hermy_angel"
+  },
+  "hermy_gakuen": {
+    "folder": "015202205",
+    "prefix": "st_hermy_gakuen"
+  },
+  "huyou_kaede": {
+    "folder": "015300207",
+    "prefix": "st_huyou_kaede"
+  },
+  "primula": {
+    "folder": "015400107",
+    "prefix": "st_primula"
+  },
+  "aids": {
+    "folder": "015500206",
+    "prefix": "st_aids"
+  },
+  "aids_mizugi": {
+    "folder": "015501208",
+    "prefix": "st_aids_mizugi"
+  },
+  "rllu": {
+    "folder": "015600203",
+    "prefix": "st_rllu"
+  },
+  "leana": {
+    "folder": "015700205",
+    "prefix": "st_leana"
+  },
+  "leana_racequeen": {
+    "folder": "015701203",
+    "prefix": "st_leana_racequeen"
+  },
+  "leana_gakuen": {
+    "folder": "015702205",
+    "prefix": "st_leana_gakuen"
+  },
+  "aera": {
+    "folder": "015800205",
+    "prefix": "st_aera"
+  },
+  "shirakawananaka": {
+    "folder": "015900105",
+    "prefix": "st_shirakawananaka"
+  },
+  "tsukishimakoko": {
+    "folder": "016000205",
+    "prefix": "st_tsukishimakoko"
+  },
+  "fafnir": {
+    "folder": "016100207",
+    "prefix": "st_fafnir"
+  },
+  "fafnir_racequeen": {
+    "folder": "016101206",
+    "prefix": "st_fafnir_racequeen"
+  },
+  "cath": {
+    "folder": "016200205",
+    "prefix": "st_cath"
+  },
+  "elles": {
+    "folder": "016300206",
+    "prefix": "st_elles"
+  },
+  "lapse": {
+    "folder": "016400203",
+    "prefix": "st_lapse"
+  },
+  "carina_verritti": {
+    "folder": "016500105",
+    "prefix": "st_carina_verritti"
+  },
+  "agnes_boulanger": {
+    "folder": "016600205",
+    "prefix": "st_agnes_boulanger"
+  },
+  "cassiopeia": {
+    "folder": "016700106",
+    "prefix": "st_cassiopeia"
+  },
+  "cassiopeia_shogatsu": {
+    "folder": "016701104",
+    "prefix": "st_cassiopeia_shogatsu"
+  },
+  "cassiopeia_bunny": {
+    "folder": "016702107",
+    "prefix": "st_cassiopeia_bunny"
+  },
+  "isolde": {
+    "folder": "016800101",
+    "prefix": "st_isolde"
+  },
+  "isolde_piacarrot3": {
+    "folder": "016801104",
+    "prefix": "st_isolde_piacarrot3"
+  },
+  "isolde_christmas": {
+    "folder": "016802106",
+    "prefix": "st_isolde_christmas"
+  },
+  "nagase_minato": {
+    "folder": "016900104",
+    "prefix": "st_nagase_minato"
+  },
+  "katagiri_yuuhi": {
+    "folder": "017000204",
+    "prefix": "st_katagiri_yuuhi"
+  },
+  "kondou_isami": {
+    "folder": "017100101",
+    "prefix": "st_kondou_isami"
+  },
+  "kondou_isami_mizugi": {
+    "folder": "017101103",
+    "prefix": "st_kondou_isami_mizugi"
+  },
+  "sakamoto_ryoma": {
+    "folder": "017200106",
+    "prefix": "st_sakamoto_ryoma"
+  },
+  "mitama": {
+    "folder": "017300205",
+    "prefix": "st_mitama"
+  },
+  "main_janet": {
+    "folder": "017400101",
+    "prefix": "st_main_janet"
+  },
+  "main_nyarlatofis": {
+    "folder": "017500102",
+    "prefix": "st_main_nyarlatofis"
+  },
+  "main_femme_fatale": {
+    "folder": "017600105",
+    "prefix": "st_main_femme_fatale"
+  },
+  "main_sigurd": {
+    "folder": "017700107",
+    "prefix": "st_main_sigurd"
+  },
+  "littley_legend": {
+    "folder": "017800107",
+    "prefix": "st_littley_legend"
+  },
+  "littley_dress": {
+    "folder": "017801207",
+    "prefix": "st_littley_dress"
+  },
+  "hasegawa_akemi": {
+    "folder": "017900105",
+    "prefix": "st_hasegawa_akemi"
+  },
+  "kanu": {
+    "folder": "018000102",
+    "prefix": "st_kanu"
+  },
+  "koumei": {
+    "folder": "018100106",
+    "prefix": "st_koumei"
+  },
+  "arisa_kamihime": {
+    "folder": "018200105",
+    "prefix": "st_arisa_kamihime"
+  },
+  "kukunochi_shikigami": {
+    "folder": "018300108",
+    "prefix": "st_kukunochi_shikigami"
+  },
+  "main_lucifer": {
+    "folder": "018400104",
+    "prefix": "st_main_lucifer"
+  },
+  "main_skoll": {
+    "folder": "018500106",
+    "prefix": "st_main_skoll"
+  },
+  "main_beelzebub": {
+    "folder": "018600108",
+    "prefix": "st_main_beelzebub"
+  },
+  "percival": {
+    "folder": "018700103",
+    "prefix": "st_percival"
+  },
+  "merlin": {
+    "folder": "018800104",
+    "prefix": "st_merlin"
+  },
+  "jeanne_and_michael": {
+    "folder": "018900101",
+    "prefix": "st_jeanne_and_michael"
+  },
+  "barbatos": {
+    "folder": "019000105",
+    "prefix": "st_barbatos"
+  },
+  "bael": {
+    "folder": "019100104",
+    "prefix": "st_bael"
+  },
+  "shizuka_gozen": {
+    "folder": "019200105",
+    "prefix": "st_shizuka_gozen"
+  },
+  "minamotono_yoshitsune": {
+    "folder": "019300101",
+    "prefix": "st_minamotono_yoshitsune"
+  },
+  "main_artorius": {
+    "folder": "019400103",
+    "prefix": "st_main_artorius"
+  },
+  "asaka_ushio": {
+    "folder": "019500104",
+    "prefix": "st_asaka_ushio"
+  },
+  "kasukabe_kanon": {
+    "folder": "019600204",
+    "prefix": "st_kasukabe_kanon"
+  },
+  "andromeda_and_cassiopeia": {
+    "folder": "019700106",
+    "prefix": "st_andromeda_and_cassiopeia"
+  },
+  "jack_the_ripper": {
+    "folder": "019800108",
+    "prefix": "st_jack_the_ripper"
+  },
+  "jack_the_ripper_mask": {
+    "folder": "019801108",
+    "prefix": "st_jack_the_ripper_mask"
+  },
+  "sherlock_holmes": {
+    "folder": "019900202",
+    "prefix": "st_sherlock_holmes"
+  },
+  "sherlock_holmes_mask": {
+    "folder": "019901202",
+    "prefix": "st_sherlock_holmes_mask"
+  },
+  "joka_and_ryofu": {
+    "folder": "020000107",
+    "prefix": "st_joka_and_ryofu"
+  },
+  "kirin": {
+    "folder": "020100201",
+    "prefix": "st_kirin"
+  },
+  "overload": {
+    "folder": "020200104",
+    "prefix": "st_overload"
+  },
+  "homunculus_soldier": {
+    "folder": "503200401",
+    "prefix": "st_homunculus_soldier"
+  },
+  "mordred_clone": {
+    "folder": "503700499",
+    "prefix": "st_mordred_clone"
+  },
+  "satanachia": {
+    "folder": "509000499",
+    "prefix": "st_satanachia"
+  },
+  "belial": {
+    "folder": "509100499",
+    "prefix": "st_belial"
+  },
+  "satanachia_clone": {
+    "folder": "510000499",
+    "prefix": "st_satanachia_clone"
+  },
+  "kabocha_no_obake_little": {
+    "folder": "511600401",
+    "prefix": "st_kabocha_no_obake_little"
+  },
+  "kabocha_no_obake_big": {
+    "folder": "511900401",
+    "prefix": "st_kabocha_no_obake_big"
+  },
+  "abyss_eater": {
+    "folder": "515400499",
+    "prefix": "st_abyss_eater"
+  },
+  "mayunoshisha": {
+    "folder": "515500499",
+    "prefix": "st_mayunoshisha"
+  },
+  "chimera": {
+    "folder": "516400499",
+    "prefix": "st_chimera"
+  },
+  "tenshihei_soldier": {
+    "folder": "906100300",
+    "prefix": "st_tenshihei_soldier"
+  },
+  "joukyu_tenshihei_soldier": {
+    "folder": "517400401",
+    "prefix": "st_joukyu_tenshihei_soldier"
+  },
+  "littley": {
+    "folder": "900100300",
+    "prefix": "st_littley"
+  },
+  "monster": {
+    "folder": "900200300",
+    "prefix": "st_monster"
+  },
+  "youngman1": {
+    "folder": "900300300",
+    "prefix": "st_youngman1"
+  },
+  "youngman1_moon": {
+    "folder": "900301300",
+    "prefix": "st_youngman1_moon"
+  },
+  "youngwoman1": {
+    "folder": "900400300",
+    "prefix": "st_youngwoman1"
+  },
+  "youngwoman1_moon": {
+    "folder": "900401300",
+    "prefix": "st_youngwoman1_moon"
+  },
+  "youngman2": {
+    "folder": "900500300",
+    "prefix": "st_youngman2"
+  },
+  "youngwoman2": {
+    "folder": "900600300",
+    "prefix": "st_youngwoman2"
+  },
+  "boy": {
+    "folder": "900700300",
+    "prefix": "st_boy"
+  },
+  "boy_moon": {
+    "folder": "900701300",
+    "prefix": "st_boy_moon"
+  },
+  "girl": {
+    "folder": "900800300",
+    "prefix": "st_girl"
+  },
+  "girl_moon": {
+    "folder": "900801300",
+    "prefix": "st_girl_moon"
+  },
+  "chunenman": {
+    "folder": "900900300",
+    "prefix": "st_chunenman"
+  },
+  "chunenman_moon": {
+    "folder": "900901300",
+    "prefix": "st_chunenman_moon"
+  },
+  "chunenwoman": {
+    "folder": "901000300",
+    "prefix": "st_chunenwoman"
+  },
+  "chuunenwoman_moon": {
+    "folder": "901001300",
+    "prefix": "st_chuunenwoman_moon"
+  },
+  "oldman": {
+    "folder": "901100300",
+    "prefix": "st_oldman"
+  },
+  "oldwoman": {
+    "folder": "901200300",
+    "prefix": "st_oldwoman"
+  },
+  "arakuremono": {
+    "folder": "901300300",
+    "prefix": "st_arakuremono"
+  },
+  "arakuremono_moon": {
+    "folder": "901301300",
+    "prefix": "st_arakuremono_moon"
+  },
+  "joryuman": {
+    "folder": "901400300",
+    "prefix": "st_joryuman"
+  },
+  "joryuwoman": {
+    "folder": "901500300",
+    "prefix": "st_joryuwoman"
+  },
+  "lightsoldier": {
+    "folder": "901600300",
+    "prefix": "st_lightsoldier"
+  },
+  "heavysoldier": {
+    "folder": "901700300",
+    "prefix": "st_heavysoldier"
+  },
+  "khatia_mizugi": {
+    "folder": "902001300",
+    "prefix": "st_khatia_mizugi"
+  },
+  "hohenheim": {
+    "folder": "902200305",
+    "prefix": "st_hohenheim"
+  },
+  "littley_dress_koma": {
+    "folder": "902500200",
+    "prefix": "st_littley_dress_koma"
+  },
+  "andromeda_and_cassiopeia_koma": {
+    "folder": "902701106",
+    "prefix": "st_andromeda_and_cassiopeia_koma"
+  },
+  "priest": {
+    "folder": "902800300",
+    "prefix": "st_priest"
+  },
+  "lightsoldierwoman": {
+    "folder": "903000300",
+    "prefix": "st_lightsoldierwoman"
+  },
+  "heavysoldierwoman": {
+    "folder": "903100300",
+    "prefix": "st_heavysoldierwoman"
+  },
+  "arakuremonowoman": {
+    "folder": "903200300",
+    "prefix": "st_arakuremonowoman"
+  },
+  "arakuremonowoman_moon": {
+    "folder": "903201300",
+    "prefix": "st_arakuremonowoman_moon"
+  },
+  "wizardman": {
+    "folder": "903300300",
+    "prefix": "st_wizardman"
+  },
+  "wizardwoman": {
+    "folder": "903400300",
+    "prefix": "st_wizardwoman"
+  },
+  "sister": {
+    "folder": "903500300",
+    "prefix": "st_sister"
+  },
+  "sister_moon": {
+    "folder": "903501300",
+    "prefix": "st_sister_moon"
+  },
+  "highmonster": {
+    "folder": "903600300",
+    "prefix": "st_highmonster"
+  },
+  "chunenman2": {
+    "folder": "903800300",
+    "prefix": "st_chunenman2"
+  },
+  "chunenman2_moon": {
+    "folder": "903801300",
+    "prefix": "st_chunenman2_moon"
+  },
+  "girl2": {
+    "folder": "903900300",
+    "prefix": "st_girl2"
+  },
+  "boy2": {
+    "folder": "904000300",
+    "prefix": "st_boy2"
+  },
+  "joryuman2": {
+    "folder": "904100300",
+    "prefix": "st_joryuman2"
+  },
+  "youngwoman3": {
+    "folder": "904200300",
+    "prefix": "st_youngwoman3"
+  },
+  "youngwoman3_moon": {
+    "folder": "904201300",
+    "prefix": "st_youngwoman3_moon"
+  },
+  "ekizen": {
+    "folder": "904300300",
+    "prefix": "st_ekizen"
+  },
+  "adeline": {
+    "folder": "904800301",
+    "prefix": "st_adeline"
+  },
+  "usagi_shogatsu": {
+    "folder": "905600301",
+    "prefix": "st_usagi_shogatsu"
+  },
+  "usagi_kami": {
+    "folder": "905700304",
+    "prefix": "st_usagi_kami"
+  },
+  " ring_engage": {
+    "folder": "905900300",
+    "prefix": "st_ ring_engage"
+  },
+  "ring_cutin": {
+    "folder": "906300300",
+    "prefix": "ring_cutin"
+  },
+  "nicolas_flamel": {
+    "folder": "906500300",
+    "prefix": "st_nicolas_flamel"
+  },
+  "janet": {
+    "folder": "906800301",
+    "prefix": "st_janet"
+  },
+  "sigurd": {
+    "folder": "906900307",
+    "prefix": "st_sigurd"
+  },
+  "lucifer": {
+    "folder": "907000304",
+    "prefix": "st_lucifer"
+  },
+  "nyarlatofis": {
+    "folder": "907100302",
+    "prefix": "st_nyarlatofis"
+  },
+  "femme_fatale": {
+    "folder": "907200305",
+    "prefix": "st_femme_fatale"
+  },
+  "skoll": {
+    "folder": "907400306",
+    "prefix": "st_skoll"
+  },
+  "beelzebub": {
+    "folder": "907500308",
+    "prefix": "st_beelzebub"
+  },
+  "artorius": {
+    "folder": "907600303",
+    "prefix": "st_artorius"
+  },
+  "richard_i1": {
+    "folder": "002000104",
+    "prefix": "st_richard_i"
+  },
+  "claudette_legend": {
+    "folder": "902100300",
+    "prefix": "st_claudette"
+  }
+}

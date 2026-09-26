@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>《れじぇくろ！》輕量互動劇情引擎</title>
+  
+  <!-- PWA & Mobile Web App Meta -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff5e98">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Legeclo">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/icons/icon-512.png">
+
+  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="/lib/spine-player.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <!-- Sidebar / Character Drawer -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <h2>✨ 角色劇情庫</h2>
+        <button id="close-sidebar-btn" class="icon-btn" title="收起選單">✕</button>
+      </div>
+      <div class="search-box">
+        <input type="text" id="char-search" placeholder="搜尋角色中文名稱..." />
+      </div>
+      <div id="char-list" class="char-list">
+        <!-- Injected via JS -->
+      </div>
+    </aside>
+
+    <!-- Main Viewport (16:9 Canvas) -->
+    <main id="main-viewport">
+      <div id="stage-container" class="stage-container">
+        <!-- Visual Layers -->
+        <div id="bg-layer" class="stage-layer">
+          <img id="bg-image" src="" alt="背景" />
+        </div>
+        <div id="standing-layer" class="stage-layer hidden">
+          <div id="spine-standing-container"></div>
+        </div>
+        <div id="media-layer" class="stage-layer">
+          <img id="still-image" src="" alt="插圖" class="hidden" />
+          <video id="stage-video" loop autoplay playsinline muted class="hidden"></video>
+        </div>
+
+        <!-- Audio Unlock / Start Overlay -->
+        <div id="start-overlay" class="start-overlay hidden">
+          <div class="start-card">
+            <div class="start-icon">🎵</div>
+            <h2>點擊畫面以開啟聲音</h2>
+            <p>因瀏覽器安全限制，自動播放音效已被系統攔截。<br>點擊下方按鈕或畫面任意處，即可暢聽原聲 BGM 與角色配音！</p>
+            <button id="start-btn" class="start-btn">▶ 進入劇情並開啟聲音</button>
+          </div>
+        </div>
+
+        <!-- Top Status Bar -->
+        <div id="top-bar" class="top-bar">
+          <div class="top-bar-left">
+            <button id="open-sidebar-btn" class="glass-btn">📚 角色選單</button>
+            <button id="open-gallery-btn" class="glass-btn highlight-btn" title="查看全部角色大頭貼圖鑑">🌸 角色大頭貼</button>
+          </div>
+          <div id="current-title" class="current-title">載入中...</div>
+          <div class="top-actions">
+            <button id="audio-toggle-btn" class="glass-btn" title="聲音開關 (快速鍵: M)">🔊 聲音正常</button>
+            <button id="auto-btn" class="glass-btn">▶ 自動播放</button>
+            <button id="loop-mode-btn" class="glass-btn" title="切換循環模式">🔄 劇情同步</button>
+            <button id="hide-ui-btn" class="glass-btn" title="隱藏介面 (快速鍵: H)">👁 隱藏介面</button>
+            <button id="log-btn" class="glass-btn" title="歷史對白 (快速鍵: L)">📜 紀錄</button>
+            <button id="settings-btn" class="glass-btn" title="音量設定">⚙️ 設定</button>
+            <button id="ratio-toggle-btn" class="glass-btn" title="切換 16:9 / 滿版全螢幕">🔲 滿版</button>
+            <button id="fullscreen-btn" class="glass-btn" title="全螢幕">⛶ 全螢幕</button>
+          </div>
+        </div>
+
+        <!-- Animation Phase Jump Bar -->
+        <div id="phase-bar" class="phase-bar">
+          <!-- Phase chips injected via JS -->
+        </div>
+
+        <!-- Dialogue Box -->
+        <div id="dialogue-box" class="dialogue-box">
+          <div class="speaker-tag" id="speaker-tag"></div>
+          <div class="dialogue-text" id="dialogue-text"></div>
+          <div class="dialogue-footer">
+            <div class="dialogue-footer-left">
+              <button id="replay-voice-btn" class="icon-text-btn" title="重播語音">🔊 重新播放</button>
+              <div id="standing-anim-wrap" class="standing-anim-wrap hidden">
+                <span class="anim-label">👗 立繪:</span>
+                <select id="standing-anim-select" class="glass-select"></select>
+              </div>
+            </div>
+            <span class="click-hint">點擊畫面或按空白鍵繼續 ▼</span>
+          </div>
+        </div>
+
+        <!-- Clickable Stage Overlay (advances dialogue or unhides UI) -->
+        <div id="stage-clicker" class="stage-clicker"></div>
+      </div>
+    </main>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal hidden">
+      <div class="modal-content glass-card">
+        <div class="modal-header">
+          <h3>⚙️ 播放與音效設定</h3>
+          <button id="close-settings-btn" class="icon-btn">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="setting-item">
+            <label>🎵 背景音樂 (BGM) 音量: <span id="bgm-vol-val">30%</span></label>
+            <input type="range" id="bgm-volume" min="0" max="100" value="30" />
+          </div>
+          <div class="setting-item">
+            <label>🗣️ 角色語音音量: <span id="voice-vol-val">100%</span></label>
+            <input type="range" id="voice-volume" min="0" max="100" value="100" />
+          </div>
+          <div class="setting-item">
+            <label>⏱️ 自動播放等待秒數: <span id="auto-delay-val">1.2 秒</span></label>
+            <input type="range" id="auto-delay" min="5" max="35" value="12" />
+          </div>
+          <div class="setting-item">
+            <label>🔄 動畫循環模式</label>
+            <select id="loop-mode-select">
+              <option value="story">跟隨劇情推進 (自動切換動作)</option>
+              <option value="infinite">鎖定當前動畫 (無限循環動作)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Log Modal -->
+    <div id="log-modal" class="modal hidden">
+      <div class="modal-content glass-card log-modal-content">
+        <div class="modal-header">
+          <h3>📜 歷史對白記錄</h3>
+          <button id="close-log-btn" class="icon-btn">✕</button>
+        </div>
+        <div id="log-list" class="log-list">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Character Avatar Gallery Modal -->
+    <div id="gallery-modal" class="modal">
+      <div class="modal-content glass-card gallery-modal-content">
+        <div class="modal-header gallery-header">
+          <div class="gallery-title-wrap">
+            <h3>🌸 角色大頭貼圖鑑選單</h3>
+            <span class="gallery-subtitle" id="gallery-count">載入中...</span>
+          </div>
+          <div class="gallery-search-wrap">
+            <input type="text" id="gallery-search" placeholder="🔍 搜尋角色姓名或代號..." class="glass-input" />
+            <button id="close-gallery-btn" class="icon-btn" title="關閉">✕</button>
+          </div>
+        </div>
+        <div class="modal-body gallery-body">
+          <div class="gallery-grid" id="gallery-grid">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- iOS PWA Fullscreen Guide Modal -->
+    <div id="ios-guide-modal" class="modal hidden">
+      <div class="modal-content glass-card ios-guide-card">
+        <div class="modal-header">
+          <h3>🍎 iPhone 真正全螢幕技巧</h3>
+          <button id="close-ios-guide-btn" class="icon-btn">✕</button>
+        </div>
+        <div class="modal-body ios-guide-body">
+          <p class="ios-guide-lead">因 Apple 官方限制，iPhone 上的 Safari 網頁無法透過按鈕隱藏工具列。但 Apple 提供了官方完美解法：</p>
+          <div class="ios-steps">
+            <div class="ios-step-item">
+              <span class="step-num">1</span>
+              <span>點擊 Safari 下方的 <strong>「分享按鈕」</strong>（正方形加向上箭頭 <strong style="color: #ff5e98;">[↑]</strong>）</span>
+            </div>
+            <div class="ios-step-item">
+              <span class="step-num">2</span>
+              <span>往下滑動，點選 <strong>「加入主畫面」</strong>（Add to Home Screen）</span>
+            </div>
+            <div class="ios-step-item">
+              <span class="step-num">3</span>
+              <span>點擊右上角「新增」，回到 iPhone 桌面點開 <strong>《Legeclo》App 圖標</strong>！</span>
+            </div>
+          </div>
+          <div class="ios-guide-tip">
+            ✨ 從桌面打開後，系統會<strong>自動隱藏所有瀏覽器工具列與網址列</strong>，提供 100% 原生橫向全螢幕！
+          </div>
+          <button id="ios-guide-ok-btn" class="start-btn" style="margin-top: 16px; width: 100%;">我知道了（開啟滿版模式）</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portrait Orientation Helper Overlay -->
+    <div id="orientation-overlay" class="orientation-overlay hidden">
+      <div class="orientation-card glass-card">
+        <div class="orientation-icon">📱 ↷</div>
+        <h3>建議將手機旋轉為橫向</h3>
+        <p>為獲得最佳全螢幕視角與完整立繪比例，建議開啟手機自動旋轉並轉為橫向。</p>
+        <button id="rotate-fullscreen-btn" class="start-btn" style="padding: 10px 24px; font-size: 14px;">⛶ 進入全螢幕並鎖定橫向</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Elements -->
+  <audio id="bgm-audio" loop></audio>
+  <audio id="voice-audio"></audio>
+
+  <!-- Spine 3.8 Runtime -->
+  <script src="/lib/spine-player.js"></script>
+  <script src="player.js?v=3"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then((reg) => {
+          console.log('Legeclo PWA Service Worker Registered:', reg.scope);
+        }).catch((err) => {
+          console.warn('Service Worker registration notice:', err);
+        });
+      });
+    }
+  </script>
+</body>
+</html>

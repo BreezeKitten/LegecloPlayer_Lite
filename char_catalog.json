@@ -1,0 +1,3771 @@
+[
+  {
+    "id": "claudette_valentine",
+    "name": "クローデット",
+    "avatar": "/cache/avatars/claudette_valentine.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "joka_and_ryofu",
+    "name": "ジョカ",
+    "avatar": "/cache/avatars/joka_and_ryofu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nadir_teacher",
+    "name": "ナディア",
+    "avatar": "/cache/avatars/nadir_teacher.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nero_dress",
+    "name": "ネロ",
+    "avatar": "/cache/avatars/nero_dress.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "barbatos",
+    "name": "バルバトス",
+    "avatar": "/cache/avatars/barbatos.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "percival",
+    "name": "パーシヴァル",
+    "avatar": "/cache/avatars/percival.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "beelzebub",
+    "name": "ベルゼビュート",
+    "avatar": "/cache/avatars/beelzebub.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "leana_gakuen",
+    "name": "リヤナ",
+    "avatar": "/cache/avatars/leana_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "cupido",
+    "name": "丘比特",
+    "avatar": "/cache/avatars/cupido.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "cupido_wolf",
+    "name": "丘比特（狼）",
+    "avatar": "/cache/avatars/cupido_wolf.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "kukunochi_shikigami",
+    "name": "久久能智（式神）",
+    "avatar": "/cache/avatars/kukunochi_shikigami.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "kyuuten_gennyo",
+    "name": "九天玄女",
+    "avatar": "/cache/avatars/kyuuten_gennyo.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "astaroth",
+    "name": "亞斯塔祿",
+    "avatar": "/cache/avatars/astaroth.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "astaroth_halloween",
+    "name": "亞斯塔祿（萬聖節）",
+    "avatar": "/cache/avatars/astaroth_halloween.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "alexander",
+    "name": "亞歷山大",
+    "avatar": "/cache/avatars/alexander.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "alexander_little",
+    "name": "亞歷山大（幼年）",
+    "avatar": "/cache/avatars/alexander_little.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "arthur",
+    "name": "亞瑟",
+    "avatar": "/cache/avatars/arthur.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "arthur_angel",
+    "name": "亞瑟（天使）",
+    "avatar": "/cache/avatars/arthur_angel.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "arthur_valentine",
+    "name": "亞瑟（情人節）",
+    "avatar": "/cache/avatars/arthur_valentine.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "arthur_christmas",
+    "name": "亞瑟（聖誕）",
+    "avatar": "/cache/avatars/arthur_christmas.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "arthur_wedding",
+    "name": "亞瑟（花嫁）",
+    "avatar": "/cache/avatars/arthur_wedding.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "ammon_valentine",
+    "name": "亞蒙（情人節）",
+    "avatar": "/cache/avatars/ammon_valentine.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "arisa_kamihime",
+    "name": "亞里莎（神姬）",
+    "avatar": "/cache/avatars/arisa_kamihime.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "andromeda",
+    "name": "仙女座",
+    "avatar": "/cache/avatars/andromeda.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "andromeda_onehalf",
+    "name": "仙女座 (1.5週年)",
+    "avatar": "/cache/avatars/andromeda_onehalf.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "andromeda_maid",
+    "name": "仙女座 (女僕)",
+    "avatar": "/cache/avatars/andromeda_maid.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "andromeda_shogatsu",
+    "name": "仙女座 (正月)",
+    "avatar": "/cache/avatars/andromeda_shogatsu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "andromeda_christmas",
+    "name": "仙女座 (聖誕)",
+    "avatar": "/cache/avatars/andromeda_christmas.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "andromeda_and_cassiopeia",
+    "name": "仙女座＆仙后座",
+    "avatar": "/cache/avatars/andromeda_and_cassiopeia.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "isolde",
+    "name": "伊索德",
+    "avatar": "/cache/avatars/isolde.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "isolde_piacarrot3",
+    "name": "伊索德",
+    "avatar": "/cache/avatars/isolde_piacarrot3.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "isolde_christmas",
+    "name": "伊索德（聖誕）",
+    "avatar": "/cache/avatars/isolde_christmas.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "elizabeth_bathory",
+    "name": "伊莉莎白·巴托里",
+    "avatar": "/cache/avatars/elizabeth_bathory.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "elizabeth_bathory_gakuen",
+    "name": "伊莉莎白·巴托里（學園）",
+    "avatar": "/cache/avatars/elizabeth_bathory_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "isis",
+    "name": "伊西斯",
+    "avatar": "/cache/avatars/isis.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "izanami",
+    "name": "伊邪那美",
+    "avatar": "/cache/avatars/izanami.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "ganesha",
+    "name": "伽內什",
+    "avatar": "/cache/avatars/ganesha.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "dantalion",
+    "name": "但他林",
+    "avatar": "/cache/avatars/dantalion.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "furfur_mizugi",
+    "name": "佛爾佛爾",
+    "avatar": "/cache/avatars/furfur_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "orion",
+    "name": "俄里翁",
+    "avatar": "/cache/avatars/orion.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nise_dimitri",
+    "name": "偽德米特里",
+    "avatar": "/cache/avatars/nise_dimitri.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nadir",
+    "name": "光明",
+    "avatar": "/cache/avatars/nadir.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nadir_valentine",
+    "name": "光明（情人節）",
+    "avatar": "/cache/avatars/nadir_valentine.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nadir_racequeen",
+    "name": "光明（賽車女郎）",
+    "avatar": "/cache/avatars/nadir_racequeen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "claudette_china",
+    "name": "克勞黛",
+    "avatar": "/cache/avatars/claudette_china.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "claudette_mizugi",
+    "name": "克勞黛",
+    "avatar": "/cache/avatars/claudette_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "claudette_legend",
+    "name": "克勞黛特（傳奇）",
+    "avatar": "/cache/avatars/claudette_legend.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "claudette_akazukin",
+    "name": "克勞黛（小紅帽）",
+    "avatar": "/cache/avatars/claudette_akazukin.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "koropokkuru",
+    "name": "克魯波克魯",
+    "avatar": "/cache/avatars/koropokkuru.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "cleopatra_half",
+    "name": "克麗奧佩脫拉",
+    "avatar": "/cache/avatars/cleopatra_half.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "cleopatra_link",
+    "name": "克麗奧佩脫拉",
+    "avatar": "/cache/avatars/cleopatra_link.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "clreopatra",
+    "name": "克麗奧佩脫拉",
+    "avatar": "/cache/avatars/clreopatra.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "caesar",
+    "name": "凱撒",
+    "avatar": "/cache/avatars/caesar.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "caesar_rabbit",
+    "name": "凱撒",
+    "avatar": "/cache/avatars/caesar_rabbit.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "caesar_gakuen",
+    "name": "凱撒（學園）",
+    "avatar": "/cache/avatars/caesar_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "caesar_wedding",
+    "name": "凱撒（花嫁）",
+    "avatar": "/cache/avatars/caesar_wedding.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "cait_sith",
+    "name": "凱特希",
+    "avatar": "/cache/avatars/cait_sith.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "cath",
+    "name": "凱茜",
+    "avatar": "/cache/avatars/cath.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "leonidas",
+    "name": "列奧尼達",
+    "avatar": "/cache/avatars/leonidas.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "masterassassin",
+    "name": "刺客大師",
+    "avatar": "/cache/avatars/masterassassin.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "galahad",
+    "name": "加拉哈德",
+    "avatar": "/cache/avatars/galahad.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "galahad_2nd",
+    "name": "加拉哈德（2週年）",
+    "avatar": "/cache/avatars/galahad_2nd.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "galahad_cheshire_cat",
+    "name": "加拉哈德（柴郡貓）",
+    "avatar": "/cache/avatars/galahad_cheshire_cat.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "gabriel",
+    "name": "加百列",
+    "avatar": "/cache/avatars/gabriel.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "gabriel_gakuen",
+    "name": "加百列（學園）",
+    "avatar": "/cache/avatars/gabriel_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "gabriel_mizugi",
+    "name": "加百列（泳裝）",
+    "avatar": "/cache/avatars/gabriel_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "gabriel_christmas",
+    "name": "加百列（聖誕）",
+    "avatar": "/cache/avatars/gabriel_christmas.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "gabriel_wedding",
+    "name": "加百列（花嫁）",
+    "avatar": "/cache/avatars/gabriel_wedding.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "gabriel_halloween",
+    "name": "加百列（萬聖節）",
+    "avatar": "/cache/avatars/gabriel_halloween.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "himiko",
+    "name": "卑彌呼",
+    "avatar": "/cache/avatars/himiko.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nightingale",
+    "name": "南丁格爾",
+    "avatar": "/cache/avatars/nightingale.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nightingale_link",
+    "name": "南丁格爾",
+    "avatar": "/cache/avatars/nightingale_link.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nightingale_gakuen",
+    "name": "南丁格爾（學園）",
+    "avatar": "/cache/avatars/nightingale_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nightingale_pajama",
+    "name": "南丁格爾（睡衣）",
+    "avatar": "/cache/avatars/nightingale_pajama.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nightingale_christmas",
+    "name": "南丁格爾（聖誕）",
+    "avatar": "/cache/avatars/nightingale_christmas.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "carbuncle",
+    "name": "卡班克爾",
+    "avatar": "/cache/avatars/carbuncle.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "khatia_legend",
+    "name": "卡緹雅（傳奇）",
+    "avatar": "/cache/avatars/khatia_legend.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "carina_verritti",
+    "name": "卡莉娜",
+    "avatar": "/cache/avatars/carina_verritti.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "khatia_christmas",
+    "name": "卡蒂雅",
+    "avatar": "/cache/avatars/khatia_christmas.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "khatia_gakuen",
+    "name": "卡蒂雅（學園）",
+    "avatar": "/cache/avatars/khatia_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "khatia_valentine",
+    "name": "卡蒂雅（情人節）",
+    "avatar": "/cache/avatars/khatia_valentine.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "khatia_legend_mizugi",
+    "name": "卡蒂雅（泳裝）",
+    "avatar": "/cache/avatars/khatia_legend_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "cassiopeia",
+    "name": "卡西歐佩亞",
+    "avatar": "/cache/avatars/cassiopeia.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "cassiopeia_bunny",
+    "name": "卡西歐佩亞（兔女郎）",
+    "avatar": "/cache/avatars/cassiopeia_bunny.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "cassiopeia_shogatsu",
+    "name": "卡西歐佩亞（正月）",
+    "avatar": "/cache/avatars/cassiopeia_shogatsu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "elles",
+    "name": "厄露斯",
+    "avatar": "/cache/avatars/elles.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "kokopelli",
+    "name": "可可佩利",
+    "avatar": "/cache/avatars/kokopelli.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "gilles_de_rais_wedding",
+    "name": "吉爾·德·萊斯（花嫁）",
+    "avatar": "/cache/avatars/gilles_de_rais_wedding.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "gilles_de_rais",
+    "name": "吉爾·德·雷",
+    "avatar": "/cache/avatars/gilles_de_rais.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "gilles_de_rais_christmas",
+    "name": "吉爾·德·雷（聖誕）",
+    "avatar": "/cache/avatars/gilles_de_rais_christmas.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "gilles_de_rais_future",
+    "name": "吉爾．德．雷（未來）",
+    "avatar": "/cache/avatars/gilles_de_rais_future.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "gilles_de_rais_dress",
+    "name": "吉爾．德．雷（禮服）",
+    "avatar": "/cache/avatars/gilles_de_rais_dress.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "ryofu",
+    "name": "呂布",
+    "avatar": "/cache/avatars/ryofu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "ryofu_2nd",
+    "name": "呂布（2週年）",
+    "avatar": "/cache/avatars/ryofu_2nd.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "ryofu_yukata",
+    "name": "呂布（浴衣）",
+    "avatar": "/cache/avatars/ryofu_yukata.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "ryofu_wedding",
+    "name": "呂布（花嫁）",
+    "avatar": "/cache/avatars/ryofu_wedding.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "ryofu_halloween",
+    "name": "呂布（萬聖節）",
+    "avatar": "/cache/avatars/ryofu_halloween.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "aids_mizugi",
+    "name": "哈帝斯（泳裝）",
+    "avatar": "/cache/avatars/aids_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hades_mizugi",
+    "name": "哈帝斯（泳裝）",
+    "avatar": "/cache/avatars/hades_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "donquixote",
+    "name": "唐吉訶德",
+    "avatar": "/cache/avatars/donquixote.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "tutankhamun",
+    "name": "圖坦卡門",
+    "avatar": "/cache/avatars/tutankhamun.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "tutankhamun_half",
+    "name": "圖坦卡門（半週年）",
+    "avatar": "/cache/avatars/tutankhamun_half.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "tutankhamun_link",
+    "name": "圖坦卡門（連動）",
+    "avatar": "/cache/avatars/tutankhamun_link.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hijikatatoshizo_china",
+    "name": "土方歲三",
+    "avatar": "/cache/avatars/hijikatatoshizo_china.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hijikatatoshizou",
+    "name": "土方歲三",
+    "avatar": "/cache/avatars/hijikatatoshizou.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sakamoto_ryoma",
+    "name": "坂本龍馬",
+    "avatar": "/cache/avatars/sakamoto_ryoma.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sherlock_holmes",
+    "name": "夏洛克·福爾摩斯",
+    "avatar": "/cache/avatars/sherlock_holmes.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "charlotte_corday",
+    "name": "夏綠蒂．科黛",
+    "avatar": "/cache/avatars/charlotte_corday.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "charlotte_corday_christmas",
+    "name": "夏綠蒂．科黛",
+    "avatar": "/cache/avatars/charlotte_corday_christmas.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "yato",
+    "name": "夜刀",
+    "avatar": "/cache/avatars/yato.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "yato_onsen",
+    "name": "夜刀",
+    "avatar": "/cache/avatars/yato_onsen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "yato_2nd",
+    "name": "夜刀（2週年）",
+    "avatar": "/cache/avatars/yato_2nd.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "yamatotakeru",
+    "name": "大和武尊",
+    "avatar": "/cache/avatars/yamatotakeru.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "yamatotakeru_racequeen",
+    "name": "大和武尊",
+    "avatar": "/cache/avatars/yamatotakeru_racequeen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "yamatotakeru_half",
+    "name": "大和武尊（半週年）",
+    "avatar": "/cache/avatars/yamatotakeru_half.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "mastersaint_dress",
+    "name": "大師‧薩菲",
+    "avatar": "/cache/avatars/mastersaint_dress.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "mastersoldier",
+    "name": "大師・莉亞",
+    "avatar": "/cache/avatars/mastersoldier.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "masterlancer",
+    "name": "大師．卡洛莉娜",
+    "avatar": "/cache/avatars/masterlancer.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "masteraerial",
+    "name": "大師．梅爾",
+    "avatar": "/cache/avatars/masteraerial.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "masteraerial_piacarrot3",
+    "name": "大師．梅爾",
+    "avatar": "/cache/avatars/masteraerial_piacarrot3.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "masteraerial_shogatsu",
+    "name": "大師．梅爾（正月）",
+    "avatar": "/cache/avatars/masteraerial_shogatsu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "mastersoldier_shogatsu",
+    "name": "大師．莉亞（正月）",
+    "avatar": "/cache/avatars/mastersoldier_shogatsu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "mastershooter",
+    "name": "大師．莫比烏斯",
+    "avatar": "/cache/avatars/mastershooter.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "mastersaint_christmas",
+    "name": "大師．薩菲",
+    "avatar": "/cache/avatars/mastersaint_christmas.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "mastersaint_shogatsu",
+    "name": "大師．薩菲（正月）",
+    "avatar": "/cache/avatars/mastersaint_shogatsu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "masterrider",
+    "name": "大師．露璐兒",
+    "avatar": "/cache/avatars/masterrider.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "amaterasu",
+    "name": "天照",
+    "avatar": "/cache/avatars/amaterasu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "amaterasu_link",
+    "name": "天照",
+    "avatar": "/cache/avatars/amaterasu_link.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "amaterasu_shikigami",
+    "name": "天照 -式神-",
+    "avatar": "/cache/avatars/amaterasu_shikigami.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "amaterasu_shogatsu",
+    "name": "天照（正月）",
+    "avatar": "/cache/avatars/amaterasu_shogatsu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "amorounagu",
+    "name": "天降女子",
+    "avatar": "/cache/avatars/amorounagu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "taikobo",
+    "name": "太公望",
+    "avatar": "/cache/avatars/taikobo.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "taikobo_cheerleader",
+    "name": "太公望（啦啦隊）",
+    "avatar": "/cache/avatars/taikobo_cheerleader.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "kikimora",
+    "name": "奇奇莫拉",
+    "avatar": "/cache/avatars/kikimora.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "nyarlathotep",
+    "name": "奈亞拉托提普",
+    "avatar": "/cache/avatars/nyarlathotep.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nyarlathotep_christmas",
+    "name": "奈亞拉托提普",
+    "avatar": "/cache/avatars/nyarlathotep_christmas.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nyarlathotep_gakuen",
+    "name": "奈亞拉托提普（學園）",
+    "avatar": "/cache/avatars/nyarlathotep_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nyarlathotep_dress",
+    "name": "奈亞拉托提普（禮服）",
+    "avatar": "/cache/avatars/nyarlathotep_dress.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nyarlatofis",
+    "name": "奈亞拉托菲斯",
+    "avatar": "/cache/avatars/nyarlatofis.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "odin",
+    "name": "奧丁",
+    "avatar": "/cache/avatars/odin.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "odin_valentine",
+    "name": "奧丁（情人節）",
+    "avatar": "/cache/avatars/odin_valentine.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "joka",
+    "name": "女媧",
+    "avatar": "/cache/avatars/joka.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "joka_yukata",
+    "name": "女媧（浴衣）",
+    "avatar": "/cache/avatars/joka_yukata.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "joka_wedding",
+    "name": "女媧（花嫁）",
+    "avatar": "/cache/avatars/joka_wedding.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "joka_halloween",
+    "name": "女媧（萬聖節）",
+    "avatar": "/cache/avatars/joka_halloween.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nymue",
+    "name": "妮姆薇",
+    "avatar": "/cache/avatars/nymue.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "nymue_valentine",
+    "name": "妮姆薇（情人節）",
+    "avatar": "/cache/avatars/nymue_valentine.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "williamtell",
+    "name": "威廉·泰爾",
+    "avatar": "/cache/avatars/williamtell.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "williamtell_link",
+    "name": "威廉·泰爾（連動）",
+    "avatar": "/cache/avatars/williamtell_link.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "koumei",
+    "name": "孔明",
+    "avatar": "/cache/avatars/koumei.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "anastasia",
+    "name": "安娜塔西亞",
+    "avatar": "/cache/avatars/anastasia.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "anastasia_christmas",
+    "name": "安娜塔西亞",
+    "avatar": "/cache/avatars/anastasia_christmas.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "anastasia_gakuen",
+    "name": "安娜塔西亞（學園）",
+    "avatar": "/cache/avatars/anastasia_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hijikatatoshizo_little",
+    "name": "小歲",
+    "avatar": "/cache/avatars/hijikatatoshizo_little.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nike",
+    "name": "尼姬",
+    "avatar": "/cache/avatars/nike.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nike_piacarrot3",
+    "name": "尼姬",
+    "avatar": "/cache/avatars/nike_piacarrot3.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nero",
+    "name": "尼祿",
+    "avatar": "/cache/avatars/nero.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nero_mizugi",
+    "name": "尼祿（泳裝）",
+    "avatar": "/cache/avatars/nero_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nero_wedding",
+    "name": "尼祿（花嫁）",
+    "avatar": "/cache/avatars/nero_wedding.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "tristan",
+    "name": "崔斯坦",
+    "avatar": "/cache/avatars/tristan.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "tristan_2nd",
+    "name": "崔斯坦（2週年）",
+    "avatar": "/cache/avatars/tristan_2nd.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "tristan_valentine",
+    "name": "崔斯坦（情人節）",
+    "avatar": "/cache/avatars/tristan_valentine.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "tristan_racequeen",
+    "name": "崔斯坦（賽車女郎）",
+    "avatar": "/cache/avatars/tristan_racequeen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "saji",
+    "name": "左慈",
+    "avatar": "/cache/avatars/saji.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "saji_onehalf",
+    "name": "左慈（1.5週年）",
+    "avatar": "/cache/avatars/saji_onehalf.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "saji_valentine",
+    "name": "左慈（情人節）",
+    "avatar": "/cache/avatars/saji_valentine.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "bacchus",
+    "name": "巴克斯",
+    "avatar": "/cache/avatars/bacchus.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "bacchus_hinamatsuri",
+    "name": "巴克斯",
+    "avatar": "/cache/avatars/bacchus_hinamatsuri.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "elizabeth_bathory_christmas",
+    "name": "巴托里・伊莉莎白",
+    "avatar": "/cache/avatars/elizabeth_bathory_christmas.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "elizabeth_bathory_valentine",
+    "name": "巴托里．伊莉莎白（情人節）",
+    "avatar": "/cache/avatars/elizabeth_bathory_valentine.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "baphomet",
+    "name": "巴風特",
+    "avatar": "/cache/avatars/baphomet.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "baphomet_valentine",
+    "name": "巴風特（情人節）",
+    "avatar": "/cache/avatars/baphomet_valentine.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "brunhild",
+    "name": "布倫希爾德",
+    "avatar": "/cache/avatars/brunhild.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "brunhild_china",
+    "name": "布倫希爾德",
+    "avatar": "/cache/avatars/brunhild_china.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "brunhild_shogatsu",
+    "name": "布倫希爾德（正月）",
+    "avatar": "/cache/avatars/brunhild_shogatsu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "brunhild_christmas",
+    "name": "布倫希爾德（聖誕）",
+    "avatar": "/cache/avatars/brunhild_christmas.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "brunhild_wedding",
+    "name": "布倫希爾德（花嫁）",
+    "avatar": "/cache/avatars/brunhild_wedding.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sildra",
+    "name": "希爾德拉",
+    "avatar": "/cache/avatars/sildra.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sildra_2nd",
+    "name": "希爾德拉（2週年）",
+    "avatar": "/cache/avatars/sildra_2nd.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "parvati",
+    "name": "帕爾瓦蒂",
+    "avatar": "/cache/avatars/parvati.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "timur",
+    "name": "帖木兒",
+    "avatar": "/cache/avatars/timur.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sildra_gakuen",
+    "name": "席爾德拉（學園）",
+    "avatar": "/cache/avatars/sildra_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sildra_devil",
+    "name": "席爾德拉（小惡魔）",
+    "avatar": "/cache/avatars/sildra_devil.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "cu_chulainn",
+    "name": "庫·夫林",
+    "avatar": "/cache/avatars/cu_chulainn.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "cu_chulainn_mizugi",
+    "name": "庫·夫林（泳裝）",
+    "avatar": "/cache/avatars/cu_chulainn_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "cu_chulainn_halloween",
+    "name": "庫·夫林（萬聖節）",
+    "avatar": "/cache/avatars/cu_chulainn_halloween.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "benkei",
+    "name": "弁慶",
+    "avatar": "/cache/avatars/benkei.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "benkei_bunny",
+    "name": "弁慶",
+    "avatar": "/cache/avatars/benkei_bunny.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "benkei_taisouhuku",
+    "name": "弁慶",
+    "avatar": "/cache/avatars/benkei_taisouhuku.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "benkei_2nd",
+    "name": "弁慶（2週年）",
+    "avatar": "/cache/avatars/benkei_2nd.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "francis_drake",
+    "name": "弗朗西斯·德雷克",
+    "avatar": "/cache/avatars/francis_drake.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "choukaku",
+    "name": "張角",
+    "avatar": "/cache/avatars/choukaku.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "mitama",
+    "name": "御靈",
+    "avatar": "/cache/avatars/mitama.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "solomon",
+    "name": "所羅門",
+    "avatar": "/cache/avatars/solomon.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "solomon_bunny",
+    "name": "所羅門（兔女郎）",
+    "avatar": "/cache/avatars/solomon_bunny.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "solomon_wedding",
+    "name": "所羅門（花嫁）",
+    "avatar": "/cache/avatars/solomon_wedding.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "solomon_halloween",
+    "name": "所羅門（萬聖節）",
+    "avatar": "/cache/avatars/solomon_halloween.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "solomon_link",
+    "name": "所羅門（連動）",
+    "avatar": "/cache/avatars/solomon_link.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "raphael",
+    "name": "拉斐爾",
+    "avatar": "/cache/avatars/raphael.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "raphael_yukata",
+    "name": "拉斐爾（浴衣）",
+    "avatar": "/cache/avatars/raphael_yukata.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "rasputin",
+    "name": "拉斯普丁",
+    "avatar": "/cache/avatars/rasputin.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "rasputin_sister",
+    "name": "拉斯普丁（修女）",
+    "avatar": "/cache/avatars/rasputin_sister.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "lapse",
+    "name": "拉普斯",
+    "avatar": "/cache/avatars/lapse.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "napoleon",
+    "name": "拿破崙",
+    "avatar": "/cache/avatars/napoleon.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "napoleon_valentine",
+    "name": "拿破崙（情人節）",
+    "avatar": "/cache/avatars/napoleon_valentine.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "morrigan",
+    "name": "摩莉甘",
+    "avatar": "/cache/avatars/morrigan.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "morrigan_angel",
+    "name": "摩莉甘（天使）",
+    "avatar": "/cache/avatars/morrigan_angel.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "scathach",
+    "name": "斯卡哈",
+    "avatar": "/cache/avatars/scathach.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "scathach_devil",
+    "name": "斯卡哈（小惡魔）",
+    "avatar": "/cache/avatars/scathach_devil.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "spartacus",
+    "name": "斯巴達克斯",
+    "avatar": "/cache/avatars/spartacus.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "spartacus_yukata",
+    "name": "斯巴達克斯（浴衣）",
+    "avatar": "/cache/avatars/spartacus_yukata.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "skoll",
+    "name": "斯庫爾",
+    "avatar": "/cache/avatars/skoll.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "snegurochka",
+    "name": "斯涅葛拉蒂卡",
+    "avatar": "/cache/avatars/snegurochka.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "snegurochka_chelsea",
+    "name": "斯涅葛拉蒂卡",
+    "avatar": "/cache/avatars/snegurochka_chelsea.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "snegurochka_wedding",
+    "name": "斯涅葛拉蒂卡（花嫁）",
+    "avatar": "/cache/avatars/snegurochka_wedding.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "niijima_yae",
+    "name": "新島八重",
+    "avatar": "/cache/avatars/niijima_yae.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "yamatotakeru_gakuen",
+    "name": "日本武尊（學園）",
+    "avatar": "/cache/avatars/yamatotakeru_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "yamatotakeru_future",
+    "name": "日本武尊（未來）",
+    "avatar": "/cache/avatars/yamatotakeru_future.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "yamatotakeru_shogatsu",
+    "name": "日本武尊（正月）",
+    "avatar": "/cache/avatars/yamatotakeru_shogatsu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "yamatotakeru_mizugi",
+    "name": "日本武尊（泳裝）",
+    "avatar": "/cache/avatars/yamatotakeru_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "kasukabe_kanon",
+    "name": "春日部花音",
+    "avatar": "/cache/avatars/kasukabe_kanon.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "primula",
+    "name": "普莉姆拉",
+    "avatar": "/cache/avatars/primula.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "mansa_musa",
+    "name": "曼薩．穆薩",
+    "avatar": "/cache/avatars/mansa_musa.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "mansa_musa_halloween",
+    "name": "曼薩．穆薩",
+    "avatar": "/cache/avatars/mansa_musa_halloween.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "mansa_musa_shogatsu",
+    "name": "曼薩．穆薩",
+    "avatar": "/cache/avatars/mansa_musa_shogatsu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "tsukishimakoko",
+    "name": "月島小戀",
+    "avatar": "/cache/avatars/tsukishimakoko.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "tsukuyomi",
+    "name": "月詠",
+    "avatar": "/cache/avatars/tsukuyomi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "tsukuyomi_shogatsu",
+    "name": "月詠（正月）",
+    "avatar": "/cache/avatars/tsukuyomi_shogatsu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "tsukuyomi_mizugi",
+    "name": "月詠（泳裝）",
+    "avatar": "/cache/avatars/tsukuyomi_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "tsukuyomi_wedding",
+    "name": "月詠（花嫁）",
+    "avatar": "/cache/avatars/tsukuyomi_wedding.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "tsukuyomi_link",
+    "name": "月讀（連結）",
+    "avatar": "/cache/avatars/tsukuyomi_link.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hattorihanzou",
+    "name": "服部半藏",
+    "avatar": "/cache/avatars/hattorihanzou.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hattorihanzou_onsen",
+    "name": "服部半藏",
+    "avatar": "/cache/avatars/hattorihanzou_onsen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hattorihanzou_mizugi",
+    "name": "服部半藏（泳裝）",
+    "avatar": "/cache/avatars/hattorihanzou_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "asakurayume",
+    "name": "朝倉由夢",
+    "avatar": "/cache/avatars/asakurayume.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "asakuraotome",
+    "name": "朝倉音姬",
+    "avatar": "/cache/avatars/asakuraotome.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "konohanasakuyahime",
+    "name": "木花咲耶姬",
+    "avatar": "/cache/avatars/konohanasakuyahime.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "konohanasakuyahime_onehalf",
+    "name": "木花咲耶姬（1.5週年）",
+    "avatar": "/cache/avatars/konohanasakuyahime_onehalf.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "suzaku",
+    "name": "朱雀",
+    "avatar": "/cache/avatars/suzaku.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "leonardo_da_vinci",
+    "name": "李奧納多．達文西",
+    "avatar": "/cache/avatars/leonardo_da_vinci.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "leonardo_da_vinci_cinderella",
+    "name": "李奧納多．達文西",
+    "avatar": "/cache/avatars/leonardo_da_vinci_cinderella.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "leonardo_da_vinci_hinamatsuri",
+    "name": "李奧納多．達文西",
+    "avatar": "/cache/avatars/leonardo_da_vinci_hinamatsuri.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "platon",
+    "name": "柏拉圖",
+    "avatar": "/cache/avatars/platon.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "niraikanai",
+    "name": "根來神至",
+    "avatar": "/cache/avatars/niraikanai.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "medjed",
+    "name": "梅傑德",
+    "avatar": "/cache/avatars/medjed.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "medjed_halloween",
+    "name": "梅傑德（萬聖節）",
+    "avatar": "/cache/avatars/medjed_halloween.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "merlin",
+    "name": "梅林",
+    "avatar": "/cache/avatars/merlin.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "okita_souji",
+    "name": "沖田總司",
+    "avatar": "/cache/avatars/okita_souji.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "okita_souji_shogatsu",
+    "name": "沖田總司（正月）",
+    "avatar": "/cache/avatars/okita_souji_shogatsu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "okita_souji_mizugi",
+    "name": "沖田總司（泳裝）",
+    "avatar": "/cache/avatars/okita_souji_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "okita_souji_wedding",
+    "name": "沖田總司（花嫁）",
+    "avatar": "/cache/avatars/okita_souji_wedding.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sariel",
+    "name": "沙利葉",
+    "avatar": "/cache/avatars/sariel.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sariel_half",
+    "name": "沙利葉（半週年）",
+    "avatar": "/cache/avatars/sariel_half.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sariel_mizugi",
+    "name": "沙利葉（泳裝）",
+    "avatar": "/cache/avatars/sariel_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "salamander",
+    "name": "沙羅曼達",
+    "avatar": "/cache/avatars/salamander.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "fafnir",
+    "name": "法夫納",
+    "avatar": "/cache/avatars/fafnir.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "fafnir_racequeen",
+    "name": "法夫納（賽車女郎）",
+    "avatar": "/cache/avatars/fafnir_racequeen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "femme_fatale",
+    "name": "法姆．法塔爾",
+    "avatar": "/cache/avatars/femme_fatale.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "mastersorcerer",
+    "name": "法師大師",
+    "avatar": "/cache/avatars/mastersorcerer.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "poseidon",
+    "name": "波賽頓",
+    "avatar": "/cache/avatars/poseidon.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "poseidon_2nd",
+    "name": "波賽頓（2週年）",
+    "avatar": "/cache/avatars/poseidon_2nd.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "loki",
+    "name": "洛基",
+    "avatar": "/cache/avatars/loki.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hermy",
+    "name": "海爾米",
+    "avatar": "/cache/avatars/hermy.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hermy_angel",
+    "name": "海爾米",
+    "avatar": "/cache/avatars/hermy_angel.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hermy_gakuen",
+    "name": "海爾米（學園）",
+    "avatar": "/cache/avatars/hermy_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nemesis",
+    "name": "涅墨西斯",
+    "avatar": "/cache/avatars/nemesis.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nemesis_onehalf",
+    "name": "涅墨西斯（1.5週年）",
+    "avatar": "/cache/avatars/nemesis_onehalf.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "asaka_ushio",
+    "name": "淺香潮",
+    "avatar": "/cache/avatars/asaka_ushio.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "minamotono_yoshitsune",
+    "name": "源義経",
+    "avatar": "/cache/avatars/minamotono_yoshitsune.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hammurabi",
+    "name": "漢摩拉比",
+    "avatar": "/cache/avatars/hammurabi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "pandora",
+    "name": "潘朵拉",
+    "avatar": "/cache/avatars/pandora.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "pandora_maid",
+    "name": "潘朵拉",
+    "avatar": "/cache/avatars/pandora_maid.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "pandora_onehalf",
+    "name": "潘朵拉（1.5週年）",
+    "avatar": "/cache/avatars/pandora_onehalf.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "pandora_valentine",
+    "name": "潘朵拉（情人節）",
+    "avatar": "/cache/avatars/pandora_valentine.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "zenith",
+    "name": "澤尼斯",
+    "avatar": "/cache/avatars/zenith.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "shiva",
+    "name": "濕婆",
+    "avatar": "/cache/avatars/shiva.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "uriel",
+    "name": "烏列爾",
+    "avatar": "/cache/avatars/uriel.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "uriel_christmas",
+    "name": "烏列爾",
+    "avatar": "/cache/avatars/uriel_christmas.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "uriel_gakuen",
+    "name": "烏列爾（學園）",
+    "avatar": "/cache/avatars/uriel_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "uriel_pajama",
+    "name": "烏列爾（睡衣）",
+    "avatar": "/cache/avatars/uriel_pajama.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "katagiri_yuuhi",
+    "name": "片桐優姬",
+    "avatar": "/cache/avatars/katagiri_yuuhi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "inuyamatamaki",
+    "name": "犬山玉姬",
+    "avatar": "/cache/avatars/inuyamatamaki.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "gembu",
+    "name": "玄武",
+    "avatar": "/cache/avatars/gembu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "richard_i",
+    "name": "理查一世",
+    "avatar": "/cache/avatars/richard_i.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "richard_i1",
+    "name": "理查一世",
+    "avatar": "/cache/avatars/richard_i1.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "richard_i_onehalf",
+    "name": "理查一世（1.5週年）",
+    "avatar": "/cache/avatars/richard_i_onehalf.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "richard_i_mizugi",
+    "name": "理查一世（泳裝）",
+    "avatar": "/cache/avatars/richard_i_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "marie_antoinette",
+    "name": "瑪麗·安東妮",
+    "avatar": "/cache/avatars/marie_antoinette.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "marie_antoinette_clreopatra",
+    "name": "瑪麗·安東妮（埃及豔后）",
+    "avatar": "/cache/avatars/marie_antoinette_clreopatra.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "marie_antoinette_yukata",
+    "name": "瑪麗·安東妮（浴衣）",
+    "avatar": "/cache/avatars/marie_antoinette_yukata.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "kannei",
+    "name": "甘寧",
+    "avatar": "/cache/avatars/kannei.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "kannei_wedding",
+    "name": "甘寧（花嫁）",
+    "avatar": "/cache/avatars/kannei_wedding.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "shirakawananaka",
+    "name": "白河奈奈香",
+    "avatar": "/cache/avatars/shirakawananaka.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "byakko",
+    "name": "白虎",
+    "avatar": "/cache/avatars/byakko.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "shirayukimishiro",
+    "name": "白雪深白",
+    "avatar": "/cache/avatars/shirayukimishiro.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sanada_yukimura",
+    "name": "真田幸村",
+    "avatar": "/cache/avatars/sanada_yukimura.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sanada_yukimura_gakuen",
+    "name": "真田幸村（學園）",
+    "avatar": "/cache/avatars/sanada_yukimura_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "ishikawagoemon",
+    "name": "石川五右衛門",
+    "avatar": "/cache/avatars/ishikawagoemon.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "michael",
+    "name": "米迦勒",
+    "avatar": "/cache/avatars/michael.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "michael_2nd",
+    "name": "米迦勒（2週年）",
+    "avatar": "/cache/avatars/michael_2nd.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "michael_maid",
+    "name": "米迦勒（女僕）",
+    "avatar": "/cache/avatars/michael_maid.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "michael_gakuen",
+    "name": "米迦勒（學園）",
+    "avatar": "/cache/avatars/michael_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "michael_shogatsu",
+    "name": "米迦勒（正月）",
+    "avatar": "/cache/avatars/michael_shogatsu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "michael_mizugi",
+    "name": "米迦勒（泳裝）",
+    "avatar": "/cache/avatars/michael_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "michael_anniversary",
+    "name": "米迦勒（週年）",
+    "avatar": "/cache/avatars/michael_anniversary.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "thor",
+    "name": "索爾",
+    "avatar": "/cache/avatars/thor.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sol_2nd",
+    "name": "索爾（2週年）",
+    "avatar": "/cache/avatars/sol_2nd.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "thor_mizugi",
+    "name": "索爾（泳裝）",
+    "avatar": "/cache/avatars/thor_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sol_halloween",
+    "name": "索爾（萬聖節）",
+    "avatar": "/cache/avatars/sol_halloween.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "thor_halloween",
+    "name": "索爾（萬聖節）",
+    "avatar": "/cache/avatars/thor_halloween.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "thor_racequeen",
+    "name": "索爾（賽車女郎）",
+    "avatar": "/cache/avatars/thor_racequeen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "robert_e_lee",
+    "name": "羅伯特·李",
+    "avatar": "/cache/avatars/robert_e_lee.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "mermaid",
+    "name": "美人魚",
+    "avatar": "/cache/avatars/mermaid.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "hasegawa_akemi",
+    "name": "羽瀨川朱美",
+    "avatar": "/cache/avatars/hasegawa_akemi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "mastersaint",
+    "name": "聖賢大師",
+    "avatar": "/cache/avatars/mastersaint.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "agnes_boulanger",
+    "name": "艾格妮絲·布朗熱",
+    "avatar": "/cache/avatars/agnes_boulanger.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "aids",
+    "name": "艾絲",
+    "avatar": "/cache/avatars/aids.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "aera",
+    "name": "艾菈",
+    "avatar": "/cache/avatars/aera.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "juno",
+    "name": "茱諾",
+    "avatar": "/cache/avatars/juno.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "juno_angel",
+    "name": "茱諾（天使）",
+    "avatar": "/cache/avatars/juno_angel.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "juno_gakuen",
+    "name": "茱諾（學園）",
+    "avatar": "/cache/avatars/juno_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "juno_dress",
+    "name": "茱諾（禮服）",
+    "avatar": "/cache/avatars/juno_dress.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "mordred",
+    "name": "莫德雷德",
+    "avatar": "/cache/avatars/mordred.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sugawara_no_michizane",
+    "name": "菅原道真",
+    "avatar": "/cache/avatars/sugawara_no_michizane.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sugawara_no_michizane_mizugi",
+    "name": "菅原道真（泳裝）",
+    "avatar": "/cache/avatars/sugawara_no_michizane_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "leana",
+    "name": "菈娜",
+    "avatar": "/cache/avatars/leana.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "leana_racequeen",
+    "name": "菈娜",
+    "avatar": "/cache/avatars/leana_racequeen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "valkyrie",
+    "name": "華爾秋蕾",
+    "avatar": "/cache/avatars/valkyrie.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "valkyrie_wedding",
+    "name": "華爾秋蕾（花嫁）",
+    "avatar": "/cache/avatars/valkyrie_wedding.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "katsushika_hokusai",
+    "name": "葛飾北齋",
+    "avatar": "/cache/avatars/katsushika_hokusai.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "katsushika_hokusai_mizugi",
+    "name": "葛飾北齋（泳裝）",
+    "avatar": "/cache/avatars/katsushika_hokusai_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "katsushika_hokusai_onsen",
+    "name": "葛飾北齋（溫泉）",
+    "avatar": "/cache/avatars/katsushika_hokusai_onsen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "toudou_takatora",
+    "name": "藤堂高虎",
+    "avatar": "/cache/avatars/toudou_takatora.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "sol",
+    "name": "蘇爾",
+    "avatar": "/cache/avatars/sol.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sol_kamihimeishou",
+    "name": "蘇爾",
+    "avatar": "/cache/avatars/sol_kamihimeishou.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sol_shogatsu",
+    "name": "蘇爾（正月）",
+    "avatar": "/cache/avatars/sol_shogatsu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sol_kamihime",
+    "name": "蘇爾（神姬）",
+    "avatar": "/cache/avatars/sol_kamihime.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "lancelot",
+    "name": "蘭斯洛特",
+    "avatar": "/cache/avatars/lancelot.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "sigurd",
+    "name": "西格魯德",
+    "avatar": "/cache/avatars/sigurd.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "kannon_bosatsu",
+    "name": "觀音菩薩",
+    "avatar": "/cache/avatars/kannon_bosatsu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "beethoven",
+    "name": "貝多芬",
+    "avatar": "/cache/avatars/beethoven.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "beethoven_gakuen",
+    "name": "貝多芬（學園）",
+    "avatar": "/cache/avatars/beethoven_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "beethoven_little",
+    "name": "貝多芬（幼年）",
+    "avatar": "/cache/avatars/beethoven_little.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "jeanne",
+    "name": "貞德",
+    "avatar": "/cache/avatars/jeanne.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "jeanne_and_michael",
+    "name": "貞德＆米迦勒",
+    "avatar": "/cache/avatars/jeanne_and_michael.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "jeanne_2nd",
+    "name": "貞德（2週年）",
+    "avatar": "/cache/avatars/jeanne_2nd.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "jeanne_gakuen",
+    "name": "貞德（學園）",
+    "avatar": "/cache/avatars/jeanne_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "jeanne_shogatsu",
+    "name": "貞德（正月）",
+    "avatar": "/cache/avatars/jeanne_shogatsu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "jeanne_mizugi",
+    "name": "貞德（泳裝）",
+    "avatar": "/cache/avatars/jeanne_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "jeanne_wedding",
+    "name": "貞德（花嫁）",
+    "avatar": "/cache/avatars/jeanne_wedding.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "jeanne_anniversary",
+    "name": "貞德（週年）",
+    "avatar": "/cache/avatars/jeanne_anniversary.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "origin",
+    "name": "起源",
+    "avatar": "/cache/avatars/origin.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "origin_devil",
+    "name": "起源",
+    "avatar": "/cache/avatars/origin_devil.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "lucifer",
+    "name": "路西法",
+    "avatar": "/cache/avatars/lucifer.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "kondou_isami",
+    "name": "近藤勇",
+    "avatar": "/cache/avatars/kondou_isami.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "kondou_isami_mizugi",
+    "name": "近藤勇（泳裝）",
+    "avatar": "/cache/avatars/kondou_isami_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "leonardo_da_vinci_halloween",
+    "name": "達文西（萬聖節）",
+    "avatar": "/cache/avatars/leonardo_da_vinci_halloween.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "tetsuwan_goetzens",
+    "name": "鐵拳格茨",
+    "avatar": "/cache/avatars/tetsuwan_goetzens.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "nagase_minato",
+    "name": "長瀨湊",
+    "avatar": "/cache/avatars/nagase_minato.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "jack_the_ripper",
+    "name": "開膛手傑克",
+    "avatar": "/cache/avatars/jack_the_ripper.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "enma",
+    "name": "閻魔",
+    "avatar": "/cache/avatars/enma.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "enma_onehalf",
+    "name": "閻魔",
+    "avatar": "/cache/avatars/enma_onehalf.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "kanu",
+    "name": "關羽",
+    "avatar": "/cache/avatars/kanu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "anubis",
+    "name": "阿努比斯",
+    "avatar": "/cache/avatars/anubis.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "anubis_half",
+    "name": "阿努比斯 (半週年)",
+    "avatar": "/cache/avatars/anubis_half.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "artemis",
+    "name": "阿提米絲",
+    "avatar": "/cache/avatars/artemis.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "artemis_half",
+    "name": "阿提米絲",
+    "avatar": "/cache/avatars/artemis_half.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "asklepios",
+    "name": "阿斯克勒庇俄斯",
+    "avatar": "/cache/avatars/asklepios.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "asklepios_shogatsu",
+    "name": "阿斯克勒庇俄斯（正月）",
+    "avatar": "/cache/avatars/asklepios_shogatsu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "apollon",
+    "name": "阿波羅",
+    "avatar": "/cache/avatars/apollon.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "apollon_2nd",
+    "name": "阿波羅（2週年）",
+    "avatar": "/cache/avatars/apollon_2nd.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "apollon_pajama",
+    "name": "阿波羅（睡衣）",
+    "avatar": "/cache/avatars/apollon_pajama.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "apollon_christmas",
+    "name": "阿波羅（聖誕）",
+    "avatar": "/cache/avatars/apollon_christmas.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "apollon_halloween",
+    "name": "阿波羅（萬聖節）",
+    "avatar": "/cache/avatars/apollon_halloween.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "artorius",
+    "name": "阿爾托利烏斯",
+    "avatar": "/cache/avatars/artorius.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "anastasia_sister",
+    "name": "阿納斯塔西婭（修女）",
+    "avatar": "/cache/avatars/anastasia_sister.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "anastasia_valentine",
+    "name": "阿納斯塔西婭（情人節）",
+    "avatar": "/cache/avatars/anastasia_valentine.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "artemis_2nd",
+    "name": "阿耳忒彌斯（2週年）",
+    "avatar": "/cache/avatars/artemis_2nd.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "artemis_bunny",
+    "name": "阿耳忒彌斯（兔女郎）",
+    "avatar": "/cache/avatars/artemis_bunny.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "artemis_halloween",
+    "name": "阿耳忒彌斯（萬聖節）",
+    "avatar": "/cache/avatars/artemis_halloween.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "amorounagu_hinamatsuri",
+    "name": "阿莫羅納古（女兒節）",
+    "avatar": "/cache/avatars/amorounagu_hinamatsuri.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "ammon",
+    "name": "阿蒙",
+    "avatar": "/cache/avatars/ammon.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "snegurochka_gakuen",
+    "name": "雪姑娘（學園）",
+    "avatar": "/cache/avatars/snegurochka_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hohenheim_old",
+    "name": "霍恩海姆",
+    "avatar": "/cache/avatars/hohenheim_old.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hohenheim_little",
+    "name": "霍恩海姆（幼年）",
+    "avatar": "/cache/avatars/hohenheim_little.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hohenheim_racequeen",
+    "name": "霍恩海姆（賽車女郎）",
+    "avatar": "/cache/avatars/hohenheim_racequeen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "rusalka",
+    "name": "露莎卡",
+    "avatar": "/cache/avatars/rusalka.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "rusalka_christmas",
+    "name": "露莎卡",
+    "avatar": "/cache/avatars/rusalka_christmas.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "rusalka_minette",
+    "name": "露莎卡",
+    "avatar": "/cache/avatars/rusalka_minette.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "rusalka_wedding",
+    "name": "露莎卡（花嫁）",
+    "avatar": "/cache/avatars/rusalka_wedding.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "rllu",
+    "name": "露露",
+    "avatar": "/cache/avatars/rllu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "seiryu",
+    "name": "青龍",
+    "avatar": "/cache/avatars/seiryu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "shizuka_gozen",
+    "name": "靜御前",
+    "avatar": "/cache/avatars/shizuka_gozen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "idaten",
+    "name": "韋馱天",
+    "avatar": "/cache/avatars/idaten.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "susanoo",
+    "name": "須佐之男",
+    "avatar": "/cache/avatars/susanoo.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "susanoo_2nd",
+    "name": "須佐之男（2週年）",
+    "avatar": "/cache/avatars/susanoo_2nd.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "fuuma_kotarou",
+    "name": "風魔小太郎",
+    "avatar": "/cache/avatars/fuuma_kotarou.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "marduk",
+    "name": "馬爾杜克",
+    "avatar": "/cache/avatars/marduk.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "masterrider_alice",
+    "name": "騎士愛麗絲",
+    "avatar": "/cache/avatars/masterrider_alice.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "quetzalcoatl",
+    "name": "魁札爾科亞特爾",
+    "avatar": "/cache/avatars/quetzalcoatl.png",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "id": "richelieu",
+    "name": "黎希留",
+    "avatar": "/cache/avatars/richelieu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "littley_dress",
+    "name": "黎德莉",
+    "avatar": "/cache/avatars/littley_dress.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "littley_legend",
+    "name": "黎德莉（傳說）",
+    "avatar": "/cache/avatars/littley_legend.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hades",
+    "name": "黑帝斯",
+    "avatar": "/cache/avatars/hades.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hades_taisouhuku",
+    "name": "黑帝斯",
+    "avatar": "/cache/avatars/hades_taisouhuku.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hades_2nd",
+    "name": "黑帝斯（2週年）",
+    "avatar": "/cache/avatars/hades_2nd.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hades_clreopatra",
+    "name": "黑帝斯（埃及豔后）",
+    "avatar": "/cache/avatars/hades_clreopatra.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hades_gakuen",
+    "name": "黑帝斯（學園）",
+    "avatar": "/cache/avatars/hades_gakuen.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "siegfried",
+    "name": "齊格弗里德",
+    "avatar": "/cache/avatars/siegfried.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "siegfried_2nd",
+    "name": "齊格弗里德（2週年）",
+    "avatar": "/cache/avatars/siegfried_2nd.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "siegfried_mizugi",
+    "name": "齊格弗里德（泳裝）",
+    "avatar": "/cache/avatars/siegfried_mizugi.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "siegfried_shogatsu",
+    "name": "齊格飛（正月）",
+    "avatar": "/cache/avatars/siegfried_shogatsu.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "siegfried_wedding",
+    "name": "齊格飛（花嫁）",
+    "avatar": "/cache/avatars/siegfried_wedding.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "siegfried_anniversary",
+    "name": "齊格飛（週年）",
+    "avatar": "/cache/avatars/siegfried_anniversary.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "bael",
+    "name": "？？？",
+    "avatar": "/cache/avatars/bael.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "furfur",
+    "name": "？？？",
+    "avatar": "/cache/avatars/furfur.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "hohenheim_origin",
+    "name": "？？？",
+    "avatar": "/cache/avatars/hohenheim_origin.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "huyou_kaede",
+    "name": "？？？",
+    "avatar": "/cache/avatars/huyou_kaede.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "janet",
+    "name": "？？？",
+    "avatar": "/cache/avatars/janet.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "kirin",
+    "name": "？？？",
+    "avatar": "/cache/avatars/kirin.png",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "overload",
+    "name": "？？？",
+    "avatar": "/cache/avatars/overload.png",
+    "chapters": [
+      2,
+      3
+    ]
+  }
+]

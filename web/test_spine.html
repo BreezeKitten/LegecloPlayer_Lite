@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8">
+    <title>Spine Standing Test</title>
+    <link rel="stylesheet" href="/lib/spine-player.css">
+    <style>
+        body {
+            margin: 0;
+            background: #1a1a24;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #fff;
+            font-family: sans-serif;
+        }
+        #spine-container {
+            width: 800px;
+            height: 800px;
+            position: relative;
+            background: radial-gradient(circle, rgba(60,60,80,0.6) 0%, rgba(20,20,30,0.8) 100%);
+            border: 2px solid #555;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .controls {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 8px 16px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <h2>角色立繪 Spine 3.8 測試 (貝多芬幼年)</h2>
+    <div id="spine-container"></div>
+    <div class="controls" id="anim-buttons"></div>
+
+    <script src="/lib/spine-player.js"></script>
+    <script>
+        let player = null;
+        try {
+            player = new spine.SpinePlayer("spine-container", {
+                skelUrl: "/cache/standing/beethoven_little/standing.skel",
+                atlasUrl: "/cache/standing/beethoven_little/standing.atlas",
+                animation: "st_01_standard",
+                alpha: true,
+                backgroundColor: "#00000000",
+                showControls: true,
+                success: function (p) {
+                    console.log("Spine Loaded Successfully!", p);
+                    const container = document.getElementById("anim-buttons");
+                    const anims = [
+                        "st_01_standard", "st_02_normal", "st_03_smile", 
+                        "st_04_anger", "st_05_sad", "st_06_shy", "st_07_surprise"
+                    ];
+                    anims.forEach(anim => {
+                        const btn = document.createElement("button");
+                        btn.textContent = anim.replace("st_", "");
+                        btn.onclick = () => {
+                            try {
+                                p.setAnimation(anim);
+                            } catch (e) {
+                                console.error(e);
+                            }
+                        };
+                        container.appendChild(btn);
+                    });
+                },
+                error: function (p, msg) {
+                    console.error("Spine Load Error:", msg);
+                    document.getElementById("spine-container").innerHTML = "<p style='color:red;padding:20px'>Error: " + msg + "</p>";
+                }
+            });
+        } catch (e) {
+            console.error("Fatal:", e);
+        }
+    </script>
+</body>
+</html>
