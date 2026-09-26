@@ -1005,6 +1005,13 @@ class LegecloPlayer {
       this.standingAnimWrap.classList.toggle('hidden', !standing.has_standing);
     }
 
+    // Immediate preview: show fallback image first so screen is never blank while Spine loads
+    if (this.staticStandingFallback) {
+      const fallbackUrl = standing.fallback_img || `/cache/avatars/${standing.character_id || this.currentChapterData.char_id}_half.png`;
+      this.staticStandingFallback.src = fallbackUrl;
+      this.staticStandingFallback.classList.remove('hidden');
+    }
+
     // 2. Static Fallback for characters without Spine 2D model
     if (!standing.has_standing) {
       if (this.spinePlayer) {
@@ -1012,27 +1019,21 @@ class LegecloPlayer {
         this.spinePlayer = null;
       }
       if (this.spineContainer) this.spineContainer.innerHTML = '';
-      if (this.staticStandingFallback) {
-        const fallbackUrl = standing.fallback_img || `/cache/avatars/${standing.character_id || this.currentChapterData.char_id}_half.png`;
-        this.staticStandingFallback.src = fallbackUrl;
-        this.staticStandingFallback.classList.remove('hidden');
-      }
       return;
-    }
-
-    // Hide static fallback when Spine model is active
-    if (this.staticStandingFallback) {
-      this.staticStandingFallback.classList.add('hidden');
     }
 
     // If Spine player is already running for this character, unpause, resize and resume
     if (this.spinePlayer && this.currentSpineCharId === standing.character_id) {
       try {
+        this.spinePlayer.paused = false;
         this.spinePlayer.play();
         if (this.spinePlayer.sceneRenderer) {
           this.spinePlayer.sceneRenderer.resize(spine.webgl.ResizeMode.Expand);
         }
       } catch (e) {}
+      if (this.staticStandingFallback) {
+        this.staticStandingFallback.classList.add('hidden');
+      }
       return;
     }
 
@@ -1094,20 +1095,28 @@ class LegecloPlayer {
             showControls: false,
             success: (player) => {
               this.spinePlayer = player;
+              player.paused = false;
+              try { player.play(); } catch (e) {}
               if (player.canvas) {
                 player.canvas.style.display = 'block';
                 player.canvas.style.width = '100%';
                 player.canvas.style.height = '100%';
               }
               if (player.sceneRenderer) {
-                player.sceneRenderer.resize(spine.webgl.ResizeMode.Expand);
+                try { player.sceneRenderer.resize(spine.webgl.ResizeMode.Expand); } catch (e) {}
+              }
+              // Hide static fallback once Spine dynamic model is loaded and rendering
+              if (this.staticStandingFallback) {
+                this.staticStandingFallback.classList.add('hidden');
               }
               // Synchronize animation with current active dialogue
               const d = this.currentChapterData && this.currentChapterData.dialogues && this.currentChapterData.dialogues[this.dialogueIndex];
               if (d) {
                 this.updateStandingAnimationForDialogue(d);
+              } else {
+                this.setStandingAnimation(defaultAnim);
               }
-              console.log(`[Spine] Initialized standing for ${standing.character_id}`);
+              console.log(`[Spine] Initialized and animating standing for ${standing.character_id}`);
             },
             error: (player, msg) => {
               console.error(`[Spine] Standing load error:`, msg);
@@ -1159,7 +1168,13 @@ class LegecloPlayer {
       return;
     }
     try {
-      this.spinePlayer.animationState.setAnimation(0, anim, true);
+      if (typeof this.spinePlayer.setAnimation === 'function') {
+        this.spinePlayer.setAnimation(anim, true);
+      } else {
+        this.spinePlayer.animationState.setAnimation(0, anim, true);
+      }
+      this.spinePlayer.paused = false;
+      try { this.spinePlayer.play(); } catch (e) {}
     } catch (err) {
       console.warn('setStandingAnimation error:', err);
     }
@@ -1192,9 +1207,7 @@ class LegecloPlayer {
       targetAnim = available.includes('st_01_standard') ? 'st_01_standard' : available[0];
     }
 
-    if (targetAnim && targetAnim !== this.currentStandingAnim) {
-      this.setStandingAnimation(targetAnim);
-    }
+    this.setStandingAnimation(targetAnim);
   }
 }
 

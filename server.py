@@ -27,8 +27,41 @@ import urllib.request
 import concurrent.futures
 import threading
 import ssl
-import imageio_ffmpeg
-import UnityPy
+import types
+
+# 提前定義執行環境目錄與 DLL 搜索路徑 (必須在 UnityPy / fmod 載入前完成)
+if getattr(sys, 'frozen', False):
+    BASE_DIR = os.path.dirname(os.path.abspath(sys.executable))
+    MEI_DIR = getattr(sys, '_MEIPASS', BASE_DIR)
+else:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    MEI_DIR = BASE_DIR
+
+# 設置 FMOD DLL 與 Windows DLL 目錄
+_fmod_candidates = [
+    os.path.join(MEI_DIR, 'fmod_toolkit', 'libfmod', 'Windows', 'x64', 'fmod.dll'),
+    os.path.join(MEI_DIR, 'libfmod', 'Windows', 'x64', 'fmod.dll'),
+    os.path.join(BASE_DIR, 'fmod.dll'),
+    os.path.join(MEI_DIR, 'fmod.dll'),
+    os.path.join(BASE_DIR, 'vgmstream', 'fmod.dll'),
+]
+for _fp in _fmod_candidates:
+    if os.path.isfile(_fp):
+        os.environ["PYFMODEX_DLL_PATH"] = _fp
+        try:
+            if hasattr(os, 'add_dll_directory'):
+                os.add_dll_directory(os.path.dirname(_fp))
+        except Exception:
+            pass
+        break
+
+for _dir in [MEI_DIR, BASE_DIR]:
+    if os.path.isdir(_dir):
+        try:
+            if hasattr(os, 'add_dll_directory'):
+                os.add_dll_directory(_dir)
+        except Exception:
+            pass
 
 # 徹底解決在無 CA 憑證環境或不同 Windows 電腦上的 SSL 驗證失敗問題
 try:
@@ -42,10 +75,57 @@ SSL_CTX.verify_mode = ssl.CERT_NONE
 
 sys.stdout.reconfigure(encoding='utf-8', line_buffering=True)
 
-if getattr(sys, 'frozen', False):
-    BASE_DIR = os.path.dirname(os.path.abspath(sys.executable))
-else:
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# 導入 UnityPy 與 fmod_toolkit 的雙重保護機制
+try:
+    import fmod_toolkit
+except Exception:
+    # 若在特殊系統環境下 FMOD 載入失敗，提供 stub 避免阻塞 UnityPy 核心解析
+    mock_fmod = types.ModuleType('fmod_toolkit')
+    mock_fmod.get_pyfmodex_system_instance = None
+    mock_fmod.raw_to_wav = None
+    mock_fmod.sound_to_wav = None
+    mock_fmod.subsound_to_wav = None
+    sys.modules['fmod_toolkit'] = mock_fmod
+
+import imageio_ffmpeg
+import UnityPy
+
+# 強化 UnityPy.helpers.Tpk.get_typetree 容錯：若打包缺少 UnityPy.resources，自動由 MEI_DIR 或本地讀取 lzma.tpk
+try:
+    import UnityPy.helpers.Tpk as _Tpk
+    _orig_get_typetree = _Tpk.get_typetree
+    _cached_blob = None
+
+    def _safe_get_typetree():
+        global _cached_blob
+        if _cached_blob is not None:
+            return _cached_blob
+        try:
+            _cached_blob = _orig_get_typetree()
+            return _cached_blob
+        except Exception:
+            # 備援嘗試從已知路徑手動解析 lzma.tpk
+            for cand in [
+                os.path.join(MEI_DIR, 'UnityPy', 'resources', 'lzma.tpk'),
+                os.path.join(MEI_DIR, 'resources', 'lzma.tpk'),
+                os.path.join(MEI_DIR, 'lzma.tpk'),
+                os.path.join(BASE_DIR, 'lzma.tpk'),
+                os.path.join(BASE_DIR, 'resources', 'lzma.tpk'),
+                os.path.join(BASE_DIR, 'UnityPy', 'resources', 'lzma.tpk'),
+            ]:
+                if os.path.isfile(cand):
+                    try:
+                        from io import BytesIO
+                        from tpk_ar import TpkFile
+                        with open(cand, 'rb') as f:
+                            _cached_blob = TpkFile.parse(BytesIO(f.read())).GetDataBlob()
+                            return _cached_blob
+                    except Exception:
+                        pass
+            raise
+    _Tpk.get_typetree = _safe_get_typetree
+except Exception:
+    pass
 
 CDN_BASE = "https://asset-tw.legeclo.johren.games/pcr"
 RESOURCE_DIR = os.path.join(BASE_DIR, 'resources')
@@ -653,14 +733,29 @@ def get_chapter_data(cid, ep):
 
             voice_url = None
             if has_voice:
-                expected_wav = os.path.join(voice_dir, f'v_{v_idx:04d}.wav')
-                if os.path.exists(expected_wav):
-                    voice_url = f'/cache/{cid}_{ep_str}/voices/v_{v_idx:04d}.wav'
-                    v_idx += 1
-                else:
-                    v_idx += 1
-                    alt_wav = os.path.join(voice_dir, f'v_{v_idx:04d}.wav')
-                    if os.path.exists(alt_wav):
+                # 尋找該對白緊隨的語音標籤 (voice_..._XXXX_XX)
+                voice_file = None
+                for lookahead in range(1, 5):
+                    if i + lookahead < len(entries):
+                        t = entries[i + lookahead]
+                        # 若下一個 token 已經是下一段中文對話，則停止向前搜尋
+                        if any('\u4e00' <= c <= '\u9fff' for c in t) and len(t) > 2:
+                            break
+                        m = re.search(r'voice_.*?_(\d{4})_\d{2}', t)
+                        if m:
+                            v_num = int(m.group(1)) - 1
+                            voice_file = f'v_{v_num:04d}.wav'
+                            break
+
+                if voice_file:
+                    v_path = os.path.join(voice_dir, voice_file)
+                    if os.path.exists(v_path):
+                        voice_url = f'/cache/{cid}_{ep_str}/voices/{voice_file}'
+                        v_idx = max(v_idx, v_num + 1)
+                elif speaker:
+                    # 容錯備援：若無明確 voice_ 標籤但確定為角色發言（非旁白），才按序檢查音訊
+                    expected_wav = os.path.join(voice_dir, f'v_{v_idx:04d}.wav')
+                    if os.path.exists(expected_wav):
                         voice_url = f'/cache/{cid}_{ep_str}/voices/v_{v_idx:04d}.wav'
                         v_idx += 1
 
