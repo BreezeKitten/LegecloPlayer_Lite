@@ -16,7 +16,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/icons/icon-512.png">
 
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
   <link rel="stylesheet" href="/lib/spine-player.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -98,6 +98,7 @@
               <div id="standing-anim-wrap" class="standing-anim-wrap hidden">
                 <span class="anim-label">👗 立繪:</span>
                 <select id="standing-anim-select" class="glass-select"></select>
+                <button id="rebuild-standing-btn" class="glass-btn icon-small-btn" title="重新解碼並修復此角色立繪快取 (若動作缺失或圖形異常時使用)">🧹 重建快取</button>
               </div>
             </div>
             <span class="click-hint">點擊畫面或按空白鍵繼續 ▼</span>
@@ -108,6 +109,9 @@
         <div id="stage-clicker" class="stage-clicker"></div>
       </div>
     </main>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
 
     <!-- Settings Modal -->
     <div id="settings-modal" class="modal hidden">
@@ -139,6 +143,15 @@
               <option value="story">跟隨劇情推進 (自動切換動作)</option>
               <option value="infinite">鎖定當前動畫 (無限循環動作)</option>
             </select>
+          </div>
+          <div class="setting-divider"></div>
+          <div class="setting-item cache-setting-item">
+            <label>🧹 快取管理 (Cache)</label>
+            <div class="cache-btn-group">
+              <button id="clear-char-cache-btn" class="glass-btn action-btn">🔄 重建當前角色快取</button>
+              <button id="clear-all-standing-btn" class="glass-btn action-btn danger-btn">🗑️ 重建全角色立繪</button>
+            </div>
+            <span class="setting-hint">※ 僅清理衍生暫存，絕不刪除 resources/ 遊戲資源原檔。</span>
           </div>
         </div>
       </div>
@@ -226,7 +239,7 @@
 
   <!-- Spine 3.8 Runtime -->
   <script src="/lib/spine-player.js"></script>
-  <script src="player.js?v=3"></script>
+  <script src="player.js?v=4"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {

@@ -87,6 +87,14 @@ class LegecloPlayer {
       this.standingAnimWrap.addEventListener('click', (e) => e.stopPropagation());
       this.standingAnimWrap.addEventListener('mousedown', (e) => e.stopPropagation());
     }
+    const rebuildStandingBtn = document.getElementById('rebuild-standing-btn');
+    if (rebuildStandingBtn) {
+      rebuildStandingBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.rebuildCurrentStanding();
+      });
+      rebuildStandingBtn.addEventListener('mousedown', (e) => e.stopPropagation());
+    }
     if (this.standingAnimSelect) {
       this.standingAnimSelect.addEventListener('click', (e) => e.stopPropagation());
       this.standingAnimSelect.addEventListener('mousedown', (e) => e.stopPropagation());
@@ -216,6 +224,16 @@ class LegecloPlayer {
     document.getElementById('loop-mode-select').addEventListener('change', (e) => {
       this.setLoopMode(e.target.value);
     });
+
+    // Cache Rebuild & Management in Settings
+    const clearCharCacheBtn = document.getElementById('clear-char-cache-btn');
+    if (clearCharCacheBtn) {
+      clearCharCacheBtn.addEventListener('click', () => this.rebuildCurrentStanding());
+    }
+    const clearAllStandingBtn = document.getElementById('clear-all-standing-btn');
+    if (clearAllStandingBtn) {
+      clearAllStandingBtn.addEventListener('click', () => this.clearAllStandingCache());
+    }
 
     // Log Modal
     document.getElementById('log-btn').addEventListener('click', (e) => {
@@ -1214,6 +1232,101 @@ class LegecloPlayer {
     }
 
     this.setStandingAnimation(targetAnim);
+  }
+
+  showToast(message, duration = 3000) {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+    const toast = document.createElement('div');
+    toast.className = 'toast-bubble';
+    toast.textContent = message;
+    container.appendChild(toast);
+    
+    requestAnimationFrame(() => toast.classList.add('show'));
+
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => {
+        if (toast.parentNode) toast.parentNode.removeChild(toast);
+      }, 400);
+    }, duration);
+  }
+
+  async rebuildCurrentStanding(charId = null, clearType = 'standing') {
+    const cid = charId || (this.currentChapterData && this.currentChapterData.char_id) || this.currentSpineCharId;
+    if (!cid) {
+      this.showToast('⚠️ 未載入角色，無法重建快取');
+      return;
+    }
+
+    const btn1 = document.getElementById('rebuild-standing-btn');
+    const btn2 = document.getElementById('clear-char-cache-btn');
+    const orig1 = btn1 ? btn1.innerHTML : '';
+    const orig2 = btn2 ? btn2.innerHTML : '';
+    if (btn1) { btn1.innerHTML = '⏳ 重建中...'; btn1.disabled = true; }
+    if (btn2) { btn2.innerHTML = '⏳ 重建中...'; btn2.disabled = true; }
+
+    const charName = (this.currentChapterData && this.currentChapterData.char_name) || cid;
+    this.showToast(`⏳ 正在重構【${charName}】的立繪快取...`, 2000);
+
+    try {
+      const resp = await fetch(`/api/clear_cache?char=${encodeURIComponent(cid)}&type=${clearType}&t=${Date.now()}`);
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      const data = await resp.json();
+
+      if (data.standing && this.currentChapterData) {
+        // Append cache-busting timestamp so browser does not load stale binary from memory
+        const bustTime = Date.now();
+        data.standing.skel = data.standing.skel + '?t=' + bustTime;
+        data.standing.atlas = data.standing.atlas + '?t=' + bustTime;
+        this.currentChapterData.standing = data.standing;
+      }
+
+      // Dispose existing spine player to reload freshly
+      if (this.spinePlayer) {
+        try { this.spinePlayer.dispose(); } catch (e) {}
+        this.spinePlayer = null;
+      }
+      this.currentSpineCharId = null;
+
+      // Re-trigger standing initialization
+      if (this.currentChapterData && this.currentChapterData.standing) {
+        this.showStanding();
+      }
+
+      this.showToast(`✨ 【${charName}】立繪快取已重構完成！`);
+    } catch (err) {
+      console.error('[Cache] Rebuild failed:', err);
+      this.showToast(`❌ 快取重構失敗: ${err.message}`);
+    } finally {
+      if (btn1) { btn1.innerHTML = orig1; btn1.disabled = false; }
+      if (btn2) { btn2.innerHTML = orig2; btn2.disabled = false; }
+    }
+  }
+
+  async clearAllStandingCache() {
+    if (!confirm('確定要重建所有角色的立繪快取嗎？\n\n（遊戲原檔 resources 完整保留，各角色將於切換時自動重新解碼）')) {
+      return;
+    }
+    const btn = document.getElementById('clear-all-standing-btn');
+    const orig = btn ? btn.innerHTML : '';
+    if (btn) { btn.innerHTML = '⏳ 清理中...'; btn.disabled = true; }
+
+    try {
+      const resp = await fetch(`/api/clear_cache?char=all&type=standing&t=${Date.now()}`);
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      this.showToast('✨ 已重置全角色立繪快取！');
+      
+      // Reload current character standing if active
+      if (this.currentChapterData && this.currentChapterData.char_id) {
+        await this.rebuildCurrentStanding(this.currentChapterData.char_id);
+      }
+    } catch (err) {
+      console.error('[Cache] Clear all failed:', err);
+      this.showToast(`❌ 清理失敗: ${err.message}`);
+    } finally {
+      if (btn) { btn.innerHTML = orig; btn.disabled = false; }
+    }
   }
 }
 

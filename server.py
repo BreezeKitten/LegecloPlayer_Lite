@@ -13,6 +13,7 @@ import glob
 import re
 import json
 import gzip
+import shutil
 import time
 import wave
 import struct
@@ -860,6 +861,63 @@ class LegecloHandler(SimpleHTTPRequestHandler):
             self.wfile.write(json.dumps(data, ensure_ascii=False).encode('utf-8'))
             return
 
+        # 快取重建/清理 API
+        if path == '/api/clear_cache':
+            cid = query.get('char', [''])[0]
+            ctype = query.get('type', ['standing'])[0]
+
+            if not cid:
+                self.send_response(400)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(b'{"ok": false, "error": "Missing char parameter"}')
+                return
+
+            result = {'ok': True, 'cleared': []}
+            if cid == 'all':
+                standing_dir = os.path.join(CACHE_DIR, 'standing')
+                if os.path.exists(standing_dir):
+                    shutil.rmtree(standing_dir, ignore_errors=True)
+                    os.makedirs(standing_dir, exist_ok=True)
+                    result['cleared'].append('all_standing')
+                print("[Cache] All standing caches purged.")
+            else:
+                char_standing_dir = os.path.join(CACHE_DIR, 'standing', cid)
+                if os.path.exists(char_standing_dir):
+                    shutil.rmtree(char_standing_dir, ignore_errors=True)
+                    result['cleared'].append(f'standing_{cid}')
+                    print(f"[Cache] Purged standing cache for {cid}.")
+
+                if ctype in ('all', 'chapter'):
+                    for item in os.listdir(CACHE_DIR):
+                        if item.startswith(f"{cid}_"):
+                            target = os.path.join(CACHE_DIR, item)
+                            if os.path.isdir(target):
+                                shutil.rmtree(target, ignore_errors=True)
+                                result['cleared'].append(item)
+                            elif os.path.isfile(target):
+                                try:
+                                    os.remove(target)
+                                    result['cleared'].append(item)
+                                except Exception:
+                                    pass
+
+                try:
+                    new_standing = ensure_standing(cid)
+                    result['standing'] = new_standing
+                except Exception as e:
+                    result['standing_error'] = str(e)
+                    print(f"[Cache] Error re-extracting standing for {cid}: {e}")
+
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate')
+            self.end_headers()
+            self.wfile.write(json.dumps(result, ensure_ascii=False).encode('utf-8'))
+            return
+
         # 靜態資源串流 (/cache, /assets)
         if path.startswith('/cache/'):
             fpath = os.path.join(CACHE_DIR, path[7:].replace('/', os.sep))
@@ -942,7 +1000,7 @@ class LegecloHandler(SimpleHTTPRequestHandler):
             self.send_header('Content-Length', str(file_size))
             self.send_header('Accept-Ranges', 'bytes')
             self.send_header('Access-Control-Allow-Origin', '*')
-            if file_path.endswith('.html') or file_path.endswith('.js') or file_path.endswith('.css'):
+            if file_path.endswith('.html') or file_path.endswith('.js') or file_path.endswith('.css') or file_path.endswith('.json') or file_path.endswith('.atlas') or file_path.endswith('.skel'):
                 self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate')
             self.end_headers()
             with open(file_path, 'rb') as f:
@@ -954,6 +1012,10 @@ class LegecloHandler(SimpleHTTPRequestHandler):
                     self.wfile.write(chunk)
         except Exception:
             pass
+
+    def do_POST(self):
+        """支援 POST 方法（與 GET 邏輯共用）"""
+        return self.do_GET()
 
 class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
     daemon_threads = True
