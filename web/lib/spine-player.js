@@ -1759,8 +1759,14 @@ var spine;
 		};
 		AnimationState.prototype.setAnimation = function (trackIndex, animationName, loop) {
 			var animation = this.data.skeletonData.findAnimation(animationName);
-			if (animation == null)
-				throw new Error("Animation not found: " + animationName);
+			if (animation == null) {
+				if (this.data.skeletonData.animations && this.data.skeletonData.animations.length > 0) {
+					animation = this.data.skeletonData.animations[0];
+					console.warn("[Spine] Animation not found: " + animationName + ", fallback to: " + animation.name);
+				} else {
+					throw new Error("Animation not found: " + animationName);
+				}
+			}
 			return this.setAnimationWith(trackIndex, animation, loop);
 		};
 		AnimationState.prototype.setAnimationWith = function (trackIndex, animation, loop) {
@@ -1787,8 +1793,14 @@ var spine;
 		};
 		AnimationState.prototype.addAnimation = function (trackIndex, animationName, loop, delay) {
 			var animation = this.data.skeletonData.findAnimation(animationName);
-			if (animation == null)
-				throw new Error("Animation not found: " + animationName);
+			if (animation == null) {
+				if (this.data.skeletonData.animations && this.data.skeletonData.animations.length > 0) {
+					animation = this.data.skeletonData.animations[0];
+					console.warn("[Spine] Animation not found: " + animationName + ", fallback to: " + animation.name);
+				} else {
+					throw new Error("Animation not found: " + animationName);
+				}
+			}
 			return this.addAnimationWith(trackIndex, animation, loop, delay);
 		};
 		AnimationState.prototype.addAnimationWith = function (trackIndex, animation, loop, delay) {

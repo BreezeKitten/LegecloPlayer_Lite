@@ -568,7 +568,12 @@ def ensure_standing(cid):
                         raw_skel = obj.read().m_Script.encode('utf-8', 'surrogateescape')
                         with open(skel_out, 'wb') as f:
                             f.write(raw_skel)
-                        anims = sorted(list(set(s.decode('latin1') for s in re.findall(rb'st_\d\d_[a-zA-Z0-9_]+', raw_skel))))
+                        canonical = ['st_01_standard', 'st_02_normal', 'st_03_smile', 'st_04_anger',
+                                     'st_05_sad', 'st_06_shy', 'st_07_surprise', 'st_08_stop',
+                                     'st_09_sp01', 'st_10_sp02', 'st_11_sp03', 'st_12_sp04', 'st_13_sp05']
+                        anims = [a for a in canonical if a.encode('latin1') in raw_skel]
+                        if not anims:
+                            anims = sorted(list(set(s.decode('latin1') for s in re.findall(rb'st_\d\d_[a-zA-Z_]+', raw_skel))))
                         break
 
                 # 3. 提取 Material
@@ -579,13 +584,14 @@ def ensure_standing(cid):
                         obj.read().image.save(os.path.join(out_dir, png_name))
                         break
 
+                avatar_fallback = f'/cache/avatars/{cid}_half.png' if os.path.exists(os.path.join(CACHE_DIR, 'avatars', f"{cid}_half.png")) else f'/cache/avatars/{cid}.png'
                 info = {
                     'has_standing': True,
                     'character_id': cid,
                     'atlas': f'/cache/standing/{cid}/standing.atlas',
                     'skel': f'/cache/standing/{cid}/standing.skel',
                     'png': f'/cache/standing/{cid}/{png_name}',
-                    'fallback_img': f'/cache/standing/{cid}/{png_name}',
+                    'fallback_img': avatar_fallback,
                     'animations': anims if anims else ['st_01_standard', 'st_02_normal', 'st_03_smile', 'st_04_anger', 'st_05_sad', 'st_06_shy', 'st_07_surprise'],
                     'default_anim': 'st_01_standard' if 'st_01_standard' in anims else (anims[0] if anims else 'st_01_standard')
                 }
