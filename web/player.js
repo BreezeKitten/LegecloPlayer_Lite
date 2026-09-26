@@ -62,15 +62,20 @@ class LegecloPlayer {
     this.iosGuideOkBtn = document.getElementById('ios-guide-ok-btn');
     this.isFillMode = false;
 
-    // Standing Illustration Spine 3.8
+    // Standing Illustration Spine 3.8 & Fallback
     this.standingLayer = document.getElementById('standing-layer');
     this.spineContainer = document.getElementById('spine-standing-container');
+    this.staticStandingFallback = document.getElementById('static-standing-fallback');
     this.standingAnimWrap = document.getElementById('standing-anim-wrap');
     this.standingAnimSelect = document.getElementById('standing-anim-select');
     this.spinePlayer = null;
     this.currentSpineCharId = null;
     this.currentStandingAnim = null;
     this.isManualStandingAnim = false;
+
+    // Voice / Subtitle Synchronization
+    this.voiceDelayTimer = null;
+    this.voiceDelay = 180; // ms natural onset delay for subtitles before speech starts
 
     this.initEventListeners();
     this.loadCharacterList();
@@ -138,6 +143,7 @@ class LegecloPlayer {
     this.replayVoiceBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       this.unlockAudio();
+      clearTimeout(this.voiceDelayTimer);
       this.playCurrentVoice(true);
     });
 
@@ -196,6 +202,13 @@ class LegecloPlayer {
       this.voiceAudio.volume = this.voiceVolume;
       document.getElementById('voice-vol-val').textContent = `${e.target.value}%`;
     });
+    const voiceDelayInput = document.getElementById('voice-delay');
+    if (voiceDelayInput) {
+      voiceDelayInput.addEventListener('input', (e) => {
+        this.voiceDelay = e.target.value * 10;
+        document.getElementById('voice-delay-val').textContent = `${(this.voiceDelay / 1000).toFixed(2)} 秒`;
+      });
+    }
     document.getElementById('auto-delay').addEventListener('input', (e) => {
       this.autoDelay = e.target.value * 100;
       document.getElementById('auto-delay-val').textContent = `${(this.autoDelay / 1000).toFixed(1)} 秒`;
@@ -270,8 +283,8 @@ class LegecloPlayer {
       });
     }
 
-    // Mobile Orientation Watcher
-    const checkOrientation = () => {
+    // Mobile Orientation & Canvas Resize Watcher
+    const handleResize = () => {
       const isMobile = window.innerWidth <= 1024;
       const isPortrait = window.innerHeight > window.innerWidth;
       if (this.orientationOverlay) {
@@ -281,10 +294,13 @@ class LegecloPlayer {
           this.orientationOverlay.classList.add('hidden');
         }
       }
+      if (this.spinePlayer && this.spinePlayer.sceneRenderer) {
+        try { this.spinePlayer.sceneRenderer.resize(spine.webgl.ResizeMode.Expand); } catch (e) {}
+      }
     };
-    window.addEventListener('resize', checkOrientation);
-    window.addEventListener('orientationchange', () => setTimeout(checkOrientation, 200));
-    checkOrientation();
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', () => setTimeout(handleResize, 200));
+    handleResize();
 
     // iOS Guide Modal
     if (this.closeIosGuideBtn) {
@@ -421,6 +437,12 @@ class LegecloPlayer {
         this.ratioToggleBtn.textContent = '🔲 滿版';
         this.ratioToggleBtn.classList.remove('active');
       }
+    }
+
+    if (this.spinePlayer && this.spinePlayer.sceneRenderer) {
+      setTimeout(() => {
+        try { this.spinePlayer.sceneRenderer.resize(spine.webgl.ResizeMode.Expand); } catch (e) {}
+      }, 50);
     }
   }
 
@@ -664,6 +686,11 @@ class LegecloPlayer {
   async loadChapter(cid, ep) {
     this.currentTitle.textContent = '載入劇情資料中...';
     clearTimeout(this.autoTimer);
+    clearTimeout(this.voiceDelayTimer);
+    try {
+      this.voiceAudio.pause();
+      this.voiceAudio.currentTime = 0;
+    } catch (e) {}
     
     // 1. Immediately reset playback settings and clear media from previous character
     this.setLoopMode('story');
@@ -841,8 +868,31 @@ class LegecloPlayer {
       this.speakerTag.textContent = '【旁白】';
     }
 
+    // Trigger visual dialogue update with subtitle animation refresh
     this.dialogueText.textContent = d.text;
-    this.playCurrentVoice();
+    this.dialogueText.style.animation = 'none';
+    void this.dialogueText.offsetHeight;
+    this.dialogueText.style.animation = '';
+
+    // Clear any pending voice play
+    clearTimeout(this.voiceDelayTimer);
+    try {
+      this.voiceAudio.pause();
+      this.voiceAudio.currentTime = 0;
+    } catch (e) {}
+
+    // Synchronize voice onset delay with dialogue text
+    if (d.voice) {
+      this.replayVoiceBtn.style.display = 'inline-flex';
+      this.replayVoiceBtn.innerHTML = '🔊 重播語音';
+      this.replayVoiceBtn.disabled = false;
+      this.voiceDelayTimer = setTimeout(() => {
+        this.playCurrentVoice();
+      }, this.voiceDelay);
+    } else {
+      this.playCurrentVoice();
+    }
+
     this.updateStandingAnimationForDialogue(d);
 
     // Auto play timing
@@ -861,6 +911,7 @@ class LegecloPlayer {
   advanceDialogue() {
     if (!this.currentChapterData || !this.currentChapterData.dialogues.length) return;
     clearTimeout(this.autoTimer);
+    clearTimeout(this.voiceDelayTimer);
 
     if (this.dialogueIndex < this.currentChapterData.dialogues.length - 1) {
       this.dialogueIndex++;
@@ -939,18 +990,48 @@ class LegecloPlayer {
   }
 
   showStanding() {
-    if (!this.currentChapterData || !this.currentChapterData.standing || !this.currentChapterData.standing.has_standing) {
+    if (!this.currentChapterData || !this.currentChapterData.standing) {
       this.hideStanding();
       return;
     }
     const standing = this.currentChapterData.standing;
-    if (this.standingLayer) this.standingLayer.classList.remove('hidden');
-    if (this.standingAnimWrap) this.standingAnimWrap.classList.remove('hidden');
 
-    // If Spine player is already running for this character, unpause and resume
+    // 1. Ensure standing layer is visible and force browser layout reflow
+    if (this.standingLayer) {
+      this.standingLayer.classList.remove('hidden');
+      void this.standingLayer.offsetWidth; // Force synchronous layout reflow so clientWidth/Height are non-zero!
+    }
+    if (this.standingAnimWrap) {
+      this.standingAnimWrap.classList.toggle('hidden', !standing.has_standing);
+    }
+
+    // 2. Static Fallback for characters without Spine 2D model
+    if (!standing.has_standing) {
+      if (this.spinePlayer) {
+        try { this.spinePlayer.dispose(); } catch (e) {}
+        this.spinePlayer = null;
+      }
+      if (this.spineContainer) this.spineContainer.innerHTML = '';
+      if (this.staticStandingFallback) {
+        const fallbackUrl = standing.fallback_img || `/cache/avatars/${standing.character_id || this.currentChapterData.char_id}_half.png`;
+        this.staticStandingFallback.src = fallbackUrl;
+        this.staticStandingFallback.classList.remove('hidden');
+      }
+      return;
+    }
+
+    // Hide static fallback when Spine model is active
+    if (this.staticStandingFallback) {
+      this.staticStandingFallback.classList.add('hidden');
+    }
+
+    // If Spine player is already running for this character, unpause, resize and resume
     if (this.spinePlayer && this.currentSpineCharId === standing.character_id) {
       try {
         this.spinePlayer.play();
+        if (this.spinePlayer.sceneRenderer) {
+          this.spinePlayer.sceneRenderer.resize(spine.webgl.ResizeMode.Expand);
+        }
       } catch (e) {}
       return;
     }
@@ -1001,30 +1082,51 @@ class LegecloPlayer {
 
     try {
       if (typeof spine !== 'undefined' && spine.SpinePlayer) {
-        this.spinePlayer = new spine.SpinePlayer(this.spineContainer, {
-          skelUrl: standing.skel,
-          atlasUrl: standing.atlas,
-          animation: defaultAnim,
-          alpha: true,
-          backgroundColor: "#00000000",
-          showControls: false,
-          viewport: {
-            padBottom: "0%",
-            padTop: "5%",
-            padLeft: "10%",
-            padRight: "10%"
-          },
-          success: (player) => {
-            this.spinePlayer = player;
-            console.log(`[Spine] Initialized standing for ${standing.character_id}`);
-          },
-          error: (player, msg) => {
-            console.error(`[Spine] Standing load error:`, msg);
-          }
+        // Run in requestAnimationFrame to ensure DOM layout dimensions are fully computed
+        requestAnimationFrame(() => {
+          if (this.currentPhaseIndex !== 0 || !this.currentChapterData) return;
+          this.spinePlayer = new spine.SpinePlayer(this.spineContainer, {
+            skelUrl: standing.skel,
+            atlasUrl: standing.atlas,
+            animation: defaultAnim,
+            alpha: true,
+            backgroundColor: "#00000000",
+            showControls: false,
+            success: (player) => {
+              this.spinePlayer = player;
+              if (player.canvas) {
+                player.canvas.style.display = 'block';
+                player.canvas.style.width = '100%';
+                player.canvas.style.height = '100%';
+              }
+              if (player.sceneRenderer) {
+                player.sceneRenderer.resize(spine.webgl.ResizeMode.Expand);
+              }
+              // Synchronize animation with current active dialogue
+              const d = this.currentChapterData && this.currentChapterData.dialogues && this.currentChapterData.dialogues[this.dialogueIndex];
+              if (d) {
+                this.updateStandingAnimationForDialogue(d);
+              }
+              console.log(`[Spine] Initialized standing for ${standing.character_id}`);
+            },
+            error: (player, msg) => {
+              console.error(`[Spine] Standing load error:`, msg);
+              if (this.staticStandingFallback) {
+                const fallbackUrl = standing.fallback_img || `/cache/avatars/${standing.character_id || this.currentChapterData.char_id}_half.png`;
+                this.staticStandingFallback.src = fallbackUrl;
+                this.staticStandingFallback.classList.remove('hidden');
+              }
+            }
+          });
         });
       }
     } catch (e) {
       console.error('[Spine] Exception creating SpinePlayer:', e);
+      if (this.staticStandingFallback) {
+        const fallbackUrl = standing.fallback_img || `/cache/avatars/${standing.character_id || this.currentChapterData.char_id}_half.png`;
+        this.staticStandingFallback.src = fallbackUrl;
+        this.staticStandingFallback.classList.remove('hidden');
+      }
     }
   }
 
@@ -1035,6 +1137,9 @@ class LegecloPlayer {
     if (this.standingAnimWrap) {
       this.standingAnimWrap.classList.add('hidden');
     }
+    if (this.staticStandingFallback) {
+      this.staticStandingFallback.classList.add('hidden');
+    }
     if (this.spinePlayer) {
       try {
         this.spinePlayer.pause();
@@ -1044,14 +1149,17 @@ class LegecloPlayer {
 
   setStandingAnimation(anim) {
     if (!this.spinePlayer) return;
+    this.currentStandingAnim = anim;
+    if (this.standingAnimSelect && this.standingAnimSelect.value !== anim && this.isManualStandingAnim) {
+      this.standingAnimSelect.value = anim;
+    }
+    // If skeleton/animationState is not yet ready, store requested animation in config so it will be used when loaded
+    if (!this.spinePlayer.animationState || !this.spinePlayer.skeleton) {
+      this.spinePlayer.config.animation = anim;
+      return;
+    }
     try {
-      this.currentStandingAnim = anim;
-      // Change animation directly on animationState to preserve camera viewport
-      if (this.spinePlayer.animationState) {
-        this.spinePlayer.animationState.setAnimation(0, anim, true);
-      } else {
-        this.spinePlayer.setAnimation(anim);
-      }
+      this.spinePlayer.animationState.setAnimation(0, anim, true);
     } catch (err) {
       console.warn('setStandingAnimation error:', err);
     }

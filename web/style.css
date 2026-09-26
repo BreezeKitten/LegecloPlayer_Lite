@@ -238,6 +238,18 @@ html, body {
   flex-grow: 1;
   word-break: break-word;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+  animation: dialogueFade 0.18s ease-out;
+}
+
+@keyframes dialogueFade {
+  from {
+    opacity: 0.65;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .dialogue-footer {
@@ -311,10 +323,26 @@ html, body {
   top: 0;
   left: 0;
   pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #spine-standing-container .spine-player-controls {
   display: none !important;
+}
+
+#static-standing-fallback {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-height: 88%;
+  max-width: 65%;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 6;
+  filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.6));
 }
 
 .icon-text-btn {

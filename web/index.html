@@ -47,6 +47,7 @@
         </div>
         <div id="standing-layer" class="stage-layer hidden">
           <div id="spine-standing-container"></div>
+          <img id="static-standing-fallback" class="hidden" alt="立繪" />
         </div>
         <div id="media-layer" class="stage-layer">
           <img id="still-image" src="" alt="插圖" class="hidden" />
@@ -123,6 +124,10 @@
           <div class="setting-item">
             <label>🗣️ 角色語音音量: <span id="voice-vol-val">100%</span></label>
             <input type="range" id="voice-volume" min="0" max="100" value="100" />
+          </div>
+          <div class="setting-item">
+            <label>🎙️ 語音對齊延遲: <span id="voice-delay-val">0.18 秒</span></label>
+            <input type="range" id="voice-delay" min="0" max="40" value="18" />
           </div>
           <div class="setting-item">
             <label>⏱️ 自動播放等待秒數: <span id="auto-delay-val">1.2 秒</span></label>

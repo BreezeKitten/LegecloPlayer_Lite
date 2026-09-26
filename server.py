@@ -460,6 +460,7 @@ def ensure_standing(cid):
                     'atlas': f'/cache/standing/{cid}/standing.atlas',
                     'skel': f'/cache/standing/{cid}/standing.skel',
                     'png': f'/cache/standing/{cid}/{png_name}',
+                    'fallback_img': f'/cache/standing/{cid}/{png_name}',
                     'animations': anims if anims else ['st_01_standard', 'st_02_normal', 'st_03_smile', 'st_04_anger', 'st_05_sad', 'st_06_shy', 'st_07_surprise'],
                     'default_anim': 'st_01_standard' if 'st_01_standard' in anims else (anims[0] if anims else 'st_01_standard')
                 }
@@ -469,7 +470,8 @@ def ensure_standing(cid):
             except Exception as e:
                 print(f"[!] ensure_standing {cid} 錯誤:", e)
 
-    return {'has_standing': False}
+    avatar_path = f"/cache/avatars/{cid}_half.png" if os.path.exists(os.path.join(CACHE_DIR, 'avatars', f"{cid}_half.png")) else f"/cache/avatars/{cid}.png"
+    return {'has_standing': False, 'character_id': cid, 'fallback_img': avatar_path}
 
 def get_chapter_data(cid, ep):
     """解析並回傳章節、動作段落、音訊與劇本資料 (自動回補)"""
