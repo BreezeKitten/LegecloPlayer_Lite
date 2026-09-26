@@ -57,5 +57,21 @@ LegecloPlayer_Lite/
 ├── tools/                 # 內建 FFmpeg 60fps 轉碼引擎
 ├── vgmstream/             # 內建 CRI HCA/AAC 語音解碼器
 ├── web/                   # 播放器前端介面 (HTML5 / CSS3 / ES6 / Spine Runtime)
+├── vcruntime140.dll 等    # 內建微軟 C++ 執行庫 (免除缺 DLL 困擾)
 └── cache/avatars/         # 421 位角色高解析度大頭貼
 ```
+
+---
+
+### ❓ 常見問題與疑難排解 (FAQ)
+
+#### Q: 啟動時出現 `failed to load dynlib/dll` 提示怎麼辦？
+**A:** 這是少數純淨 Windows 系統（如全新重灌、很少玩 PC 遊戲的電腦）缺少微軟官方 C++ 執行階段程式庫，或防毒軟體鎖定暫存目錄所致：
+1. **一鍵安裝微軟官方 VC++ 執行庫（最推薦）**：
+   - 下載並安裝微軟官方 [Visual C++ 2015-2022 Redistributable (x64)](https://aka.ms/vs/17/release/vc_redist.x64.exe)（微軟官方下載，安裝僅需 10 秒，安裝後**免重啟電腦**即可直接雙擊啟動）。
+2. **已內建本機 DLL 隨身包**：
+   - 播放器目錄已直接附帶 `vcruntime140.dll`、`msvcp140.dll` 等通用相依函式庫，多數電腦解壓後皆能直接讀取。
+3. **改用本機 Python 啟動**：
+   - 若電腦本身有安裝 Python，執行 `啟動播放器.bat` 會在獨立執行檔受阻時自動切換至本機 Python 執行，確保 100% 順利啟動。
+4. **防毒軟體排除**：
+   - 若受 Windows Defender 或第三方防毒誤判攔截，請將播放器資料夾加入信任或排除名單。

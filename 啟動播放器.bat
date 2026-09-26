@@ -15,11 +15,23 @@ if exist "啟動播放器.exe" (
     echo [*] 正在以獨立免安裝執行檔啟動本機伺服器...
     echo.
     "啟動播放器.exe" 8888
+    if %errorlevel% neq 0 (
+        echo.
+        echo [!] 執行檔啟動發生異常 (退出碼: %errorlevel%)
+        echo [💡] 可能原因: 系統缺少 Microsoft Visual C++ 2015-2022 執行庫 (常見於純淨 Windows)
+        echo      微軟官方安裝檔: https://aka.ms/vs/17/release/vc_redist.x64.exe (安裝後免重啟)
+        echo.
+        echo [*] 正在嘗試自動切換為本機 Python 環境啟動...
+        echo.
+        goto :run_python
+    )
     echo.
-    echo [*] 伺服器已退出。
+    echo [*] 伺服器已正常退出。
     pause
     exit /b
 )
+
+:run_python
 
 python --version >nul 2>&1
 if %errorlevel% neq 0 (
