@@ -830,7 +830,7 @@ def get_chapter_data(cid, ep):
             })
         i += 1
 
-    return {
+    res_data = {
         'char_id': cid,
         'character_name': get_char_name(cid),
         'ep': ep_str,
@@ -841,6 +841,12 @@ def get_chapter_data(cid, ep):
         'dialogues': dialogues,
         'standing': standing
     }
+    try:
+        with open(os.path.join(char_cache, 'chapter_data.json'), 'w', encoding='utf-8') as f:
+            json.dump(res_data, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"[!] 保存 chapter_data.json 失敗: {e}")
+    return res_data
 
 class LegecloHandler(SimpleHTTPRequestHandler):
     """輕量 HTTP 服務處理程序"""
@@ -1062,6 +1068,128 @@ def run_server(port=8888, open_browser=True):
     except KeyboardInterrupt:
         print("\n伺服器已停止。")
 
+def batch_transcode_all(max_workers=4):
+    print("=" * 65)
+    print("🚀 啟動全量快取批次轉碼 (生成 ready-to-play 本機與手機完全離線快取)")
+    print("=" * 65)
+    
+    # 1. 處理角色立繪 (Spine 骨骼與貼圖)
+    print("[*] 正在處理角色立繪 (Spine 骨骼與貼圖)...")
+    m_map = CHAR_MODEL_MAP
+    if not m_map:
+        model_map_file = os.path.join(BASE_DIR, 'char_model_map.json')
+        if os.path.exists(model_map_file):
+            try:
+                with open(model_map_file, 'r', encoding='utf-8') as f:
+                    m_map = json.load(f)
+            except Exception:
+                pass
+    m_count = 0
+    if m_map:
+        for cid, m_info in m_map.items():
+            folder = m_info.get('folder')
+            pfx = m_info.get('prefix')
+            if not folder or not pfx:
+                continue
+            skel = os.path.join(RESOURCE_DIR, 'characters', folder, 'avatar', 'standing', 'export', f"{pfx}.skel.bytes")
+            if os.path.exists(skel):
+                try:
+                    ensure_standing(cid)
+                    m_count += 1
+                except Exception:
+                    pass
+    print(f"[+] 立繪處理完成：共處理 {m_count} 位角色")
+
+    # 2. 搜尋 resources 內所有現存劇本/章節
+    manifest = CDN_MANIFEST
+    if not manifest:
+        manifest_file = os.path.join(BASE_DIR, 'cdn_manifest.json')
+        if os.path.exists(manifest_file):
+            try:
+                with open(manifest_file, 'r', encoding='utf-8') as f:
+                    manifest = json.load(f)
+            except Exception:
+                pass
+
+    all_tasks = []
+    if manifest:
+        for cid, eps in manifest.items():
+            for ep in eps:
+                ep_str = f"{int(ep):02d}"
+                sc_file = os.path.join(RESOURCE_DIR, 'adv', 'scenario', f'cs_{cid}_{ep_str}.evsc.bytes')
+                mo_files = glob.glob(os.path.join(RESOURCE_DIR, 'adv', 'movie', f'hs_{cid}_mo_{ep_str}*.usm.bytes'))
+                if os.path.exists(sc_file) or len(mo_files) > 0:
+                    all_tasks.append((cid, str(int(ep))))
+    else:
+        sc_files = glob.glob(os.path.join(RESOURCE_DIR, 'adv', 'scenario', 'cs_*.evsc.bytes'))
+        for sc in sc_files:
+            fn = os.path.basename(sc).replace('cs_', '').replace('.evsc.bytes', '')
+            if '_' in fn:
+                parts = fn.rsplit('_', 1)
+                if len(parts) == 2 and parts[1].isdigit():
+                    all_tasks.append((parts[0], str(int(parts[1]))))
+
+    # 去重
+    all_tasks = sorted(list(set(all_tasks)))
+
+    total = len(all_tasks)
+    print(f"[*] 檢測到已下載素材章節: {total} 個")
+    if total == 0:
+        print("[!] resources/ 目錄內未發現已下載的章節素材，請先執行回補下載！")
+        return
+
+    # 檢查哪些已經完整轉碼 (含 chapter_data.json)
+    need_transcode = []
+    already_cached = 0
+    for cid, ep in all_tasks:
+        ep_str = f"{int(ep):02d}"
+        c_json = os.path.join(CACHE_DIR, f"{cid}_{ep_str}", 'chapter_data.json')
+        if os.path.exists(c_json) and os.path.getsize(c_json) > 100:
+            already_cached += 1
+        else:
+            need_transcode.append((cid, ep))
+
+    print(f"[*] 快取現狀: 已轉碼 {already_cached} 個 | 待轉碼 {len(need_transcode)} 個")
+    if not need_transcode:
+        print("🎉 所有已下載章節皆已轉碼完成，快取已是最新狀態！")
+        return
+
+    print(f"[*] 開始平行轉碼 (啟用 {max_workers} 線程)...")
+    start_t = time.time()
+    done_cnt = 0
+    err_cnt = 0
+
+    def _worker(task):
+        cid, ep = task
+        try:
+            get_chapter_data(cid, ep)
+            return True, cid, ep, ""
+        except Exception as e:
+            return False, cid, ep, str(e)
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = [executor.submit(_worker, t) for t in need_transcode]
+        for fut in concurrent.futures.as_completed(futures):
+            done_cnt += 1
+            ok, cid, ep, err = fut.result()
+            if not ok:
+                err_cnt += 1
+            pct = (done_cnt / len(need_transcode)) * 100
+            elapsed = time.time() - start_t
+            speed = done_cnt / elapsed if elapsed > 0 else 0
+            cname = get_char_name(cid)
+            print(f"\r[*] 進度: {done_cnt}/{len(need_transcode)} ({pct:.1f}%) | 正在處理: {cname} 第 {int(ep):02d} 話 | 速度: {speed:.1f} 話/秒", end="", flush=True)
+
+    print()
+    print("=" * 65)
+    print(f"🎉 批次轉碼作業完成！成功: {done_cnt - err_cnt} 個 | 失敗: {err_cnt} 個 | 總耗時: {time.time()-start_t:.1f} 秒")
+    print(f"📁 快取輸出目錄: {CACHE_DIR}")
+    print("📱 您現在可以執行 sync_cache_to_phone 將完整快取同步到手機！")
+    print("=" * 65)
+
 if __name__ == '__main__':
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else PORT
+    if '--transcode' in sys.argv or '--batch-transcode' in sys.argv:
+        batch_transcode_all()
+        sys.exit(0)
+    port = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else PORT
     run_server(port, open_browser=AUTO_OPEN)

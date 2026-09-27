@@ -107,10 +107,14 @@ LegecloPlayer_Lite/
 
 ---
 
-## 📱 手機版連動 (LegecloPlayer Android)
+## 📱 手機版連動與離線同步 (LegecloPlayer Android)
 
 本專案與原生 Android 離線播放器 **[LegecloPlayer_Android](https://github.com/BreezeKitten/LegecloPlayer_Android)** 完整互通相容！
-若需將電腦端下載好的快取傳輸至手機，只需將手機插上傳輸線並雙擊執行本目錄中的 **`sync_cache_to_phone.bat`**，即可一鍵將全角色離線快取同步至手機！
+
+### 完整手機離線三步驟：
+1. **下載與轉碼**：雙擊執行 **`一鍵全量回補`**，輸入 `[5]` 進行全量下載並自動批次轉碼（或已有素材時輸入 `[6]` 僅執行轉碼）。此步驟會將素材解鎖轉碼為手機與網頁即播的 `cache/` 快取。
+2. **連接手機**：使用 USB 傳輸線連接 Android 手機，並確保手機已開啟「開發人員選項」及「USB 偵錯」。
+3. **一鍵推送**：雙擊執行 **`sync_cache_to_phone.bat`**，選取 `[1]` 一鍵同步全部快取至手機！完成後即可在手機 App 享有 100% 完全離線暢玩。
 
 ---
 
