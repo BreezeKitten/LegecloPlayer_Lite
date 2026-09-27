@@ -101,8 +101,16 @@ LegecloPlayer_Lite/
 ├── char_names.json        # 角色名稱中繼資料
 ├── web/                   # HTML5/ES6 播放器前端介面與 Spine Runtime
 ├── assets/                # 播放器預設介面圖示 (預設頭像與背景圖)
+├── sync_cache_to_phone.bat# 一鍵同步快取至 Android 手機工具
 └── cache/                 # 本地動態運行快取 (依需求即時生成)
 ```
+
+---
+
+## 📱 手機版連動 (LegecloPlayer Android)
+
+本專案與原生 Android 離線播放器 **[LegecloPlayer_Android](https://github.com/BreezeKitten/LegecloPlayer_Android)** 完整互通相容！
+若需將電腦端下載好的快取傳輸至手機，只需將手機插上傳輸線並雙擊執行本目錄中的 **`sync_cache_to_phone.bat`**，即可一鍵將全角色離線快取同步至手機！
 
 ---
 

@@ -547,6 +547,14 @@ html, body {
   align-items: center;
 }
 
+#settings-modal, #log-modal {
+  z-index: 200;
+}
+
+#player-name-modal {
+  z-index: 250;
+}
+
 .modal-content {
   width: 440px;
   max-width: 90%;
@@ -584,6 +592,34 @@ html, body {
 .setting-item input[type="range"] {
   width: 100%;
   accent-color: #ff5e98;
+}
+
+.setting-item input[type="text"] {
+  width: 100%;
+  padding: 8px 12px;
+  background: #1e2230;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 13px;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.setting-item input[type="text"]:focus {
+  outline: none;
+  border-color: #ff5e98;
+  box-shadow: 0 0 8px rgba(255, 94, 152, 0.35);
+}
+
+.name-setting-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.name-setting-group input[type="text"] {
+  flex: 1;
 }
 
 .setting-item select {
@@ -874,6 +910,53 @@ html, body {
   background: #ff5e98;
   color: #fff;
   box-shadow: 0 0 8px rgba(255, 94, 152, 0.6);
+}
+
+/* Offline Ready Chapter Badges & Cards */
+.gallery-filter-tabs {
+  display: flex;
+  gap: 4px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 2px 4px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.filter-tab {
+  background: transparent;
+  border: none;
+  color: #a0aec0;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.filter-tab.active {
+  background: #ff5e98;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 94, 152, 0.4);
+}
+.filter-tab:hover:not(.active) {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+.offline-badge {
+  background: rgba(46, 213, 115, 0.25) !important;
+  color: #2ed573 !important;
+  border: 1px solid rgba(46, 213, 115, 0.6) !important;
+  font-weight: bold !important;
+}
+.offline-badge:hover {
+  background: #2ed573 !important;
+  color: #000 !important;
+  box-shadow: 0 0 8px rgba(46, 213, 115, 0.8) !important;
+}
+.cached-card {
+  border-color: rgba(46, 213, 115, 0.4) !important;
+  background: rgba(46, 213, 115, 0.06) !important;
+  box-shadow: 0 0 12px rgba(46, 213, 115, 0.15);
 }
 
 /* Portrait Helper Overlay */

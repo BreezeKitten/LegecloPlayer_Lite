@@ -412,9 +412,9 @@
     ]
   },
   {
-    "id": "claudette_legend",
-    "name": "克勞黛特（傳奇）",
-    "avatar": "/cache/avatars/claudette_legend.png",
+    "id": "claudette",
+    "name": "克勞黛特",
+    "avatar": "/cache/avatars/claudette.png",
     "chapters": [
       2,
       3
@@ -680,9 +680,9 @@
     ]
   },
   {
-    "id": "khatia_legend",
-    "name": "卡緹雅（傳奇）",
-    "avatar": "/cache/avatars/khatia_legend.png",
+    "id": "khatia",
+    "name": "卡緹雅",
+    "avatar": "/cache/avatars/khatia.png",
     "chapters": [
       2,
       3
@@ -2542,15 +2542,6 @@
     ]
   },
   {
-    "id": "richard_i1",
-    "name": "理查一世",
-    "avatar": "/cache/avatars/richard_i1.png",
-    "chapters": [
-      2,
-      3
-    ]
-  },
-  {
     "id": "richard_i_onehalf",
     "name": "理查一世（1.5週年）",
     "avatar": "/cache/avatars/richard_i_onehalf.png",
@@ -3707,7 +3698,7 @@
   },
   {
     "id": "bael",
-    "name": "？？？",
+    "name": "巴耶力",
     "avatar": "/cache/avatars/bael.png",
     "chapters": [
       2,
@@ -3716,7 +3707,7 @@
   },
   {
     "id": "furfur",
-    "name": "？？？",
+    "name": "佛爾佛爾",
     "avatar": "/cache/avatars/furfur.png",
     "chapters": [
       2,
@@ -3725,7 +3716,7 @@
   },
   {
     "id": "hohenheim_origin",
-    "name": "？？？",
+    "name": "霍恩海姆（起源）",
     "avatar": "/cache/avatars/hohenheim_origin.png",
     "chapters": [
       2,
@@ -3734,7 +3725,7 @@
   },
   {
     "id": "huyou_kaede",
-    "name": "？？？",
+    "name": "芙蓉楓",
     "avatar": "/cache/avatars/huyou_kaede.png",
     "chapters": [
       2,
@@ -3743,7 +3734,7 @@
   },
   {
     "id": "janet",
-    "name": "？？？",
+    "name": "珍妮特",
     "avatar": "/cache/avatars/janet.png",
     "chapters": [
       2,
@@ -3752,7 +3743,7 @@
   },
   {
     "id": "kirin",
-    "name": "？？？",
+    "name": "麒麟",
     "avatar": "/cache/avatars/kirin.png",
     "chapters": [
       2,
@@ -3761,7 +3752,7 @@
   },
   {
     "id": "overload",
-    "name": "？？？",
+    "name": "霸王",
     "avatar": "/cache/avatars/overload.png",
     "chapters": [
       2,

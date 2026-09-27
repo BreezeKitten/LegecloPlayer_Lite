@@ -16,7 +16,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/icons/icon-512.png">
 
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
   <link rel="stylesheet" href="/lib/spine-player.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -144,6 +144,14 @@
               <option value="infinite">鎖定當前動畫 (無限循環動作)</option>
             </select>
           </div>
+          <div class="setting-item">
+            <label>🏷️ 主人公稱呼設定 (替換台詞中 &lt;name&gt;)</label>
+            <div class="name-setting-group">
+              <input type="text" id="player-name-input" placeholder="預設：Master" />
+              <button id="save-player-name-btn" class="glass-btn action-btn">儲存</button>
+            </div>
+            <span class="setting-hint">※ 自動替換劇本台詞中的 &lt;name&gt;&lt;/name&gt; 與 $n</span>
+          </div>
           <div class="setting-divider"></div>
           <div class="setting-item cache-setting-item">
             <label>🧹 快取管理 (Cache)</label>
@@ -152,6 +160,28 @@
               <button id="clear-all-standing-btn" class="glass-btn action-btn danger-btn">🗑️ 重建全角色立繪</button>
             </div>
             <span class="setting-hint">※ 僅清理衍生暫存，絕不刪除 resources/ 遊戲資源原檔。</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Initial Player Name Prompt Modal -->
+    <div id="player-name-modal" class="modal hidden">
+      <div class="modal-content glass-card">
+        <div class="modal-header">
+          <h3>👋 請設定主人公稱呼</h3>
+        </div>
+        <div class="modal-body">
+          <p style="font-size: 13px; color: #ccc; margin-bottom: 14px; line-height: 1.6;">
+            歡迎！請輸入要在劇情台詞中顯示的主人公稱呼<br>
+            （例如：Master、團長、自己的暱稱），此設定可隨時在「⚙️ 設定」中修改：
+          </p>
+          <div class="setting-item">
+            <input type="text" id="init-player-name-input" placeholder="Master" value="Master" />
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px;">
+            <button id="skip-player-name-btn" class="glass-btn action-btn">使用預設 (Master)</button>
+            <button id="confirm-player-name-btn" class="glass-btn action-btn" style="background: #ff5e98; border-color: #ff5e98; color: #fff; font-weight: bold;">確定</button>
           </div>
         </div>
       </div>
@@ -179,6 +209,10 @@
             <span class="gallery-subtitle" id="gallery-count">載入中...</span>
           </div>
           <div class="gallery-search-wrap">
+            <div class="gallery-filter-tabs">
+              <button id="filter-all-btn" class="filter-tab active">全部</button>
+              <button id="filter-cached-btn" class="filter-tab">💾 離線就緒</button>
+            </div>
             <input type="text" id="gallery-search" placeholder="🔍 搜尋角色姓名或代號..." class="glass-input" />
             <button id="close-gallery-btn" class="icon-btn" title="關閉">✕</button>
           </div>
@@ -239,7 +273,7 @@
 
   <!-- Spine 3.8 Runtime -->
   <script src="/lib/spine-player.js"></script>
-  <script src="player.js?v=4"></script>
+  <script src="player.js?v=5"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {

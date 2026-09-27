@@ -582,7 +582,18 @@ def ensure_standing(cid):
                 env_mat = UnityPy.load(mat_bundle)
                 for obj in env_mat.objects:
                     if obj.type.name == 'Texture2D':
-                        obj.read().image.save(os.path.join(out_dir, png_name))
+                        img = obj.read().image
+                        try:
+                            with open(atlas_out, 'r', encoding='utf-8', errors='ignore') as af:
+                                m = re.search(r'size:\s*(\d+)\s*,\s*(\d+)', af.read())
+                                if m:
+                                    tw, th = int(m.group(1)), int(m.group(2))
+                                    if img.size != (tw, th):
+                                        from PIL import Image
+                                        img = img.resize((tw, th), Image.Resampling.LANCZOS)
+                        except Exception:
+                            pass
+                        img.save(os.path.join(out_dir, png_name))
                         break
 
                 avatar_fallback = f'/cache/avatars/{cid}_half.png' if os.path.exists(os.path.join(CACHE_DIR, 'avatars', f"{cid}_half.png")) else f'/cache/avatars/{cid}.png'

@@ -52,6 +52,7 @@ class LegecloPlayer {
     this.galleryCount = document.getElementById('gallery-count');
     this.openGalleryBtn = document.getElementById('open-gallery-btn');
     this.closeGalleryBtn = document.getElementById('close-gallery-btn');
+    this.galleryFilterTab = 'all';
 
     // Mobile & Aspect Ratio Controls
     this.ratioToggleBtn = document.getElementById('ratio-toggle-btn');
@@ -77,7 +78,11 @@ class LegecloPlayer {
     this.voiceDelayTimer = null;
     this.voiceDelay = 180; // ms natural onset delay for subtitles before speech starts
 
+    // Protagonist Player Name Configuration
+    this.playerName = localStorage.getItem('legeclo_player_name') || 'Master';
+
     this.initEventListeners();
+    this.initPlayerName();
     this.loadCharacterList();
   }
 
@@ -269,6 +274,24 @@ class LegecloPlayer {
         this.renderAvatarGallery(e.target.value.trim());
       });
     }
+    const filterAllBtn = document.getElementById('filter-all-btn');
+    const filterCachedBtn = document.getElementById('filter-cached-btn');
+    if (filterAllBtn && filterCachedBtn) {
+      filterAllBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.galleryFilterTab = 'all';
+        filterAllBtn.classList.add('active');
+        filterCachedBtn.classList.remove('active');
+        this.renderAvatarGallery(this.gallerySearch ? this.gallerySearch.value.trim() : '');
+      });
+      filterCachedBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.galleryFilterTab = 'cached';
+        filterCachedBtn.classList.add('active');
+        filterAllBtn.classList.remove('active');
+        this.renderAvatarGallery(this.gallerySearch ? this.gallerySearch.value.trim() : '');
+      });
+    }
     if (this.galleryModal) {
       this.galleryModal.addEventListener('click', (e) => {
         if (e.target === this.galleryModal) {
@@ -367,6 +390,8 @@ class LegecloPlayer {
         this.logModal.classList.add('hidden');
         if (this.galleryModal) this.galleryModal.classList.add('hidden');
         this.sidebar.classList.remove('open');
+        const pNameModal = document.getElementById('player-name-modal');
+        if (pNameModal) pNameModal.classList.add('hidden');
         this.setUIHidden(false);
       }
     });
@@ -380,6 +405,81 @@ class LegecloPlayer {
         }, this.autoDelay);
       }
     });
+  }
+
+  initPlayerName() {
+    const savedName = localStorage.getItem('legeclo_player_name');
+    const nameInput = document.getElementById('player-name-input');
+    if (nameInput) {
+      nameInput.value = this.playerName;
+    }
+
+    const modal = document.getElementById('player-name-modal');
+    const initInput = document.getElementById('init-player-name-input');
+    const confirmBtn = document.getElementById('confirm-player-name-btn');
+    const skipBtn = document.getElementById('skip-player-name-btn');
+    const saveSettingsBtn = document.getElementById('save-player-name-btn');
+
+    const updateName = (val, notify = true) => {
+      const finalName = (val && val.trim()) ? val.trim() : 'Master';
+      this.playerName = finalName;
+      localStorage.setItem('legeclo_player_name', finalName);
+      if (nameInput) nameInput.value = finalName;
+      if (notify) this.showToast(`主人公稱呼已設定為「${finalName}」`);
+      if (this.currentChapterData && this.currentChapterData.dialogues) {
+        this.renderCurrentDialogue();
+      }
+    };
+
+    if (savedName === null && modal && initInput) {
+      modal.classList.remove('hidden');
+      setTimeout(() => initInput.focus(), 300);
+
+      const handleConfirm = (e) => {
+        if (e) e.stopPropagation();
+        modal.classList.add('hidden');
+        updateName(initInput.value);
+      };
+      const handleSkip = (e) => {
+        if (e) e.stopPropagation();
+        modal.classList.add('hidden');
+        updateName('Master');
+      };
+
+      if (confirmBtn) confirmBtn.addEventListener('click', handleConfirm);
+      if (skipBtn) skipBtn.addEventListener('click', handleSkip);
+      initInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') handleConfirm(e);
+      });
+    }
+
+    if (saveSettingsBtn && nameInput) {
+      saveSettingsBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        updateName(nameInput.value);
+      });
+      nameInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          updateName(nameInput.value);
+        }
+      });
+      nameInput.addEventListener('change', () => {
+        updateName(nameInput.value, false);
+      });
+    }
+  }
+
+  formatDialogueText(text) {
+    if (!text) return '';
+    const name = this.playerName || 'Master';
+    return text
+      .replace(/<name>(.*?)<\/name>/gi, name)
+      .replace(/<\/?name>/gi, '')
+      .replace(/\$n/g, name)
+      .replace(/<ruby=[^>]*>(.*?)<\/ruby>/gi, '$1')
+      .replace(/<\/?ruby(=[^>]*)?>/gi, '')
+      .replace(/<size=[^>]*>(.*?)<\/size>/gi, '$1')
+      .replace(/<\/?size(=[^>]*)?>/gi, '');
   }
 
   unlockAudio() {
@@ -615,7 +715,13 @@ class LegecloPlayer {
       c.chapters.forEach(ep => {
         const badge = document.createElement('span');
         badge.className = 'chapter-badge';
-        badge.textContent = `第 ${ep} 章`;
+        const isOffline = (c.cached_chapters || []).includes(ep);
+        if (isOffline) {
+          badge.classList.add('offline-badge');
+          badge.textContent = `第 ${ep} 章 💾`;
+        } else {
+          badge.textContent = `第 ${ep} 章`;
+        }
         badge.addEventListener('click', (e) => {
           e.stopPropagation();
           this.sidebar.classList.remove('open');
@@ -629,7 +735,8 @@ class LegecloPlayer {
       // Clicking item loads first chapter
       item.addEventListener('click', () => {
         this.sidebar.classList.remove('open');
-        this.loadChapter(c.id, c.chapters[0]);
+        const targetEp = (c.cached_chapters && c.cached_chapters.length > 0) ? c.cached_chapters[0] : c.chapters[0];
+        this.loadChapter(c.id, targetEp);
       });
 
       this.charList.appendChild(item);
@@ -640,22 +747,30 @@ class LegecloPlayer {
     if (!this.galleryGrid) return;
     this.galleryGrid.innerHTML = '';
 
-    const filtered = this.allCharacters.filter(c => 
-      !filterText || c.name.toLowerCase().includes(filterText.toLowerCase()) || c.id.toLowerCase().includes(filterText.toLowerCase())
-    );
+    const cachedCount = this.allCharacters.filter(c => c.is_cached).length;
+    const filterCachedBtn = document.getElementById('filter-cached-btn');
+    if (filterCachedBtn) {
+      filterCachedBtn.textContent = `💾 離線就緒 (${cachedCount})`;
+    }
+
+    const filtered = this.allCharacters.filter(c => {
+      if (this.galleryFilterTab === 'cached' && !c.is_cached) return false;
+      return !filterText || c.name.toLowerCase().includes(filterText.toLowerCase()) || c.id.toLowerCase().includes(filterText.toLowerCase());
+    });
 
     if (this.galleryCount) {
-      this.galleryCount.textContent = `共 ${filtered.length} 位角色`;
+      this.galleryCount.textContent = `共 ${filtered.length} 位角色${this.galleryFilterTab === 'cached' ? ' (已離線快取)' : ''}`;
     }
 
     if (filtered.length === 0) {
-      this.galleryGrid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; color: #8892b0; padding: 40px 0; font-size: 15px;">沒有找到符合「${filterText}」的角色</div>`;
+      this.galleryGrid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; color: #8892b0; padding: 40px 0; font-size: 15px;">沒有找到符合${this.galleryFilterTab === 'cached' ? '已離線' : ''}「${filterText}」的角色</div>`;
       return;
     }
 
     filtered.forEach(c => {
       const card = document.createElement('div');
       card.className = 'gallery-card';
+      if (c.is_cached) card.classList.add('cached-card');
       card.title = `${c.name} (${c.chapters.map(ep => `第${ep}章`).join(', ')})`;
 
       const avatarWrap = document.createElement('div');
@@ -680,7 +795,13 @@ class LegecloPlayer {
       c.chapters.forEach(ep => {
         const badge = document.createElement('span');
         badge.className = 'gallery-chapter-badge';
-        badge.textContent = `第${ep}章`;
+        const isOffline = (c.cached_chapters || []).includes(ep);
+        if (isOffline) {
+          badge.classList.add('offline-badge');
+          badge.textContent = `第${ep}章 💾`;
+        } else {
+          badge.textContent = `第${ep}章`;
+        }
         badge.addEventListener('click', (e) => {
           e.stopPropagation();
           this.unlockAudio();
@@ -694,7 +815,8 @@ class LegecloPlayer {
       card.addEventListener('click', () => {
         this.unlockAudio();
         this.galleryModal.classList.add('hidden');
-        this.loadChapter(c.id, c.chapters[0]);
+        const targetEp = (c.cached_chapters && c.cached_chapters.length > 0) ? c.cached_chapters[0] : c.chapters[0];
+        this.loadChapter(c.id, targetEp);
       });
 
       this.galleryGrid.appendChild(card);
@@ -880,14 +1002,16 @@ class LegecloPlayer {
     }
 
     const d = this.currentChapterData.dialogues[this.dialogueIndex];
-    if (d.speaker) {
-      this.speakerTag.textContent = `【${d.speaker}】`;
+    const speakerText = this.formatDialogueText(d.speaker);
+    if (speakerText) {
+      this.speakerTag.textContent = `【${speakerText}】`;
     } else {
       this.speakerTag.textContent = '【旁白】';
     }
 
     // Trigger visual dialogue update with subtitle animation refresh
-    this.dialogueText.textContent = d.text;
+    const formattedText = this.formatDialogueText(d.text);
+    this.dialogueText.textContent = formattedText;
     this.dialogueText.style.animation = 'none';
     void this.dialogueText.offsetHeight;
     this.dialogueText.style.animation = '';
@@ -918,7 +1042,7 @@ class LegecloPlayer {
       clearTimeout(this.autoTimer);
       if (!d.voice) {
         // Line without voice: calculate reading delay based on text length
-        const readingMs = Math.max(2200, d.text.length * 140) + this.autoDelay;
+        const readingMs = Math.max(2200, formattedText.length * 140) + this.autoDelay;
         this.autoTimer = setTimeout(() => {
           this.advanceDialogue();
         }, readingMs);
@@ -992,12 +1116,13 @@ class LegecloPlayer {
 
       const spk = document.createElement('div');
       spk.className = 'log-speaker';
-      spk.textContent = d.speaker ? `【${d.speaker}】` : '【旁白】';
+      const speakerText = this.formatDialogueText(d.speaker);
+      spk.textContent = speakerText ? `【${speakerText}】` : '【旁白】';
       entry.appendChild(spk);
 
       const txt = document.createElement('div');
       txt.className = 'log-text';
-      txt.textContent = d.text;
+      txt.textContent = this.formatDialogueText(d.text);
       entry.appendChild(txt);
 
       this.logList.appendChild(entry);
